@@ -7,7 +7,7 @@ let allListings = [];
 let dashboardState = null;
 
 // Initialize on load
-document.addEventListener("DOMContentLoaded", () => {
+function initDashboard() {
     // 1. Initial render from static data if available
     if (window.STATIC_DASHBOARD_STATE) {
         applyDashboardState(window.STATIC_DASHBOARD_STATE);
@@ -26,7 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
         loadDashboardState();
         loadListings();
     }
-});
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initDashboard);
+} else {
+    initDashboard();
+}
 
 // Switch active tab
 function switchTab(tabId) {
