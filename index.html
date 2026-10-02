@@ -28,16 +28,8 @@
             <div class="top-actions">
                 <div class="status-indicator">
                     <span class="pulse-dot"></span>
-                    <span id="system-time">2026-10-02 12:29 CDT</span>
+                    <span id="system-time">Last Scraped: 2026-10-02 16:19 CDT</span>
                 </div>
-                <button class="btn btn-secondary" onclick="openDrawer()">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Ingestion & Sync
-                </button>
-                <button class="btn btn-primary" onclick="openDeployModal()">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
-                    Deploy to GitHub Pages
-                </button>
             </div>
         </header>
 
@@ -45,7 +37,6 @@
         <section class="summary-section">
             <div class="section-header">
                 <h2>EXECUTIVE SUMMARY & REFRESH METRICS</h2>
-                <button class="btn-sm btn-ghost" onclick="loadDashboardState()">⟳ Refresh Live State</button>
             </div>
             
             <div class="kpi-grid">
@@ -132,22 +123,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Deployment Status -->
-                <div class="matrix-card">
-                    <div class="card-title-sm">GITHUB PAGES DEPLOYMENT PIPELINE</div>
-                    <div class="deploy-status-box">
-                        <div class="deploy-meta">
-                            <div>Target: <a href="https://farmerboy772.github.io/" target="_blank" class="link-cyan">farmerboy772.github.io</a></div>
-                            <div>Repository: <code>farmerboy772/farmerboy772.github.io</code> (main)</div>
-                            <div>Last Commit: <span id="deploy-last-commit" class="font-mono">Ready to deploy</span></div>
-                            <div>Last Deployed: <span id="deploy-last-time">--</span></div>
-                        </div>
-                        <div class="deploy-controls-inline">
-                            <button class="btn btn-sm btn-primary" onclick="openDeployModal()">Authorized Deploy Pipeline</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -165,13 +140,9 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 Unconfirmed Locations (<span id="unconfirmed-tab-count">0</span>)
             </button>
-            <button class="tab-btn" onclick="switchTab('maintenance')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Maintenance & Deep Date Resolution
-            </button>
             <button class="tab-btn" onclick="switchTab('exports')">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Publishing & Export Hub
+                Downloads & View Links
             </button>
         </nav>
 
@@ -299,35 +270,7 @@
                 </div>
             </div>
 
-            <!-- TAB 4: Maintenance & Date Resolution -->
-            <div id="tab-maintenance" class="tab-pane">
-                <div class="maintenance-grid">
-                    <div class="maintenance-card">
-                        <h3>Deep Date Resolution Queue (Step 7)</h3>
-                        <p>Identifies up to 25 Facebook Marketplace listings currently missing verified posted dates (prioritized by newest first seen). Converts relative strings (e.g., "15 hours ago", "3 days ago") to approximate ISO dates with the "Estimated Relative" basis and regenerates report artifacts.</p>
-                        <div class="button-row">
-                            <button class="btn btn-primary" onclick="triggerDateResolution()">Run Date Resolution Pass</button>
-                            <button class="btn btn-secondary" onclick="triggerReportsRegen()">Regenerate Step 6 Reports</button>
-                        </div>
-                        <div class="date-queue-list" id="date-resolution-queue-list">
-                            <!-- Populated dynamically -->
-                        </div>
-                    </div>
-
-                    <div class="maintenance-card">
-                        <h3>Secondary OPDB Matching Pass</h3>
-                        <p>Attempts secondary fuzzy token and alias resolution against the Open Pinball Database schema for any remaining unverified machines.</p>
-                        <div class="button-row">
-                            <button class="btn btn-secondary" onclick="triggerDateResolution()">Run Secondary OPDB Pass</button>
-                        </div>
-                        <div id="opdb-unverified-list" class="unverified-list">
-                            <!-- Populated dynamically -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 5: Publishing & Export Hub -->
+            <!-- TAB 4: Downloads & View Links -->
             <div id="tab-exports" class="tab-pane">
                 <div class="exports-grid">
                     <div class="export-card">
@@ -348,148 +291,9 @@
                         <div class="export-desc">Audit table layout optimized for desktop review and rapid comparison.</div>
                         <a href="audit_list.html" target="_blank" class="btn btn-secondary">Open List View ↗</a>
                     </div>
-                    <div class="export-card">
-                        <div class="export-icon">🌐</div>
-                        <div class="export-title">Root index.html</div>
-                        <div class="export-desc">Main site entry point configured for GitHub Pages publishing.</div>
-                        <a href="index.html" target="_blank" class="btn btn-secondary">Open Main View ↗</a>
-                    </div>
                 </div>
             </div>
         </main>
-    </div>
-
-    <!-- Ingestion & Sync Drawer -->
-    <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
-    <div class="drawer" id="ingestion-drawer">
-        <div class="drawer-header">
-            <h3>INGESTION & SYNC DRAWER</h3>
-            <button class="close-btn" onclick="closeDrawer()">✕</button>
-        </div>
-        <div class="drawer-content">
-            <!-- Session Health Status -->
-            <div class="drawer-section">
-                <h4>Provider Session Health & Guardrails</h4>
-                <div class="session-boxes">
-                    <div class="session-item">
-                        <div class="session-label">Pinside Session State:</div>
-                        <div class="session-val" id="pinside-session-status">Checking...</div>
-                    </div>
-                    <div class="session-item">
-                        <div class="session-label">Facebook Context State:</div>
-                        <div class="session-val" id="fb-session-status">Checking...</div>
-                    </div>
-                    <div class="session-item">
-                        <div class="session-label">HiBid Endpoint State:</div>
-                        <div class="session-val" id="hibid-session-status">Checking...</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scraper Runner Triggers -->
-            <div class="drawer-section">
-                <h4>Live Collector Runners</h4>
-                <p class="drawer-help">Executes multi-provider ingestion with full guardrails. If a source is blocked by login walls or bot protection, it flags the source as inaccessible without halting or inventing data.</p>
-                <div class="button-group">
-                    <button class="btn btn-secondary" onclick="triggerScrape('pinside')">Run Pinside Scraper (500km SS)</button>
-                    <button class="btn btn-secondary" onclick="triggerScrape('facebook')">Run Facebook Runner (10 Cities)</button>
-                    <button class="btn btn-secondary" onclick="triggerScrape('hibid')">Run HiBid Runner (250mi)</button>
-                </div>
-                <div id="scrape-trigger-status" class="scrape-status-msg"></div>
-            </div>
-
-            <!-- Paste Bulk Raw JSON Payloads -->
-            <div class="drawer-section">
-                <h4>Bulk Raw JSON Payload Ingestion</h4>
-                <p class="drawer-help">Paste raw JSON collected from local headless browser scrapers. Payload will be normalized, deduplicated, rule-scored, OPDB-enriched, and stored in the persistent datastore.</p>
-                <div class="form-row">
-                    <label>Target Provider Source:</label>
-                    <select id="payload-source-select">
-                        <option value="facebook">Facebook Marketplace</option>
-                        <option value="hibid">HiBid Auction</option>
-                        <option value="pinside">Pinside Classifieds</option>
-                    </select>
-                <textarea id="raw-payload-input" class="payload-textarea" placeholder="Paste raw JSON array here... e.g. [{ 'listing_id': '123', 'raw_title': 'Twilight Zone', 'price': 8500 }]"></textarea>
-                <div class="button-row" style="margin-top: 10px;">
-                    <button class="btn btn-primary" onclick="submitBulkPayload()">Ingest & Sync Payload</button>
-                    <button class="btn btn-secondary" onclick="document.getElementById('raw-payload-input').value=''">Clear</button>
-                </div>
-                <div id="ingest-feedback" class="ingest-feedback"></div>
-            </div>
-
-            <!-- Push Notifications & Webhook Alerts -->
-            <div class="drawer-section">
-                <h4>Push Notifications & Instant Deal Alerts</h4>
-                <p class="drawer-help">Receive real-time push alerts via Discord, Telegram, or custom webhook whenever a "Steal" (≥35% off), "Great Deal" (≥20% off), or high-score machine is detected.</p>
-                <div class="form-row">
-                    <label>Discord / Incoming Webhook URL:</label>
-                    <input type="text" id="webhook-url-input" style="width:100%; height:38px; border-radius:6px; background:var(--bg-surface-elevated); border:1px solid var(--border-color); color:var(--text-primary); padding:8px 12px; font-family:var(--font-mono); font-size:0.8rem;" placeholder="https://discord.com/api/webhooks/..." />
-                </div>
-                <div class="button-row" style="margin-top: 8px; display:flex; gap:8px;">
-                    <button class="btn btn-primary btn-sm" onclick="saveWebhookConfig()">Save Webhook</button>
-                    <button class="btn btn-secondary btn-sm" onclick="triggerTestAlert()">Send Test Deal Alert</button>
-                </div>
-                <div id="webhook-feedback" class="ingest-feedback" style="margin-top:6px;"></div>
-                <div style="margin-top: 12px;">
-                    <div style="font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:6px;">Recent Deal Radar Activity:</div>
-                    <div id="drawer-recent-alerts" style="max-height:140px; overflow-y:auto; font-size:0.75rem; border:1px solid var(--border-color); border-radius:6px; padding:6px; background:var(--bg-main);">
-                        Loading alert history...
-                    </div>
-                </div>
-            </div>
-
-            <!-- Runner Specifications -->
-            <div class="drawer-section">
-                <h4>Collector Runner Specifications</h4>
-                <div class="specs-box">
-                    <strong>Facebook Marketplace:</strong> 10 Target Cities (Tulsa, OKC, Dallas, Fort Worth, Wichita, Joplin, Springfield, Kansas City, Bentonville, Fort Smith) • 12 scroll iterations per city (~1.8s delay).<br><br>
-                    <strong>HiBid:</strong> State-level URL subdomain filtering across 5 regional portals (oklahoma, texas, kansas, missouri, arkansas) • Paginate up to 5 pages per query • USD only • Prices marked as "Current High Bid".<br><br>
-                    <strong>Pinside:</strong> Solid-State classifieds endpoint (500 km radius, sort by ad_time_placed DESC) • Strips initial "FS:" • Extracts ID, price, location, relative/absolute dates.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Authorized GitHub Pages Deployment Modal -->
-    <div class="modal-overlay" id="deploy-modal-overlay">
-        <div class="modal">
-            <div class="modal-header">
-                <h3>AUTHORIZED GITHUB PAGES DEPLOYMENT</h3>
-                <button class="close-btn" onclick="closeDeployModal()">✕</button>
-            </div>
-            <div class="modal-body">
-                <div class="deploy-auth-banner">
-                    <div class="warning-icon">🔒</div>
-                    <div>
-                        <strong>Security & Authorization Guard (Step 8)</strong>
-                        <p>Deploying will publish the generated regional catalog artifacts to <code>farmerboy772/farmerboy772.github.io</code> (main branch). Explicit authorization is required to prevent accidental pushes.</p>
-                    </div>
-                </div>
-
-                <div class="deploy-specs-box">
-                    <div><strong>Target Repository:</strong> <code>farmerboy772/farmerboy772.github.io</code></div>
-                    <div><strong>Branch:</strong> <code>main</code> (force-with-lease)</div>
-                    <div><strong>Commit Format:</strong> <code>Update pinball listings: YYYY-MM-DD HH:MM CDT</code></div>
-                    <div><strong>Published URL:</strong> <a href="https://farmerboy772.github.io/" target="_blank" class="link-cyan">https://farmerboy772.github.io/</a></div>
-                    <div><strong>Safety Guarantee:</strong> Local database, Pinside session cookies, and credentials are never committed. Scraper repositories are untouched.</div>
-                </div>
-
-                <div class="auth-checkbox-row">
-                    <label>
-                        <input type="checkbox" id="auth-confirm-check" onchange="toggleDeployButton()">
-                        I authorize committing and publishing the current regional pinball catalog to GitHub Pages.
-                    </label>
-                </div>
-
-                <div class="deploy-console" id="deploy-console-output">
-                    Deployment log output will appear here...
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeDeployModal()">Cancel</button>
-                <button class="btn btn-primary" id="btn-execute-deploy" disabled onclick="executeDeployment()">Confirm & Deploy to GitHub Pages</button>
-            </div>
-        </div>
     </div>
 
     <script src="static_data.js"></script>

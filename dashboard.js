@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
         renderAllViews();
     }
 
-    // 2. If running on HTTP/HTTPS, fetch live data from server
-    if (window.location.protocol.startsWith("http")) {
+    // 2. Only attempt live API calls if running on localhost / local dev server
+    const isLocalServer = window.location.hostname === "localhost" || 
+                          window.location.hostname === "127.0.0.1" || 
+                          window.location.port === "8000" || 
+                          window.location.port === "5000";
+    if (isLocalServer) {
         loadDashboardState();
         loadListings();
-        loadWebhookConfig();
-        loadRecentAlerts();
     }
 });
 
@@ -43,6 +45,22 @@ function switchTab(tabId) {
 function applyDashboardState(data) {
     dashboardState = data;
     const summary = data.summary || {};
+
+    const timeEl = document.getElementById("system-time");
+    if (timeEl) {
+        if (summary.last_scraped_cdt) {
+            timeEl.textContent = `Last Scraped: ${summary.last_scraped_cdt}`;
+        } else if (summary.last_scrape_time) {
+            timeEl.textContent = `Last Scraped: ${summary.last_scrape_time}`;
+        } else if (summary.latest_runs && summary.latest_runs.length > 0 && summary.latest_runs[0].timestamp) {
+            try {
+                const d = new Date(summary.latest_runs[0].timestamp);
+                timeEl.textContent = `Last Scraped: ${d.toLocaleString()}`;
+            } catch(e) {
+                timeEl.textContent = `Last Scraped: ${summary.latest_runs[0].timestamp}`;
+            }
+        }
+    }
 
     document.getElementById("metric-total-observed").textContent = summary.total_observed ?? "--";
     document.getElementById("metric-active-ss").textContent = summary.active_regional_ss ?? "--";
@@ -76,18 +94,6 @@ function applyDashboardState(data) {
     document.getElementById("stat-date-verified").textContent = dates.Verified ?? 0;
     document.getElementById("stat-date-estimated").textContent = dates["Estimated Relative"] ?? 0;
     document.getElementById("stat-date-unknown").textContent = dates.Unknown ?? 0;
-
-    // Deploy status
-    if (summary.last_deploy) {
-        document.getElementById("deploy-last-commit").textContent = summary.last_deploy.commit_hash || "Active";
-        document.getElementById("deploy-last-time").textContent = summary.last_deploy.timestamp ? summary.last_deploy.timestamp.replace("T", " ").substring(0, 19) + " UTC" : "--";
-    }
-
-    // Session health in drawer
-    const sess = data.session_health || {};
-    if (sess.pinside) document.getElementById("pinside-session-status").textContent = sess.pinside.status;
-    if (sess.facebook) document.getElementById("fb-session-status").textContent = sess.facebook.status;
-    if (sess.hibid) document.getElementById("hibid-session-status").textContent = sess.hibid.status;
 }
 
 // Fetch dashboard state & summary metrics via HTTP
@@ -119,7 +125,6 @@ function renderAllViews() {
     renderCatalogGrid();
     renderAuditTable();
     renderUnconfirmedQueue();
-    renderDateResolutionQueue();
 }
 
 // Helpers
@@ -470,322 +475,4 @@ function renderUnconfirmedQueue() {
     }).join("");
 }
 
-// Render Tab 4: Maintenance Date Resolution Queue
-function renderDateResolutionQueue() {
-    const list = document.getElementById("date-resolution-queue-list");
-    const fbUnverified = allListings.filter(i => i.source === "facebook" && i.status === "active" && i.posted_date_basis !== "Verified").slice(0, 25);
-
-    if (fbUnverified.length === 0) {
-        list.innerHTML = `<div style="padding: 12px; color: var(--text-muted);">All active Facebook listings have established date resolution.</div>`;
-    } else {
-        list.innerHTML = fbUnverified.map(item => `
-            <div class="date-item">
-                <div>
-                    <strong>${escapeHtml(item.raw_title)}</strong>
-                    <div style="color:var(--text-muted); font-size:0.75rem;">${escapeHtml(item.city)}, ${escapeHtml(item.state)} • First seen: ${escapeHtml(item.first_seen.substring(0, 16))}</div>
-                </div>
-                <div style="text-align:right;">
-                    <span class="pill pill-${item.posted_date_basis === 'Estimated Relative' ? 'estimated' : 'unknown'}">${escapeHtml(item.posted_date_basis)}</span>
-                    <div style="font-size:0.75rem; margin-top:2px;">"${escapeHtml(item.posted_date_wording || 'No text')}"</div>
-                </div>
-            </div>
-        `).join("");
-    }
-
-    // Unverified OPDB machines
-    const unverifiedOPDB = allListings.filter(i => i.technology === "unverified" && i.status === "active");
-    const opdbContainer = document.getElementById("opdb-unverified-list");
-    if (unverifiedOPDB.length === 0) {
-        opdbContainer.innerHTML = `<div style="padding: 12px; color: var(--text-muted);">No unverified machines currently active.</div>`;
-    } else {
-        opdbContainer.innerHTML = unverifiedOPDB.map(i => `
-            <div class="date-item">
-                <span><strong>${escapeHtml(i.raw_title)}</strong> (${escapeHtml(i.source)})</span>
-                <span class="pill pill-unverified">Unverified</span>
-            </div>
-        `).join("");
-    }
-}
-
-// Drawer Controls
-function openDrawer() {
-    document.getElementById("drawer-overlay").classList.add("open");
-    document.getElementById("ingestion-drawer").classList.add("open");
-}
-
-function closeDrawer() {
-    document.getElementById("drawer-overlay").classList.remove("open");
-    document.getElementById("ingestion-drawer").classList.remove("open");
-}
-
-// Bulk Ingest
-async function submitBulkPayload() {
-    const raw = document.getElementById("raw-payload-input").value.trim();
-    const source = document.getElementById("payload-source-select").value;
-    const feedback = document.getElementById("ingest-feedback");
-    
-    if (!raw) {
-        feedback.innerHTML = `<span style="color:var(--accent-red)">Please paste a valid JSON array into the textarea.</span>`;
-        return;
-    }
-
-    let parsed = null;
-    try {
-        parsed = JSON.parse(raw);
-    } catch (err) {
-        feedback.innerHTML = `<span style="color:var(--accent-red)">Invalid JSON syntax: ${err.message}</span>`;
-        return;
-    }
-
-    feedback.innerHTML = `<span>Processing payload...</span>`;
-
-    if (window.location.protocol.startsWith("http")) {
-        try {
-            const res = await fetch("/api/ingest", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ payload: parsed, source: source })
-            });
-            const result = await res.json();
-            if (result.success) {
-                feedback.innerHTML = `<span style="color:var(--accent-green); font-weight:600;">✓ ${escapeHtml(result.message)}</span>`;
-                await loadDashboardState();
-                await loadListings();
-            } else {
-                feedback.innerHTML = `<span style="color:var(--accent-red)">Error: ${escapeHtml(result.message)}</span>`;
-            }
-        } catch (e) {
-            feedback.innerHTML = `<span style="color:var(--accent-red)">Network error: ${escapeHtml(e.message)}</span>`;
-        }
-    } else {
-        // Direct file:// or offline mode feedback
-        feedback.innerHTML = `
-            <div style="color:var(--accent-green); font-weight:600; margin-bottom:4px;">✓ Payload validated (${parsed.length} items parsed).</div>
-            <div style="font-size:0.75rem; color:var(--text-secondary);">To commit updates to the persistent database, execute in terminal:<br>
-            <code style="color:var(--accent-cyan);">./pinball_ops.py --ingest &lt;file.json&gt; --source ${source}</code></div>
-        `;
-    }
-}
-
-// Trigger Live Scraper
-async function triggerScrape(source) {
-    const statusEl = document.getElementById("scrape-trigger-status");
-    statusEl.textContent = `Connecting to ${source} collector runner...`;
-    
-    if (window.location.protocol.startsWith("http")) {
-        try {
-            const res = await fetch("/api/scrape/trigger", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ source: source })
-            });
-            const data = await res.json();
-            statusEl.textContent = `[${data.status.toUpperCase()}] ${data.message}`;
-            await loadDashboardState();
-            await loadListings();
-        } catch (e) {
-            statusEl.textContent = `Scrape trigger error: ${e.message}`;
-        }
-    } else {
-        statusEl.innerHTML = `Run live automation for ${source.toUpperCase()} via CLI: <code style="color:var(--accent-cyan);">python3 pinball_ops.py --auto-scrape</code> or <code style="color:var(--accent-cyan);">bash scripts/refresh.sh</code>`;
-    }
-}
-
-// Maintenance triggers
-async function triggerDateResolution() {
-    if (window.location.protocol.startsWith("http")) {
-        try {
-            const res = await fetch("/api/maintenance/date-resolution", { method: "POST" });
-            const data = await res.json();
-            alert(data.message || "Date resolution complete.");
-            await loadDashboardState();
-            await loadListings();
-        } catch (e) {
-            alert("Date resolution error: " + e.message);
-        }
-    } else {
-        alert("To run Date Resolution pass in terminal, execute:\n./pinball_ops.py --resolve-dates");
-    }
-}
-
-async function triggerReportsRegen() {
-    if (window.location.protocol.startsWith("http")) {
-        try {
-            const res = await fetch("/api/reports/generate", { method: "POST" });
-            const data = await res.json();
-            alert(`Reports successfully regenerated in dist directory (${data.stats.count} regional solid-state listings).`);
-            await loadDashboardState();
-            await loadListings();
-        } catch (e) {
-            alert("Report regeneration error: " + e.message);
-        }
-    } else {
-        alert("To regenerate Step 6 reports in terminal, execute:\n./pinball_ops.py --report");
-    }
-}
-
-// Deploy Modal Controls
-function openDeployModal() {
-    document.getElementById("deploy-modal-overlay").classList.add("open");
-    document.getElementById("auth-confirm-check").checked = false;
-    document.getElementById("btn-execute-deploy").disabled = true;
-    document.getElementById("deploy-console-output").textContent = "Awaiting explicit authorization confirmation...";
-}
-
-function closeDeployModal() {
-    document.getElementById("deploy-modal-overlay").classList.remove("open");
-}
-
-function toggleDeployButton() {
-    const isChecked = document.getElementById("auth-confirm-check").checked;
-    document.getElementById("btn-execute-deploy").disabled = !isChecked;
-    const consoleEl = document.getElementById("deploy-console-output");
-    if (isChecked) {
-        consoleEl.textContent = "Authorized. Ready to execute git deployment workflow for farmerboy772.github.io.";
-    } else {
-        consoleEl.textContent = "Awaiting explicit authorization confirmation...";
-    }
-}
-
-async function executeDeployment() {
-    const consoleEl = document.getElementById("deploy-console-output");
-    const btn = document.getElementById("btn-execute-deploy");
-    btn.disabled = true;
-    consoleEl.textContent = "Deploying to GitHub Pages... Please wait.\n";
-
-    if (window.location.protocol.startsWith("http")) {
-        try {
-            const res = await fetch("/api/deploy", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ authorized: true })
-            });
-            const data = await res.json();
-            
-            let logsText = (data.logs || []).join("\n");
-            consoleEl.textContent = logsText + "\n\nResult: " + data.message;
-            
-            if (data.success) {
-                consoleEl.textContent += `\nTarget live site: ${data.target_url}`;
-            }
-            await loadDashboardState();
-        } catch (e) {
-            consoleEl.textContent += `\nError executing deployment: ${e.message}`;
-        }
-    } else {
-        consoleEl.textContent = `
-[AUTHORIZED STEP 8 PIPELINE]
-Repository: farmerboy772/farmerboy772.github.io
-Branch: main (force-with-lease)
-Commit Message Format: Update pinball listings: YYYY-MM-DD HH:MM CDT
-
-Execute authorized deployment via terminal:
-./pinball_ops.py --deploy --authorized
-`;
-    }
-}
-
-// Push Notifications & Webhook Alert Management in Drawer
-async function loadWebhookConfig() {
-    if (!window.location.protocol.startsWith("http")) return;
-    try {
-        const res = await fetch("/api/alerts/config");
-        if (res.ok) {
-            const data = await res.json();
-            const input = document.getElementById("webhook-url-input");
-            if (input && data.webhook_url) {
-                input.value = data.webhook_url;
-            }
-        }
-    } catch (e) {
-        console.warn("Could not load webhook config:", e);
-    }
-}
-
-async function saveWebhookConfig() {
-    const input = document.getElementById("webhook-url-input");
-    const feedback = document.getElementById("webhook-feedback");
-    const url = (input?.value || "").trim();
-
-    if (window.location.protocol.startsWith("http")) {
-        try {
-            feedback.innerHTML = `<span style="color:var(--text-muted);">Saving webhook configuration...</span>`;
-            const res = await fetch("/api/alerts/config", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ webhook_url: url })
-            });
-            const data = await res.json();
-            if (data.success) {
-                feedback.innerHTML = `<span style="color:var(--accent-green); font-weight:600;">✓ ${escapeHtml(data.message)}</span>`;
-            } else {
-                feedback.innerHTML = `<span style="color:var(--accent-red);">${escapeHtml(data.message)}</span>`;
-            }
-        } catch (e) {
-            feedback.innerHTML = `<span style="color:var(--accent-red);">Error saving webhook: ${escapeHtml(e.message)}</span>`;
-        }
-    } else {
-        feedback.innerHTML = `<span style="color:var(--accent-cyan);">Offline mode: Set via environment variable PINBALL_ALERT_WEBHOOK or start server.</span>`;
-    }
-}
-
-async function triggerTestAlert() {
-    const input = document.getElementById("webhook-url-input");
-    const feedback = document.getElementById("webhook-feedback");
-    const url = (input?.value || "").trim();
-
-    if (window.location.protocol.startsWith("http")) {
-        try {
-            feedback.innerHTML = `<span style="color:var(--text-muted);">Dispatching test deal alert...</span>`;
-            const res = await fetch("/api/alerts/test", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ webhook_url: url })
-            });
-            const data = await res.json();
-            if (data.success) {
-                feedback.innerHTML = `<span style="color:var(--accent-green); font-weight:600;">✓ ${escapeHtml(data.message)}</span>`;
-                loadRecentAlerts();
-            } else {
-                feedback.innerHTML = `<span style="color:var(--accent-red);">✕ ${escapeHtml(data.message)}</span>`;
-            }
-        } catch (e) {
-            feedback.innerHTML = `<span style="color:var(--accent-red);">Network error: ${escapeHtml(e.message)}</span>`;
-        }
-    } else {
-        feedback.innerHTML = `<span style="color:var(--accent-cyan);">To dispatch a test alert from CLI, run: <br><code>./pinball_ops.py --test-alert</code></span>`;
-    }
-}
-
-async function loadRecentAlerts() {
-    const container = document.getElementById("drawer-recent-alerts");
-    if (!container) return;
-    if (window.location.protocol.startsWith("http")) {
-        try {
-            const res = await fetch("/api/alerts");
-            if (!res.ok) return;
-            const data = await res.json();
-            const alerts = data.alerts || [];
-            if (alerts.length === 0) {
-                container.innerHTML = `<div style="color:var(--text-muted); padding:4px;">No recent alerts recorded.</div>`;
-                return;
-            }
-            container.innerHTML = alerts.slice(0, 10).map(a => `
-                <div style="display:flex; justify-content:space-between; align-items:center; padding:4px 0; border-bottom:1px solid rgba(255,255,255,0.05);">
-                    <div>
-                        <strong style="color:var(--text-primary);">${escapeHtml(a.title)}</strong>
-                        <div style="color:var(--text-muted); font-size:0.7rem;">${escapeHtml(a.location)} • ${a.price ? '$' + Number(a.price).toLocaleString() : 'N/A'} (FMV: ~$${Number(a.fmv || 0).toLocaleString()})</div>
-                    </div>
-                    <div style="text-align:right;">
-                        <span style="font-weight:700; color:${a.deal_tier === 'Steal' ? 'var(--accent-neon)' : 'var(--accent-cyan)'};">${escapeHtml(a.deal_tier || 'Alert')}</span>
-                        <div style="font-size:0.68rem; color:var(--text-muted);">${a.timestamp ? a.timestamp.substring(11, 16) + ' UTC' : ''}</div>
-                    </div>
-                </div>
-            `).join("");
-        } catch (e) {
-            container.innerHTML = `<div style="color:var(--text-muted);">Alert history unavailable offline.</div>`;
-        }
-    } else {
-        container.innerHTML = `<div style="color:var(--text-muted); padding:4px;">Alert log active at <code>data/deal_alerts.json</code></div>`;
-    }
-}
+// End of client controller

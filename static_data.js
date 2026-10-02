@@ -91,14 +91,17 @@ window.STATIC_DASHBOARD_STATE = {
         "timestamp": "2026-10-02T20:07:49.159465+00:00"
       }
     ],
+    "last_scrape_time": "2026-10-02 16:19 CDT",
+    "last_scraped_cdt": "2026-10-02 16:19 CDT",
+    "last_scraped_at": "2026-10-02T21:19:29.162190+00:00",
     "last_deploy": {
-      "id": 2,
-      "commit_hash": "913a90c",
-      "commit_message": "Update pinball listings: 2026-10-02 12:38 CDT",
-      "timestamp": "2026-10-02T17:38:24.258323+00:00",
-      "status": "failed",
+      "id": 3,
+      "commit_hash": "3c82dbc",
+      "commit_message": "Update pinball listings: 2026-10-02 17:56 CDT",
+      "timestamp": "2026-10-02T22:56:12.278764+00:00",
+      "status": "success",
       "target_url": "https://farmerboy772.github.io/",
-      "logs": "[17:38:24] Initializing GitHub Pages deployment pipeline...\n[17:38:24] Created temporary deployment workspace: /var/folders/sr/gxc1dv8s7lb8n5605fnm_7nh0000gn/T/gh_pages_deploy_zb5m79ji\n[17:38:24] Attempting clone of https://github.com/farmerboy772/farmerboy772.github.io.git (branch: main)...\n[17:38:24] Standard clone output: Cloning into '/var/folders/sr/gxc1dv8s7lb8n5605fnm_7nh0000gn/T/gh_pages_deploy_zb5m79ji'...\nfatal: unable to access 'https://github.com/farmerboy772/farmerboy772.github.io.git/': Could not resolve host: github.com\n[17:38:24] Attempting re-initialization or pull with rebase...\n[17:38:24] Pull rebase note: fatal: unable to access 'https://github.com/farmerboy772/farmerboy772.github.io.git/': Could not resolve host: github.com\n[17:38:24] Clearing destination root files (preserving .git)...\n[17:38:24] Copying Step 6 generated artifacts into repository root...\n[17:38:24]   -> Copied index.html\n[17:38:24]   -> Copied catalog_grid.html\n[17:38:24]   -> Copied styles.css\n[17:38:24]   -> Copied audit_list.html\n[17:38:24]   -> Copied pinball_listings.csv\n[17:38:24] Staging files and creating commit: 'Update pinball listings: 2026-10-02 12:38 CDT'\n[17:38:24] Commit created: [913a90c] Update pinball listings: 2026-10-02 12:38 CDT\n[17:38:24] Executing: git push --force-with-lease origin main...\n[17:38:24] Git push failed (remote authentication/network constraint): fatal: unable to access 'https://github.com/farmerboy772/farmerboy772.github.io.git/': Could not resolve host: github.com. Local scraped results and reports are preserved."
+      "logs": "[22:56:12] Initializing GitHub Pages deployment pipeline...\n[22:56:12] Target repository: https://github.com/farmerboy772/farmerboy772.github.io.git (branch: main)\n[22:56:12] Created isolated deployment workspace: /var/folders/sr/gxc1dv8s7lb8n5605fnm_7nh0000gn/T/gh_pages_deploy_7g2ok2go\n[22:56:12] Attempting clone of remote branch...\n[22:56:13] Clearing destination root files (preserving .git)...\n[22:56:13] Copying Step 6 generated artifacts into repository root...\n[22:56:13]   -> Copied index.html\n[22:56:13]   -> Copied catalog_grid.html\n[22:56:13]   -> Copied styles.css\n[22:56:13]   -> Copied dashboard.html\n[22:56:13]   -> Copied audit_list.html\n[22:56:13]   -> Copied static_data.js\n[22:56:13]   -> Copied dashboard.js\n[22:56:13]   -> Copied pinball_listings.csv\n[22:56:13] Staging files and creating commit: 'Update pinball listings: 2026-10-02 17:56 CDT'\n[22:56:13] Commit created: [3c82dbc] Update pinball listings: 2026-10-02 17:56 CDT\n[22:56:13] Executing: git push --force-with-lease origin main...\n[22:56:14] Successfully deployed listings to GitHub Pages! Commit: 3c82dbc at 2026-10-02 17:56 CDT\n[22:56:14] Target live URL: https://farmerboy772.github.io/farmerboy772hub.io/"
     }
   },
   "session_health": {
