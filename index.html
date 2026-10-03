@@ -128,21 +128,21 @@
         </section>
 
         <!-- Navigation Tabs -->
-        <nav class="nav-tabs glass-panel-subtle no-scrollbar">
-            <button class="tab-btn active" onclick="switchTab('catalog')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <nav class="nav-tabs glass-panel-subtle no-scrollbar" role="tablist" aria-label="Dashboard view sections">
+            <button class="tab-btn active" id="tab-btn-catalog" role="tab" aria-selected="true" aria-controls="tab-catalog" tabindex="0" onclick="switchTab('catalog')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                 Regional Solid-State Catalog (Grid)
             </button>
-            <button class="tab-btn" onclick="switchTab('audit')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            <button class="tab-btn" id="tab-btn-audit" role="tab" aria-selected="false" aria-controls="tab-audit" tabindex="-1" onclick="switchTab('audit')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
                 Desktop Audit Table (List)
             </button>
-            <button class="tab-btn" onclick="switchTab('unconfirmed')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <button class="tab-btn" id="tab-btn-unconfirmed" role="tab" aria-selected="false" aria-controls="tab-unconfirmed" tabindex="-1" onclick="switchTab('unconfirmed')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 Unconfirmed Locations (<span id="unconfirmed-tab-count">0</span>)
             </button>
-            <button class="tab-btn" onclick="switchTab('exports')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <button class="tab-btn" id="tab-btn-exports" role="tab" aria-selected="false" aria-controls="tab-exports" tabindex="-1" onclick="switchTab('exports')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Downloads & View Links
             </button>
         </nav>
@@ -150,11 +150,11 @@
         <!-- Main Content Area -->
         <main class="main-content">
             <!-- TAB 1: Grid View -->
-            <div id="tab-catalog" class="tab-pane active">
+            <div id="tab-catalog" class="tab-pane active" role="tabpanel" aria-labelledby="tab-btn-catalog">
                 <div class="pane-toolbar">
                     <div class="filter-group no-scrollbar">
-                        <input type="text" id="grid-search" placeholder="Search machine, manufacturer, or city..." oninput="filterGrid()">
-                        <select id="grid-deal-filter" onchange="filterGrid()">
+                        <input type="text" id="grid-search" aria-label="Search catalog machines by title, manufacturer, or city" placeholder="Search machine, manufacturer, or city..." oninput="filterGrid()">
+                        <select id="grid-deal-filter" aria-label="Filter catalog by deal rating" onchange="filterGrid()">
                             <option value="all">All Deals & Valuation</option>
                             <option value="deals_only">🔥 Deals Radar Only (≥15% off)</option>
                             <option value="steals">🚨 Steals Only (≥35% off)</option>
@@ -162,13 +162,13 @@
                             <option value="good">✓ Good Value (10%–20% off)</option>
                             <option value="auction">🔨 Live Auction Bids</option>
                         </select>
-                        <select id="grid-source-filter" onchange="filterGrid()">
+                        <select id="grid-source-filter" aria-label="Filter catalog by source platform" onchange="filterGrid()">
                             <option value="all">All Sources</option>
                             <option value="facebook">Facebook Marketplace</option>
                             <option value="hibid">HiBid</option>
                             <option value="pinside">Pinside</option>
                         </select>
-                        <select id="grid-state-filter" onchange="filterGrid()">
+                        <select id="grid-state-filter" aria-label="Filter catalog by regional state" onchange="filterGrid()">
                             <option value="all">All Regional States (OK, KS, AR, MO, TX)</option>
                             <option value="OK">Oklahoma (OK)</option>
                             <option value="TX">Texas (TX)</option>
@@ -176,7 +176,7 @@
                             <option value="MO">Missouri (MO)</option>
                             <option value="AR">Arkansas (AR)</option>
                         </select>
-                        <select id="grid-sort-by" onchange="filterGrid()">
+                        <select id="grid-sort-by" aria-label="Sort catalog machines" onchange="filterGrid()">
                             <option value="date-desc">Posted Date (Newest First)</option>
                             <option value="discount-desc">🔥 Deal Discount (Highest Savings %)</option>
                             <option value="distance-asc">📍 Distance (Closest to Bixby)</option>
@@ -194,10 +194,10 @@
             </div>
 
             <!-- TAB 2: Dense Audit Table -->
-            <div id="tab-audit" class="tab-pane">
+            <div id="tab-audit" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-audit">
                 <div class="pane-toolbar">
-                    <input type="text" id="audit-search" placeholder="Filter audit table..." oninput="filterAudit()">
-                    <select id="audit-deal-filter" onchange="filterAudit()">
+                    <input type="text" id="audit-search" aria-label="Filter audit table listings" placeholder="Filter audit table..." oninput="filterAudit()">
+                    <select id="audit-deal-filter" aria-label="Filter audit table by valuation tier" onchange="filterAudit()">
                         <option value="all">All Valuation Tiers</option>
                         <option value="deals">🔥 Deals Only (≥15% off)</option>
                         <option value="steals">🚨 Steals (≥35% off)</option>
@@ -207,12 +207,12 @@
                         <option value="above">Above Market</option>
                         <option value="auction">🔨 Auction Bids</option>
                     </select>
-                    <select id="audit-status-filter" onchange="filterAudit()">
+                    <select id="audit-status-filter" aria-label="Filter audit table by listing status" onchange="filterAudit()">
                         <option value="all">All Statuses (Active & Removed)</option>
                         <option value="active" selected>Active Only</option>
                         <option value="removed">Removed Only (Misses ≥ 3)</option>
                     </select>
-                    <select id="audit-scoring-filter" onchange="filterAudit()">
+                    <select id="audit-scoring-filter" aria-label="Filter audit table by scoring result" onchange="filterAudit()">
                         <option value="all">All Scoring Results</option>
                         <option value="passed" selected>Passed Scoring Only</option>
                         <option value="rejected">Rejected by Filters Only</option>
@@ -246,7 +246,7 @@
             </div>
 
             <!-- TAB 3: Unconfirmed Location Review Queue -->
-            <div id="tab-unconfirmed" class="tab-pane">
+            <div id="tab-unconfirmed" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-unconfirmed">
                 <div class="pane-header">
                     <h3>Unconfirmed Location & Shipping-Only Review Queue</h3>
                     <p>These listings were excluded from the primary Regional Solid-State report because they lack confirmed location data (states outside OK/KS/AR/MO/TX, shipping-only, or unknown distance). You can review or verify them here.</p>
@@ -272,7 +272,7 @@
             </div>
 
             <!-- TAB 4: Downloads & View Links -->
-            <div id="tab-exports" class="tab-pane">
+            <div id="tab-exports" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-exports">
                 <div class="exports-grid">
                     <div class="export-card glass-panel glass-panel-interactive">
                         <div class="export-icon">📄</div>
@@ -297,7 +297,7 @@
         </main>
     </div>
 
-    <script src="static_data.js?v=202610030240"></script>
-    <script src="dashboard.js?v=202610030240"></script>
+    <script src="static_data.js?v=202610030253"></script>
+    <script src="dashboard.js?v=202610030253"></script>
 </body>
 </html>

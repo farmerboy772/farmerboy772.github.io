@@ -22,6 +22,7 @@ function initDashboard() {
                           window.location.hostname === "127.0.0.1" || 
                           window.location.port === "8000" || 
                           window.location.port === "5000";
+    setupTabKeyboardNavigation();
     if (isLocalServer) {
         loadDashboardState();
         loadListings();
@@ -34,18 +35,52 @@ if (document.readyState === "loading") {
     initDashboard();
 }
 
+function setupTabKeyboardNavigation() {
+    const tabList = document.querySelector(".nav-tabs");
+    if (!tabList) return;
+    const tabBtns = Array.from(tabList.querySelectorAll(".tab-btn"));
+    
+    tabBtns.forEach((btn, index) => {
+        btn.addEventListener("keydown", (e) => {
+            let targetIndex = -1;
+            if (e.key === "ArrowRight") {
+                targetIndex = (index + 1) % tabBtns.length;
+            } else if (e.key === "ArrowLeft") {
+                targetIndex = (index - 1 + tabBtns.length) % tabBtns.length;
+            } else if (e.key === "Home") {
+                targetIndex = 0;
+            } else if (e.key === "End") {
+                targetIndex = tabBtns.length - 1;
+            }
+            if (targetIndex !== -1) {
+                e.preventDefault();
+                tabBtns[targetIndex].click();
+                tabBtns[targetIndex].focus();
+            }
+        });
+    });
+}
+
 // Switch active tab
 function switchTab(tabId) {
     document.querySelectorAll(".tab-pane").forEach(el => el.classList.remove("active"));
-    document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
+    document.querySelectorAll(".tab-btn").forEach(el => {
+        el.classList.remove("active");
+        el.setAttribute("aria-selected", "false");
+        el.setAttribute("tabindex", "-1");
+    });
     
     const target = document.getElementById(`tab-${tabId}`);
     if (target) target.classList.add("active");
 
-    const clickedBtn = Array.from(document.querySelectorAll(".tab-btn")).find(btn => 
+    const clickedBtn = document.getElementById(`tab-btn-${tabId}`) || Array.from(document.querySelectorAll(".tab-btn")).find(btn => 
         btn.getAttribute("onclick") && btn.getAttribute("onclick").includes(tabId)
     );
-    if (clickedBtn) clickedBtn.classList.add("active");
+    if (clickedBtn) {
+        clickedBtn.classList.add("active");
+        clickedBtn.setAttribute("aria-selected", "true");
+        clickedBtn.setAttribute("tabindex", "0");
+    }
 }
 
 function applyDashboardState(data) {
@@ -154,11 +189,20 @@ function escapeHtml(text) {
     if (!text) return "";
     return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
+const GENERIC_MACHINE_NAMES = new Set([
+    "pinball", "pin ball", "pinball machine", "pinball table", "pinball game",
+    "arcade", "arcade game", "game", "machine", "table", "vintage pinball",
+    "classic pinball", "solid state pinball", "commercial pinball", "unverified"
+]);
 
 function getPinsideMachineUrl(item) {
     if (item && item.pinside_url) return item.pinside_url;
     const canon = (item.canonical_name || "").trim();
-    if (canon && canon.toLowerCase() !== "unverified") {
+    const isGeneric = GENERIC_MACHINE_NAMES.has(canon.toLowerCase());
+    const matchConf = (item.match_confidence !== undefined && item.match_confidence !== null) ? Number(item.match_confidence) : 1.0;
+    const isUncertain = !canon || isGeneric || canon.toLowerCase() === "unverified" || matchConf < 0.65 || item.is_uncertain || item.is_accessory;
+
+    if (!isUncertain && canon) {
         const slug = canon.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
         return `https://pinside.com/pinball/machine/${slug}`;
     }
@@ -304,7 +348,18 @@ function renderCatalogGrid() {
             ? '<span class="badge badge-img-type">OPDB Backglass</span>' 
             : '<span class="badge badge-img-type">Posting Photo</span>';
 
-        const canonTitle = item.canonical_name || item.raw_title;
+        const isGenericOrUncertain = !item.canonical_name || 
+            GENERIC_MACHINE_NAMES.has((item.canonical_name || "").toLowerCase().trim()) || 
+            item.canonical_name.toLowerCase() === "unverified" || 
+            (item.match_confidence !== undefined && item.match_confidence < 0.65) ||
+            item.is_uncertain || item.is_accessory;
+
+        const canonTitle = isGenericOrUncertain ? item.raw_title : (item.canonical_name || item.raw_title);
+        const matchBadge = isGenericOrUncertain 
+            ? `<span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span>` 
+            : '';
+        const pinsideBtnText = isGenericOrUncertain ? "Search Pinside Archive ↗" : "Pinside Machine Details ↗";
+
         const mfgYear = item.manufacturer ? `${item.manufacturer} • ${item.year || ''}` : "Manufacturer Unverified";
         const priceDisp = item.price !== null ? `$${Number(item.price).toLocaleString()}` : (item.fmv ? `Est. ~$${Number(item.fmv).toLocaleString()}` : "Price Upon Request");
         const pType = item.price_type || (item.fmv ? "Market Estimate" : "Asking Price");
@@ -313,7 +368,9 @@ function renderCatalogGrid() {
         const pinsideUrl = getPinsideMachineUrl(item);
 
         let dealBadge = "";
-        if (item.deal_badge) {
+        if (item.deal_tier === "Uncertain Valuation" || item.is_uncertain) {
+            dealBadge = ""; // Withhold deal badge for uncertain valuation or accessory
+        } else if (item.deal_badge) {
             if (item.deal_badge.includes("ALERT") || item.deal_tier === "Steal") {
                 dealBadge = `<span class="badge" style="background:#f43f5e; color:#fff; font-weight:700; letter-spacing:0.5px;">${escapeHtml(item.deal_badge)}</span>`;
             } else if (item.deal_badge.includes("Great") || item.deal_tier === "Great Deal") {
@@ -356,7 +413,7 @@ function renderCatalogGrid() {
                     <span class="mfg-year">${escapeHtml(mfgYear)}</span>
                     <span class="distance-pill">${escapeHtml(dist)}</span>
                 </div>
-                <h3 class="card-title" title="${escapeHtml(item.raw_title)}">${escapeHtml(canonTitle)}</h3>
+                <h3 class="card-title" title="${escapeHtml(item.raw_title)}">${escapeHtml(canonTitle)} ${matchBadge}</h3>
                 <div class="raw-title-sub">Listing: "${escapeHtml(item.raw_title)}"</div>
                 
                 <div class="pricing-row" style="flex-wrap:wrap; gap:6px;">
@@ -391,7 +448,7 @@ function renderCatalogGrid() {
                     <a href="${escapeHtml(item.direct_url || '#')}" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-${escapeHtml(item.source)}">View Listing ↗</a>
                     <a href="${escapeHtml(pinsideUrl)}" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
-                        Pinside Machine Details ↗
+                        ${escapeHtml(pinsideBtnText)}
                     </a>
                 </div>
             </div>
@@ -450,12 +507,34 @@ function renderAuditTable() {
         const dist = getDistanceEst(item.city, item.state, item);
         const pinsideUrl = getPinsideMachineUrl(item);
 
+        const isGenericOrUncertain = !item.canonical_name || 
+            GENERIC_MACHINE_NAMES.has((item.canonical_name || "").toLowerCase().trim()) || 
+            item.canonical_name.toLowerCase() === "unverified" || 
+            (item.match_confidence !== undefined && item.match_confidence < 0.65) ||
+            item.is_uncertain || item.is_accessory;
+
+        const canonDisplay = isGenericOrUncertain 
+            ? `${escapeHtml(item.canonical_name || 'Unverified')} <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.25);font-size:0.7rem;padding:2px 4px;">Uncertain</span>` 
+            : `<strong>${escapeHtml(canon)}</strong>`;
+
+        let dealRatingHtml = `<span style="color:var(--text-muted); font-size:0.82rem;">-</span>`;
+        if (item.deal_tier === "Uncertain Valuation" || item.is_uncertain) {
+            dealRatingHtml = `<span class="badge" style="background:rgba(148,163,184,0.15); color:#94a3b8; border:1px solid rgba(148,163,184,0.25); font-size:0.80rem;">Uncertain Valuation</span>`;
+        } else if (item.deal_tier && item.deal_tier !== "Normal") {
+            dealRatingHtml = `
+                <span class="badge" style="${item.deal_tier === 'Steal' ? 'background:#f43f5e; color:#fff;' : (item.deal_tier === 'Great Deal' ? 'background:#0284c7; color:#fff;' : (item.deal_tier === 'Good Value' ? 'background:#059669; color:#fff;' : 'background:var(--bg-surface-elevated); border:1px solid var(--border-color); color:var(--text-secondary);'))} font-size:0.80rem;">
+                    ${escapeHtml(item.deal_tier)}
+                </span>
+                ${item.discount_percent ? `<div style="font-size:0.82rem; font-weight:700; color:${item.discount_percent > 0 ? 'var(--accent-green)' : 'var(--accent-red)'}; margin-top:2px;">${item.discount_percent > 0 ? '+' : ''}${item.discount_percent}%</div>` : ''}
+            `;
+        }
+
         return `
         <tr>
             <td><span class="badge badge-source-${item.source}">${escapeHtml(item.source.toUpperCase())}</span></td>
             <td class="font-mono">${escapeHtml(item.listing_id)}</td>
             <td>
-                <strong>${escapeHtml(canon)}</strong>
+                ${canonDisplay}
                 <div style="font-size:0.82rem; color:var(--text-muted); margin-top:2px;">${escapeHtml(item.raw_title)}</div>
             </td>
             <td>${escapeHtml(item.manufacturer || '-')}</td>
@@ -468,12 +547,7 @@ function renderAuditTable() {
                 ${priceBadge}
             </td>
             <td>
-                ${item.deal_tier && item.deal_tier !== "Normal" ? `
-                    <span class="badge" style="${item.deal_tier === 'Steal' ? 'background:#f43f5e; color:#fff;' : (item.deal_tier === 'Great Deal' ? 'background:#0284c7; color:#fff;' : (item.deal_tier === 'Good Value' ? 'background:#059669; color:#fff;' : 'background:var(--bg-surface-elevated); border:1px solid var(--border-color); color:var(--text-secondary);'))} font-size:0.80rem;">
-                        ${escapeHtml(item.deal_tier)}
-                    </span>
-                    ${item.discount_percent ? `<div style="font-size:0.82rem; font-weight:700; color:${item.discount_percent > 0 ? 'var(--accent-green)' : 'var(--accent-red)'}; margin-top:2px;">${item.discount_percent > 0 ? '+' : ''}${item.discount_percent}%</div>` : ''}
-                ` : `<span style="color:var(--text-muted); font-size:0.82rem;">-</span>`}
+                ${dealRatingHtml}
             </td>
             <td>
                 ${escapeHtml(item.city)}, ${escapeHtml(item.state)}
@@ -489,7 +563,7 @@ function renderAuditTable() {
             <td style="white-space:nowrap;">
                 <a href="${escapeHtml(item.direct_url || '#')}" target="_blank" class="link-source-${item.source}">Open ↗</a>
                 <div style="margin-top:3px;">
-                    <a href="${escapeHtml(pinsideUrl)}" target="_blank" class="link-pinside">Pinside ↗</a>
+                    <a href="${escapeHtml(pinsideUrl)}" target="_blank" class="link-pinside">${isGenericOrUncertain ? 'Search Archive ↗' : 'Pinside ↗'}</a>
                 </div>
             </td>
         </tr>
