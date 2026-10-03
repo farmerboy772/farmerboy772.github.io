@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="ambient-glow animate-pulse-slow" aria-hidden="true"></div>
     <div class="app-layout">
         <!-- Top Navigation Bar -->
-        <header class="top-nav">
+        <header class="top-nav glass-panel">
             <div class="brand">
                 <div class="brand-logo">
                     <span class="flipper-left">/</span>
@@ -40,37 +41,37 @@
             </div>
             
             <div class="kpi-grid">
-                <div class="kpi-card" id="kpi-observed">
+                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-observed">
                     <div class="kpi-label">TOTAL OBSERVED</div>
                     <div class="kpi-val" id="metric-total-observed">--</div>
                     <div class="kpi-sub">Across FB, HiBid & Pinside</div>
                 </div>
-                <div class="kpi-card accent-neon" id="kpi-active-ss">
+                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-active-ss">
                     <div class="kpi-label">ACTIVE REGIONAL SOLID-STATE</div>
                     <div class="kpi-val" id="metric-active-ss">--</div>
                     <div class="kpi-sub">Confirmed OK, KS, AR, MO, TX</div>
                 </div>
-                <div class="kpi-card" id="kpi-new">
+                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-new">
                     <div class="kpi-label">NEWLY DISCOVERED</div>
                     <div class="kpi-val" id="metric-newly-discovered">--</div>
                     <div class="kpi-sub">Initial observation run</div>
                 </div>
-                <div class="kpi-card accent-gold" id="kpi-price-changes">
+                <div class="kpi-card glass-panel glass-panel-interactive accent-gold" id="kpi-price-changes">
                     <div class="kpi-label">PRICE ALTERATIONS</div>
                     <div class="kpi-val" id="metric-price-altered">--</div>
                     <div class="kpi-sub">With logged price history</div>
                 </div>
-                <div class="kpi-card" id="kpi-removed">
+                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-removed">
                     <div class="kpi-label">REMOVED / DELISTED</div>
                     <div class="kpi-val" id="metric-removed">--</div>
                     <div class="kpi-sub">Consecutive misses ≥ 3</div>
                 </div>
-                <div class="kpi-card accent-warning" id="kpi-unconfirmed">
+                <div class="kpi-card glass-panel glass-panel-interactive accent-warning" id="kpi-unconfirmed">
                     <div class="kpi-label">UNCONFIRMED LOCATION</div>
                     <div class="kpi-val" id="metric-unconfirmed">--</div>
                     <div class="kpi-sub">Shipping-only / Unknown State</div>
                 </div>
-                <div class="kpi-card accent-neon" id="kpi-deals">
+                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-deals">
                     <div class="kpi-label" style="color: var(--accent-neon);">🔥 DEAL RADAR (≥20% OFF)</div>
                     <div class="kpi-val" id="metric-deal-count" style="color: var(--accent-neon);">--</div>
                     <div class="kpi-sub">Steals & Great Deals Active</div>
@@ -80,7 +81,7 @@
             <!-- Coverage & Breakdown Matrix -->
             <div class="matrix-grid">
                 <!-- Source Coverage -->
-                <div class="matrix-card">
+                <div class="matrix-card glass-panel">
                     <div class="card-title-sm">PROVIDER COVERAGE BREAKDOWN</div>
                     <div class="source-list" id="source-coverage-list">
                         <div class="source-row">
@@ -102,7 +103,7 @@
                 </div>
 
                 <!-- OPDB Enrichment & Date Status -->
-                <div class="matrix-card">
+                <div class="matrix-card glass-panel">
                     <div class="card-title-sm">OPDB ENRICHMENT & DATE RESOLUTION</div>
                     <div class="enrich-stats">
                         <div class="stat-group">
@@ -127,7 +128,7 @@
         </section>
 
         <!-- Navigation Tabs -->
-        <nav class="nav-tabs">
+        <nav class="nav-tabs glass-panel-subtle no-scrollbar">
             <button class="tab-btn active" onclick="switchTab('catalog')">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                 Regional Solid-State Catalog (Grid)
@@ -151,7 +152,7 @@
             <!-- TAB 1: Grid View -->
             <div id="tab-catalog" class="tab-pane active">
                 <div class="pane-toolbar">
-                    <div class="filter-group">
+                    <div class="filter-group no-scrollbar">
                         <input type="text" id="grid-search" placeholder="Search machine, manufacturer, or city..." oninput="filterGrid()">
                         <select id="grid-deal-filter" onchange="filterGrid()">
                             <option value="all">All Deals & Valuation</option>
@@ -217,7 +218,7 @@
                         <option value="rejected">Rejected by Filters Only</option>
                     </select>
                 </div>
-                <div class="table-wrap">
+                <div class="table-wrap glass-panel no-scrollbar">
                     <table class="data-table" id="audit-table">
                         <thead>
                             <tr>
@@ -250,7 +251,7 @@
                     <h3>Unconfirmed Location & Shipping-Only Review Queue</h3>
                     <p>These listings were excluded from the primary Regional Solid-State report because they lack confirmed location data (states outside OK/KS/AR/MO/TX, shipping-only, or unknown distance). You can review or verify them here.</p>
                 </div>
-                <div class="table-wrap">
+                <div class="table-wrap glass-panel no-scrollbar">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -273,19 +274,19 @@
             <!-- TAB 4: Downloads & View Links -->
             <div id="tab-exports" class="tab-pane">
                 <div class="exports-grid">
-                    <div class="export-card">
+                    <div class="export-card glass-panel glass-panel-interactive">
                         <div class="export-icon">📄</div>
                         <div class="export-title">Clean Tabular CSV</div>
                         <div class="export-desc">Full metadata export for spreadsheet analysis, matching all final report fields.</div>
                         <a href="pinball_listings.csv" download class="btn btn-secondary">Download CSV</a>
                     </div>
-                    <div class="export-card">
+                    <div class="export-card glass-panel glass-panel-interactive">
                         <div class="export-icon">🖼️</div>
                         <div class="export-title">HTML Grid View</div>
                         <div class="export-desc">Visual card catalog featuring artwork, score breakdowns, price pills, and links.</div>
                         <a href="catalog_grid.html" target="_blank" class="btn btn-secondary">Open Grid View ↗</a>
                     </div>
-                    <div class="export-card">
+                    <div class="export-card glass-panel glass-panel-interactive">
                         <div class="export-icon">📋</div>
                         <div class="export-title">HTML Dense List View</div>
                         <div class="export-desc">Audit table layout optimized for desktop review and rapid comparison.</div>
@@ -296,7 +297,7 @@
         </main>
     </div>
 
-    <script src="static_data.js?v=202610030145"></script>
-    <script src="dashboard.js?v=202610030145"></script>
+    <script src="static_data.js?v=202610030222"></script>
+    <script src="dashboard.js?v=202610030222"></script>
 </body>
 </html>

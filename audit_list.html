@@ -6,19 +6,79 @@
     <meta name="referrer" content="no-referrer">
     <title>Pinball Catalog Audit List — Bixby, OK (74008)</title>
     <style>
+        @layer base {
+          * {
+            -webkit-tap-highlight-color: transparent;
+          }
+
+          body {
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            background-color: #070b14;
+            color: #f1f5f9;
+            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+          }
+        }
+
+        /* Glassmorphic cards with legacy WebKit prefix support */
+        .glass-panel {
+          background: rgba(15, 23, 42, 0.65);
+          -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-panel-subtle {
+          background: rgba(255, 255, 255, 0.05);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-interactive {
+          transition: all 0.2s ease-in-out;
+        }
+
+        .glass-panel-interactive:active {
+          transform: scale(0.98);
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom smooth horizontal scroll for iPad touch */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        /* Dynamic ambient gradient glow */
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 0.7; }
+        }
+
+        .animate-pulse-slow {
+          animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
         :root {
-            --bg-dark: #f0f3f8;
-            --bg-card: #ffffff;
-            --bg-header: #e2e8f0;
-            --accent-cyan: #0284c7;
-            --accent-neon: #e11d48;
-            --accent-gold: #b45309;
-            --accent-green: #047857;
-            --text-main: #0f172a;
-            --text-secondary: #334155;
-            --text-muted: #475569;
-            --border-subtle: #cbd5e1;
-            color-scheme: light;
+            --bg-dark: #070b14;
+            --bg-card: rgba(15, 23, 42, 0.65);
+            --bg-header: rgba(30, 41, 59, 0.8);
+            --accent-cyan: #38bdf8;
+            --accent-neon: #f43f5e;
+            --accent-gold: #fbbf24;
+            --accent-green: #34d399;
+            --accent-red: #f87171;
+            --text-main: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-subtle: rgba(255, 255, 255, 0.12);
+            color-scheme: dark;
         }
         body {
             background: var(--bg-dark);
@@ -29,6 +89,19 @@
             margin: 0;
             padding: 24px;
         }
+        .ambient-glow {
+            position: fixed;
+            top: -160px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            max-width: 100vw;
+            height: 520px;
+            background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.16), rgba(244, 63, 94, 0.08) 45%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(80px);
+        }
         header {
             max-width: 1600px;
             margin: 0 auto 20px;
@@ -36,7 +109,15 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 16px;
+            padding: 18px 24px;
+            background: rgba(15, 23, 42, 0.65);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            position: relative;
+            z-index: 1;
         }
         h1 {
             margin: 0;
@@ -46,29 +127,40 @@
         }
         .header-nav a {
             margin-left: 12px;
-            color: var(--accent-cyan);
+            color: var(--text-main);
             text-decoration: none;
             padding: 8px 16px;
             border: 1px solid var(--border-subtle);
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 0.90rem;
             font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
         }
         .header-nav a:hover {
-            background: var(--border-subtle);
-            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+        .table-wrap {
+            max-width: 1600px;
+            margin: 0 auto;
+            overflow-x: auto;
+            background: rgba(15, 23, 42, 0.65);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            border-radius: 12px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            position: relative;
+            z-index: 1;
         }
         table {
             width: 100%;
-            max-width: 1600px;
-            margin: 0 auto;
             border-collapse: collapse;
             font-size: 0.90rem;
-            background: var(--bg-card);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border-subtle);
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
         }
         th, td {
             padding: 13px 15px;
@@ -84,7 +176,7 @@
             font-weight: 700;
         }
         tr:hover td {
-            background: #f8fafc;
+            background: rgba(255, 255, 255, 0.04);
         }
         .badge-source {
             padding: 4px 8px;
@@ -96,12 +188,12 @@
         }
         .badge-facebook { background: #2563eb; color: #fff; }
         .badge-pinside { background: var(--accent-neon); color: #fff; }
-        .badge-hibid { background: var(--accent-gold); color: #0f172a; font-weight: 800; }
-        .link-source-facebook { color: #3b82f6; text-decoration: underline; font-weight: 700; }
+        .badge-hibid { background: var(--accent-gold); color: #070b14; font-weight: 800; }
+        .link-source-facebook { color: #60a5fa; text-decoration: underline; font-weight: 700; }
         .link-source-pinside { color: var(--accent-neon); text-decoration: underline; font-weight: 700; }
         .link-source-hibid { color: var(--accent-gold); text-decoration: underline; font-weight: 700; }
         .link-source-facebook:hover, .link-source-pinside:hover, .link-source-hibid:hover { opacity: 0.85; }
-        .link-pinside { color: var(--accent-neon); text-decoration: underline; font-size: 0.82rem; font-weight: 600; display: block; margin-top: 4px; }
+        .link-pinside { color: #fda4af; text-decoration: underline; font-size: 0.82rem; font-weight: 600; display: block; margin-top: 4px; }
         .link-pinside:hover { opacity: 0.85; }
         .tech-tag {
             padding: 4px 8px;
@@ -110,13 +202,14 @@
             font-weight: 700;
             text-transform: uppercase;
         }
-        .tech-solid_state { background: #059669; color: #fff; }
-        .tech-em { background: #d97706; color: #fff; }
-        .tech-unverified { background: #475569; color: #f1f5f9; }
+        .tech-solid_state { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.4); }
+        .tech-em { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.4); }
+        .tech-unverified { background: rgba(148, 163, 184, 0.2); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
     </style>
 </head>
 <body>
-    <header>
+    <div class="ambient-glow animate-pulse-slow" aria-hidden="true"></div>
+    <header class="glass-panel">
         <div>
             <h1>Pinball Catalog Audit Table</h1>
             <div style="color:var(--text-secondary);font-size:0.90rem;margin-top:4px;">Desktop auditing list for active regional pinball machines (OK, KS, AR, MO, TX) • Last Scraped: 2026-10-02 20:45 CDT</div>
@@ -127,6 +220,7 @@
             <a href="index.html">Operations Dashboard</a>
         </div>
     </header>
+    <div class="table-wrap glass-panel no-scrollbar">
     <table>
         <thead>
             <tr>
@@ -2630,5 +2724,6 @@
         
         </tbody>
     </table>
+    </div>
 </body>
 </html>

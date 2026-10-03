@@ -95,13 +95,13 @@ window.STATIC_DASHBOARD_STATE = {
     "last_scraped_cdt": "2026-10-02 20:45 CDT",
     "last_scraped_at": "2026-10-03T01:45:24.519013+00:00",
     "last_deploy": {
-      "id": 8,
-      "commit_hash": "1c6b4b6",
-      "commit_message": "Update pinball listings: 2026-10-02 19:24 CDT",
-      "timestamp": "2026-10-03T00:24:11.695592+00:00",
+      "id": 9,
+      "commit_hash": "841dd76",
+      "commit_message": "Update pinball listings: 2026-10-02 20:45 CDT",
+      "timestamp": "2026-10-03T01:45:32.522585+00:00",
       "status": "success",
       "target_url": "https://farmerboy772.github.io/",
-      "logs": "[00:24:11] Initializing GitHub Pages deployment pipeline...\n[00:24:11] Target repository: https://github.com/farmerboy772/farmerboy772.github.io.git (branch: main)\n[00:24:11] Created isolated deployment workspace: /var/folders/sr/gxc1dv8s7lb8n5605fnm_7nh0000gn/T/gh_pages_deploy_q8xti23k\n[00:24:11] Attempting clone of remote branch...\n[00:24:12] Clearing destination root files (preserving .git)...\n[00:24:12] Copying Step 6 generated artifacts into repository root...\n[00:24:12]   -> Copied index.html\n[00:24:12]   -> Copied catalog_grid.html\n[00:24:12]   -> Copied styles.css\n[00:24:12]   -> Copied dashboard.html\n[00:24:12]   -> Copied audit_list.html\n[00:24:12]   -> Copied static_data.js\n[00:24:12]   -> Copied dashboard.js\n[00:24:12]   -> Copied pinball_listings.csv\n[00:24:12] Staging files and creating commit: 'Update pinball listings: 2026-10-02 19:24 CDT'\n[00:24:12] Commit created: [1c6b4b6] Update pinball listings: 2026-10-02 19:24 CDT\n[00:24:12] Executing: git push --force-with-lease origin main...\n[00:24:14] Successfully deployed listings to GitHub Pages! Commit: 1c6b4b6 at 2026-10-02 19:24 CDT\n[00:24:14] Target live URL: https://farmerboy772.github.io/"
+      "logs": "[01:45:32] Initializing GitHub Pages deployment pipeline...\n[01:45:32] Target repository: https://github.com/farmerboy772/farmerboy772.github.io.git (branch: main)\n[01:45:32] Created isolated deployment workspace: /var/folders/sr/gxc1dv8s7lb8n5605fnm_7nh0000gn/T/gh_pages_deploy_eeh5x9ha\n[01:45:32] Attempting clone of remote branch...\n[01:45:33] Clearing destination root files (preserving .git)...\n[01:45:33] Copying Step 6 generated artifacts into repository root...\n[01:45:33]   -> Copied index.html\n[01:45:33]   -> Copied catalog_grid.html\n[01:45:33]   -> Copied styles.css\n[01:45:33]   -> Copied dashboard.html\n[01:45:33]   -> Copied audit_list.html\n[01:45:33]   -> Copied static_data.js\n[01:45:33]   -> Copied dashboard.js\n[01:45:33]   -> Copied pinball_listings.csv\n[01:45:33] Staging files and creating commit: 'Update pinball listings: 2026-10-02 20:45 CDT'\n[01:45:34] Commit created: [841dd76] Update pinball listings: 2026-10-02 20:45 CDT\n[01:45:34] Executing: git push --force-with-lease origin main...\n[01:45:36] Successfully deployed listings to GitHub Pages! Commit: 841dd76 at 2026-10-02 20:45 CDT\n[01:45:36] Target live URL: https://farmerboy772.github.io/"
     }
   },
   "session_health": {

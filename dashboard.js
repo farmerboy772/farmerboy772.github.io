@@ -263,7 +263,7 @@ function renderCatalogGrid() {
         let dealBadge = "";
         if (item.deal_badge) {
             if (item.deal_badge.includes("ALERT") || item.deal_tier === "Steal") {
-                dealBadge = `<span class="badge" style="background:#e11d48; color:#fff; font-weight:700; letter-spacing:0.5px;">${escapeHtml(item.deal_badge)}</span>`;
+                dealBadge = `<span class="badge" style="background:#f43f5e; color:#fff; font-weight:700; letter-spacing:0.5px;">${escapeHtml(item.deal_badge)}</span>`;
             } else if (item.deal_badge.includes("Great") || item.deal_tier === "Great Deal") {
                 dealBadge = `<span class="badge" style="background:#0284c7; color:#fff; font-weight:600;">${escapeHtml(item.deal_badge)}</span>`;
             } else if (item.deal_badge.includes("Good") || item.deal_tier === "Good Value") {
@@ -286,7 +286,7 @@ function renderCatalogGrid() {
         ).join("");
 
         return `
-        <div class="pinball-card">
+        <div class="pinball-card glass-panel glass-panel-interactive">
             <div class="card-image-wrap">
                 <img src="${escapeHtml(primaryImg)}"
                      alt="${escapeHtml(canonTitle)}"
@@ -418,7 +418,7 @@ function renderAuditTable() {
             </td>
             <td>
                 ${item.deal_tier && item.deal_tier !== "Normal" ? `
-                    <span class="badge" style="${item.deal_tier === 'Steal' ? 'background:#e11d48; color:#fff;' : (item.deal_tier === 'Great Deal' ? 'background:#0284c7; color:#fff;' : (item.deal_tier === 'Good Value' ? 'background:#059669; color:#fff;' : 'background:var(--bg-surface-elevated); border:1px solid var(--border-color); color:var(--text-secondary);'))} font-size:0.80rem;">
+                    <span class="badge" style="${item.deal_tier === 'Steal' ? 'background:#f43f5e; color:#fff;' : (item.deal_tier === 'Great Deal' ? 'background:#0284c7; color:#fff;' : (item.deal_tier === 'Good Value' ? 'background:#059669; color:#fff;' : 'background:var(--bg-surface-elevated); border:1px solid var(--border-color); color:var(--text-secondary);'))} font-size:0.80rem;">
                         ${escapeHtml(item.deal_tier)}
                     </span>
                     ${item.discount_percent ? `<div style="font-size:0.82rem; font-weight:700; color:${item.discount_percent > 0 ? 'var(--accent-green)' : 'var(--accent-red)'}; margin-top:2px;">${item.discount_percent > 0 ? '+' : ''}${item.discount_percent}%</div>` : ''}
