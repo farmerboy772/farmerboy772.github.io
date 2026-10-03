@@ -166,6 +166,58 @@ function getPinsideMachineUrl(item) {
     return `https://pinside.com/pinball/archive?q=${encodeURIComponent(q)}`;
 }
 
+function formatListingDate(item) {
+    const wording = (item.posted_date_wording || "").trim();
+    const iso = item.posted_date_iso || item.first_seen || "";
+    const basis = item.posted_date_basis || "Unknown";
+
+    let calDate = "";
+    if (iso) {
+        try {
+            const d = new Date(iso);
+            if (!isNaN(d.getTime())) {
+                calDate = d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+            }
+        } catch (e) {}
+        if (!calDate && iso.length >= 10) {
+            calDate = iso.substring(0, 10);
+        }
+    }
+
+    const isPlaceholder = !wording || /marketplace in|listed on pinside|active auction/i.test(wording);
+    const isRelative = /\b(ago|yesterday|just now|moments ago)\b/i.test(wording);
+    const isCountdown = (!isRelative) && (/^\d+\s*[dhm]\b/i.test(wording) || wording.toLowerCase().includes("opens in"));
+
+    const dateClass = basis === "Verified" ? "date-verified" : (basis === "Estimated Relative" ? "date-estimated" : "date-unknown");
+
+    if (isRelative) {
+        if (calDate) {
+            return { displayDate: `${wording} (${calDate})`, dateClass };
+        }
+        return { displayDate: wording, dateClass };
+    }
+
+    if (isCountdown) {
+        const countdownLabel = wording.toLowerCase().startsWith("bidding") ? wording : `Ends in ${wording}`;
+        if (calDate) {
+            return { displayDate: `${countdownLabel} (Est. ${calDate})`, dateClass: "date-estimated" };
+        }
+        return { displayDate: countdownLabel, dateClass: "date-estimated" };
+    }
+
+    if (isPlaceholder || !wording) {
+        if (calDate) {
+            return { displayDate: `Posted: ${calDate}`, dateClass };
+        }
+        return { displayDate: "Date Unknown", dateClass: "date-unknown" };
+    }
+
+    if (calDate) {
+        return { displayDate: calDate, dateClass };
+    }
+    return { displayDate: wording, dateClass };
+}
+
 // Render Tab 1: Catalog Grid View (Solid-State Regional only)
 function renderCatalogGrid() {
     const container = document.getElementById("catalog-grid-cards");
@@ -211,8 +263,8 @@ function renderCatalogGrid() {
     // Sorting
     filtered.sort((a, b) => {
         if (sortBy === "date-desc") {
-            const aDate = a.posted_date_iso || "";
-            const bDate = b.posted_date_iso || "";
+            const aDate = a.posted_date_iso || a.first_seen || "";
+            const bDate = b.posted_date_iso || b.first_seen || "";
             if (!aDate && bDate) return 1;
             if (aDate && !bDate) return -1;
             return bDate.localeCompare(aDate);
@@ -278,8 +330,7 @@ function renderCatalogGrid() {
             ? `<div style="font-size:0.84rem; color:var(--accent-cyan); margin-top:3px; font-weight:500;">Historical sales median benchmark</div>`
             : (item.fmv ? `<div style="font-size:0.84rem; color:var(--text-secondary); margin-top:3px; font-weight:500;">Est. Market: ~$${Number(item.fmv).toLocaleString()}</div>` : '');
 
-        const dateBasisClass = item.posted_date_basis === "Verified" ? "date-verified" : (item.posted_date_basis === "Estimated Relative" ? "date-estimated" : "date-unknown");
-        const dateStr = item.posted_date_wording || (item.posted_date_iso ? item.posted_date_iso.substring(0, 10) : "Date Unknown");
+        const { displayDate, dateClass: dateBasisClass } = formatListingDate(item);
 
         const breakdownList = (item.score_breakdown || []).map(b => 
             `<li>${escapeHtml(b.desc)} (${b.delta > 0 ? '+' : ''}${b.delta})</li>`
@@ -326,7 +377,7 @@ function renderCatalogGrid() {
 
                 <div class="date-row ${dateBasisClass}">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>${escapeHtml(dateStr)} (${escapeHtml(item.posted_date_basis || 'Unknown')})</span>
+                    <span>${escapeHtml(displayDate)}</span>
                 </div>
 
                 <div class="score-breakdown-details">
@@ -432,8 +483,8 @@ function renderAuditTable() {
             <td>${statusBadge}</td>
             <td>${item.consecutive_misses}</td>
             <td>
-                ${escapeHtml(item.posted_date_wording || '-')}
-                <div style="font-size:0.82rem; color:var(--text-muted);">${escapeHtml(item.posted_date_basis)}</div>
+                <div><strong>${escapeHtml(formatListingDate(item).displayDate)}</strong></div>
+                <div style="font-size:0.80rem; color:var(--text-muted);">${escapeHtml(item.posted_date_basis || 'Unknown')}</div>
             </td>
             <td style="white-space:nowrap;">
                 <a href="${escapeHtml(item.direct_url || '#')}" target="_blank" class="link-source-${item.source}">Open ↗</a>
