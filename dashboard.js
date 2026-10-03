@@ -6,37 +6,8 @@
 let allListings = [];
 let dashboardState = null;
 
-// Eye Comfort Theme Controller
-function initTheme() {
-    const savedTheme = localStorage.getItem("pinball_eye_comfort_theme") || "dark";
-    applyTheme(savedTheme);
-}
-
-function applyTheme(theme) {
-    const icon = document.getElementById("theme-icon");
-    const label = document.getElementById("theme-label");
-    if (theme === "light") {
-        document.documentElement.setAttribute("data-theme", "light");
-        if (icon) icon.textContent = "🌙";
-        if (label) label.textContent = "Eye Comfort: Dark";
-    } else {
-        document.documentElement.removeAttribute("data-theme");
-        if (icon) icon.textContent = "☀️";
-        if (label) label.textContent = "Eye Comfort: Light";
-    }
-    localStorage.setItem("pinball_eye_comfort_theme", theme);
-}
-
-function toggleEyeComfortTheme() {
-    const isLight = document.documentElement.getAttribute("data-theme") === "light";
-    applyTheme(isLight ? "dark" : "light");
-}
-window.toggleEyeComfortTheme = toggleEyeComfortTheme;
-
 // Initialize on load
 function initDashboard() {
-    initTheme();
-
     // 1. Initial render from static data if available
     if (window.STATIC_DASHBOARD_STATE) {
         applyDashboardState(window.STATIC_DASHBOARD_STATE);

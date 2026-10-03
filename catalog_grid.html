@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         :root {
-            --bg-dark: #111520;
-            --bg-card: #181f2f;
-            --accent-neon: #f43f5e;
-            --accent-cyan: #38bdf8;
-            --accent-gold: #fbbf24;
-            --accent-green: #34d399;
-            --accent-red: #f87171;
-            --text-main: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --border-subtle: #384666;
-            color-scheme: dark;
+            --bg-dark: #f0f3f8;
+            --bg-card: #ffffff;
+            --accent-neon: #e11d48;
+            --accent-cyan: #0284c7;
+            --accent-gold: #b45309;
+            --accent-green: #047857;
+            --accent-red: #dc2626;
+            --text-main: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #475569;
+            --border-subtle: #cbd5e1;
+            color-scheme: light;
         }
         body {
             background: var(--bg-dark);
@@ -83,17 +83,18 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
             transition: transform 0.2s, border-color 0.2s;
         }
         .pinball-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: var(--accent-cyan);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
         }
         .card-image-wrap {
             position: relative;
             height: 200px;
-            background: #000;
+            background: #e2e8f0;
         }
         .card-image-wrap img {
             width: 100%;

@@ -7,18 +7,18 @@
     <title>Pinball Catalog Audit List — Bixby, OK (74008)</title>
     <style>
         :root {
-            --bg-dark: #111520;
-            --bg-card: #181f2f;
-            --bg-header: #222b40;
-            --accent-cyan: #38bdf8;
-            --accent-neon: #f43f5e;
-            --accent-gold: #fbbf24;
-            --accent-green: #34d399;
-            --text-main: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --border-subtle: #384666;
-            color-scheme: dark;
+            --bg-dark: #f0f3f8;
+            --bg-card: #ffffff;
+            --bg-header: #e2e8f0;
+            --accent-cyan: #0284c7;
+            --accent-neon: #e11d48;
+            --accent-gold: #b45309;
+            --accent-green: #047857;
+            --text-main: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #475569;
+            --border-subtle: #cbd5e1;
+            color-scheme: light;
         }
         body {
             background: var(--bg-dark);
@@ -56,7 +56,7 @@
         }
         .header-nav a:hover {
             background: var(--border-subtle);
-            color: #fff;
+            color: var(--text-main);
         }
         table {
             width: 100%;
@@ -68,6 +68,7 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid var(--border-subtle);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
         }
         th, td {
             padding: 13px 15px;
@@ -76,14 +77,14 @@
         }
         th {
             background: var(--bg-header);
-            color: var(--accent-cyan);
+            color: var(--text-main);
             text-transform: uppercase;
             font-size: 0.82rem;
             letter-spacing: 0.5px;
             font-weight: 700;
         }
         tr:hover td {
-            background: #252e44;
+            background: #f8fafc;
         }
         .badge-source {
             padding: 4px 8px;
