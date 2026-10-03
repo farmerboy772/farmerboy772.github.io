@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <title>Pinball Aggregator & Operations Dashboard — Bixby, OK (74008)</title>
+    <script>
+        (function() {
+            var theme = localStorage.getItem("pinball_eye_comfort_theme") || "dark";
+            if (theme === "light") {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,9 +34,13 @@
                 </div>
             </div>
             <div class="top-actions">
+                <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleEyeComfortTheme()" aria-label="Toggle Eye Comfort Theme" title="Toggle between Eye-Comfort Warm Dark and High-Contrast Light theme">
+                    <span id="theme-icon">☀️</span>
+                    <span id="theme-label">Eye Comfort: Light</span>
+                </button>
                 <div class="status-indicator">
                     <span class="pulse-dot"></span>
-                    <span id="system-time">Last Scraped: 2026-10-02 18:39 CDT</span>
+                    <span id="system-time">Last Scraped: 2026-10-02 19:19 CDT</span>
                 </div>
             </div>
         </header>
@@ -70,7 +82,7 @@
                     <div class="kpi-val" id="metric-unconfirmed">--</div>
                     <div class="kpi-sub">Shipping-only / Unknown State</div>
                 </div>
-                <div class="kpi-card" id="kpi-deals" style="border-color: rgba(255, 0, 127, 0.4); background: rgba(255, 0, 127, 0.06);">
+                <div class="kpi-card accent-neon" id="kpi-deals">
                     <div class="kpi-label" style="color: var(--accent-neon);">🔥 DEAL RADAR (≥20% OFF)</div>
                     <div class="kpi-val" id="metric-deal-count" style="color: var(--accent-neon);">--</div>
                     <div class="kpi-sub">Steals & Great Deals Active</div>
@@ -296,7 +308,7 @@
         </main>
     </div>
 
-    <script src="static_data.js?v=202610022345"></script>
-    <script src="dashboard.js?v=202610022345"></script>
+    <script src="static_data.js?v=202610030019"></script>
+    <script src="dashboard.js?v=202610030019"></script>
 </body>
 </html>

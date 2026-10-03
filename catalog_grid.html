@@ -8,19 +8,25 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         :root {
-            --bg-dark: #0f111a;
-            --bg-card: #181b29;
-            --accent-neon: #ff007f;
-            --accent-cyan: #00f0ff;
-            --accent-gold: #ffd700;
-            --text-main: #f0f2f8;
-            --text-muted: #8e95aa;
-            --border-subtle: #272c42;
+            --bg-dark: #111520;
+            --bg-card: #181f2f;
+            --accent-neon: #f43f5e;
+            --accent-cyan: #38bdf8;
+            --accent-gold: #fbbf24;
+            --accent-green: #34d399;
+            --accent-red: #f87171;
+            --text-main: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-subtle: #384666;
+            color-scheme: dark;
         }
         body {
             background: var(--bg-dark);
             color: var(--text-main);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
             margin: 0;
             padding: 24px;
         }
@@ -38,13 +44,12 @@
         h1 {
             margin: 0;
             font-size: 1.8rem;
+            font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(90deg, #ff007f, #00f0ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-main);
         }
         .header-sub {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 0.95rem;
             margin-top: 4px;
         }
@@ -53,10 +58,11 @@
             margin-left: 12px;
             color: var(--accent-cyan);
             text-decoration: none;
-            padding: 8px 14px;
+            padding: 8px 16px;
             border: 1px solid var(--border-subtle);
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.90rem;
+            font-weight: 600;
             transition: all 0.2s;
         }
         .header-nav a:hover {
@@ -132,22 +138,23 @@
         .card-header-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 0.78rem;
-            color: var(--text-muted);
+            font-size: 0.84rem;
+            color: var(--text-secondary);
             margin-bottom: 6px;
         }
         .distance-pill {
             color: var(--accent-cyan);
-            font-weight: 600;
+            font-weight: 700;
         }
         .card-title {
             margin: 0 0 4px;
-            font-size: 1.2rem;
-            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
             line-height: 1.3;
         }
         .raw-title-sub {
-            font-size: 0.8rem;
+            font-size: 0.84rem;
             color: var(--text-muted);
             margin-bottom: 12px;
             white-space: nowrap;
@@ -161,100 +168,101 @@
             margin-bottom: 10px;
         }
         .price-val {
-            font-size: 1.3rem;
+            font-size: 1.45rem;
             font-weight: 800;
             color: var(--accent-gold);
         }
         .price-type {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 400;
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            font-weight: 500;
         }
         .location-row, .date-row {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.82rem;
-            color: var(--text-muted);
+            gap: 8px;
+            font-size: 0.86rem;
+            color: var(--text-secondary);
             margin-bottom: 6px;
         }
-        .date-verified { color: #2ecc71; }
-        .date-estimated { color: var(--accent-cyan); }
+        .date-verified { color: var(--accent-green); font-weight: 600; }
+        .date-estimated { color: var(--accent-cyan); font-weight: 600; }
         .date-unknown { color: var(--text-muted); }
         .score-breakdown-details {
             margin: 10px 0 16px;
-            font-size: 0.78rem;
+            font-size: 0.82rem;
             border-top: 1px dashed var(--border-subtle);
             padding-top: 8px;
         }
         .score-breakdown-details summary {
             cursor: pointer;
             color: var(--accent-cyan);
+            font-weight: 600;
         }
         .score-breakdown-details ul {
             margin: 6px 0 0 16px;
             padding: 0;
-            color: var(--text-muted);
+            color: var(--text-secondary);
         }
         .card-actions {
             margin-top: auto;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
         }
         .btn-card-link {
             display: block;
             text-align: center;
             text-decoration: none;
-            padding: 9px 12px;
+            padding: 10px 14px;
             border-radius: 6px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.90rem;
             transition: all 0.2s ease;
         }
         .btn-source-facebook {
-            background: #1877f2;
+            background: #2563eb;
             color: #ffffff;
-            border: 1px solid #1877f2;
+            border: 1px solid #2563eb;
         }
         .btn-source-facebook:hover {
-            background: #1565c0;
+            background: #1d4ed8;
         }
         .btn-source-pinside {
-            background: #ff007f;
+            background: var(--accent-neon);
             color: #ffffff;
-            border: 1px solid #ff007f;
+            border: 1px solid var(--accent-neon);
         }
         .btn-source-pinside:hover {
-            background: #e60073;
+            background: #e11d48;
         }
         .btn-source-hibid {
-            background: #ffd700;
-            color: #0b0d17;
+            background: var(--accent-gold);
+            color: #0f172a;
             font-weight: 800;
-            border: 1px solid #ffd700;
+            border: 1px solid var(--accent-gold);
         }
         .btn-source-hibid:hover {
-            background: #ffc400;
+            background: #f59e0b;
         }
         .btn-pinside-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
-            background: rgba(255, 0, 127, 0.12);
-            border: 1px solid rgba(255, 0, 127, 0.4);
-            color: #ff007f;
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px solid rgba(244, 63, 94, 0.4);
+            color: var(--accent-neon);
             text-decoration: none;
-            padding: 6px 10px;
+            padding: 7px 12px;
             border-radius: 6px;
-            font-size: 0.78rem;
-            font-weight: 600;
+            font-size: 0.84rem;
+            font-weight: 700;
             transition: all 0.2s ease;
         }
         .btn-pinside-link:hover {
-            background: rgba(255, 0, 127, 0.25);
-            border-color: #ff007f;
+            background: rgba(244, 63, 94, 0.2);
+            border-color: var(--accent-neon);
             color: #fff;
         }
     </style>
@@ -263,7 +271,7 @@
     <header>
         <div>
             <h1>Regional Solid-State Pinball Catalog</h1>
-            <div class="header-sub">Curated for Collector in Bixby, OK (ZIP 74008) • Regional Bounds: OK, KS, AR, MO, TX • Last Scraped: 2026-10-02 18:39 CDT</div>
+            <div class="header-sub">Curated for Collector in Bixby, OK (ZIP 74008) • Regional Bounds: OK, KS, AR, MO, TX • Last Scraped: 2026-10-02 19:19 CDT</div>
         </div>
         <div class="header-nav">
             <a href="audit_list.html">Audit List View</a>
@@ -332,7 +340,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/783898345_1381633453376849_8807842919589422220_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=a1H2mQ526EcQ7kNvwEqZryM&amp;_nc_oc=AdqpUXLIvLRtFFrsTeUXNmtSkH5MtVLo4RBbbxRH_X8e0oOwSfYKv5Hr61lS1G7fSwQ&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQMLohfYNQLuv7oBWpMwVXokPMuIKG4DOQm44xLUikMYSw&amp;oe=6AC61AE0" alt="The Addams Family" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/0/68/068ec9d58a5daef9234b3f27aeeb9e9d6d5eb7e3/resized/medium/068ec9d58a5daef9234b3f27aeeb9e9d6d5eb7e3.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/783898345_1381633453376849_8807842919589422220_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=a1H2mQ526EcQ7kNvwEqZryM&amp;_nc_oc=AdqpUXLIvLRtFFrsTeUXNmtSkH5MtVLo4RBbbxRH_X8e0oOwSfYKv5Hr61lS1G7fSwQ&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=l0AYLyJKvQoILJAWB8tNzA&amp;_nc_ss=7b20f&amp;oh=00_AQMjnbDcLFtj-Ld4j5B3jRh_yMOZPdkDi1K14-HDyxoI9w&amp;oe=6AC61AE0" alt="The Addams Family" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/0/68/068ec9d58a5daef9234b3f27aeeb9e9d6d5eb7e3/resized/medium/068ec9d58a5daef9234b3f27aeeb9e9d6d5eb7e3.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -343,7 +351,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Bally • 1992</span>
-                    <span class="distance-pill">~16 mi from Bixby</span>
+                    <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="🫵Bally Pinball 1992 The Addams Family Coaster Promo 🫵">The Addams Family</h3>
                 <div class="raw-title-sub">Listing: "🫵Bally Pinball 1992 The Addams Family Coaster Promo 🫵"</div>
@@ -361,7 +369,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Tulsa, OK</span>
+                    <span>Oklahoma City, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -389,7 +397,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/818865605_1066024249545616_3362604304460862098_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=f7Ig78T3fxUQ7kNvwFUi1II&amp;_nc_oc=AdqhsNMKIAyxIgyWVFXYdfUTnCcDU7r94XDBqVJlEW5Ezl5XE4tsJb9HnBVzNjWmc5M&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQP0QB3YCz4SIQN_WNQwFXbLWYeBNja0a20_sHYv443swg&amp;oe=6AC5F790" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/818865605_1066024249545616_3362604304460862098_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=f7Ig78T3fxUQ7kNvwFUi1II&amp;_nc_oc=AdqhsNMKIAyxIgyWVFXYdfUTnCcDU7r94XDBqVJlEW5Ezl5XE4tsJb9HnBVzNjWmc5M&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQPJagQsxGmFQW-cm_8SjFQLrv1oZwJ1t1ekupq-ZEV-RQ&amp;oe=6AC62FD0" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -446,64 +454,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/825266558_1796877251508872_3715014310990336950_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=oteZ1p061kgQ7kNvwEhlmHn&amp;_nc_oc=AdoIEa2kGAdF60EPxge4GqyWoDR9aQeRSSBE_JjoM6cv2NF_uAnple7AuVqwrkE0aDw&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=_dfQdSMXpM0IAFcAVaR6aQ&amp;_nc_ss=7b20f&amp;oh=00_AQP2UrCrRfFGTPemeVP8jZmbdGH0ZFPbhd2q3wL-KRK5ow&amp;oe=6AC5FF99" alt="Firepower" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/01d68b36-8d23-4d63-9a36-9531c0f16243-medium.jpg';"/>
-                <div class="image-overlay">
-                    <div style="display:flex; gap:4px; align-items:center;">
-                        <span class="badge badge-facebook">FACEBOOK</span>
-                        <span class="badge badge-img-type">Posting Photo</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1980</span>
-                    <span class="distance-pill">~230 mi from Bixby</span>
-                </div>
-                <h3 class="card-title" title="🔥 1980 Williams Firepower Pinball Machine">Firepower</h3>
-                <div class="raw-title-sub">Listing: "🔥 1980 Williams Firepower Pinball Machine"</div>
-                
-                <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
-                    <div>
-                        <div class="price-val">$2,600 <span class="price-type" style="color:#38bdf8;">(Market Estimate)</span></div>
-                        <div style="font-size:0.75rem;color:#38bdf8;margin-top:2px;">Historical sales median benchmark</div>
-                    </div>
-                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-                        <span class="badge" style="background:rgba(56, 189, 248, 0.15);color:#38bdf8;border:1px solid rgba(56, 189, 248, 0.3);">Est. Market Value</span>
-                        
-                    </div>
-                </div>
-
-                <div class="location-row">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Kansas City MO, MO</span>
-                </div>
-
-                <div class="date-row date-estimated">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Marketplace in Kansas City MO, MO (Estimated Relative)</span>
-                </div>
-
-                <div class="score-breakdown-details">
-                    <details>
-                        <summary>Rule Scoring Breakdown</summary>
-                        <ul><li>Recognized manufacturer: Williams (+3)</li><li>Exact pinball machine/table phrase match (+3)</li><li>Estimated FMV benchmark pricing (+2)</li></ul>
-                    </details>
-                </div>
-
-                <div class="card-actions">
-                    <a href="https://www.facebook.com/marketplace/item/1345071534146984" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-facebook">View Listing ↗</a>
-                    <a href="https://pinside.com/pinball/machine/firepower" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
-                        Pinside Machine Details ↗
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="pinball-card">
-            <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/749419624_1793177708519029_4564633416067071355_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=vQdXua666GEQ7kNvwFMrO12&amp;_nc_oc=Adqg302iB5vatImcFyiPz5ZzytLScSXk761c3_DvRaprSQdJlZ8gc86QoEltojSnDhU&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=kgqiQaAV15OdEMy8mHjVww&amp;_nc_ss=7b20f&amp;oh=00_AQMo3XsthMYV4e0tg584qJR_Vf7M1HTxtATctyiIZTblZA&amp;oe=6AC62C61" alt="Andromeda" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/db0737db-3716-4733-8a2d-13b87fb0b1d3-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/749419624_1793177708519029_4564633416067071355_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=vQdXua666GEQ7kNvwFMrO12&amp;_nc_oc=Adqg302iB5vatImcFyiPz5ZzytLScSXk761c3_DvRaprSQdJlZ8gc86QoEltojSnDhU&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQPSGQQHZBirne4rErfaOkD421E70KI0Fwdyml6JFOrWNQ&amp;oe=6AC62C61" alt="Andromeda" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/db0737db-3716-4733-8a2d-13b87fb0b1d3-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -514,7 +465,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Game Plan • 1985</span>
-                    <span class="distance-pill">~97 mi from Bixby</span>
+                    <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Cosmos pinball andromeda">Andromeda</h3>
                 <div class="raw-title-sub">Listing: "Cosmos pinball andromeda"</div>
@@ -532,7 +483,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Oklahoma City, OK</span>
+                    <span>Tulsa, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -560,7 +511,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/767130987_2166978317551285_8207131702351142248_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=t536fq2c2ZgQ7kNvwFbr6b5&amp;_nc_oc=AdrmbTo39of715aXSukBKDfk_OCuTOLWf3P2ErN0RRruseANZHbgE4-NzfiR_EmYJXg&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQMK8Yam4jRXbtIh0081bcalfplMM8Iao0HEwRg7XyI0jw&amp;oe=6AC61B3B" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/767130987_2166978317551285_8207131702351142248_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=t536fq2c2ZgQ7kNvwFbr6b5&amp;_nc_oc=AdrmbTo39of715aXSukBKDfk_OCuTOLWf3P2ErN0RRruseANZHbgE4-NzfiR_EmYJXg&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQPopUm-BYk23suAVDnfzpCf4YJlGYHSFBbgAlQCf86cZw&amp;oe=6AC61B3B" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -617,7 +568,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/825279505_1092352633348498_343279497612776364_n.jpg?stp=c0.228.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=Etdsh-6abg4Q7kNvwFl1Jtr&amp;_nc_oc=AdpVDBKR9PlH44lHMM2fUrKWT7hOQyje4HlwFzzIAnyDR7SOf0fp1r47rQRBW3Qv0ts&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQOI3Uyz0sNlpE3y2JXN2Ugl-wvFUfLJrnXXGURz_43Ghg&amp;oe=6AC60998" alt="Strikes and Spares" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/7/8c/78c738ae85834f89d36329fe80c1024bc68c07c1/resized/medium/78c738ae85834f89d36329fe80c1024bc68c07c1.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/825279505_1092352633348498_343279497612776364_n.jpg?stp=c0.228.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=Etdsh-6abg4Q7kNvwFl1Jtr&amp;_nc_oc=AdpVDBKR9PlH44lHMM2fUrKWT7hOQyje4HlwFzzIAnyDR7SOf0fp1r47rQRBW3Qv0ts&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQPAsNdaaiB-chy_afjAe6JAoyGKvaqyWjq1H6LM69nhCw&amp;oe=6AC60998" alt="Strikes and Spares" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/7/8c/78c738ae85834f89d36329fe80c1024bc68c07c1/resized/medium/78c738ae85834f89d36329fe80c1024bc68c07c1.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -674,7 +625,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/797087677_1772738747248596_8502575399829598534_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=HrxEYddxCJQQ7kNvwG3fILL&amp;_nc_oc=AdoU5gYX7U2jcgYsaKa8_qrumXuUHmoKgn8YWhhMYKMKfTiNGPHquEoWEQ8T9CYk3xE&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQPIAEkIPsY8ifKqLeHtw5W82ZssnRh92FnCYYRKKQAIOw&amp;oe=6AC60715" alt="Wild Life" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/1c2b09fa-b35d-4deb-832c-a9780702a270-medium.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/797087677_1772738747248596_8502575399829598534_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=HrxEYddxCJQQ7kNvwG3fILL&amp;_nc_oc=AdoU5gYX7U2jcgYsaKa8_qrumXuUHmoKgn8YWhhMYKMKfTiNGPHquEoWEQ8T9CYk3xE&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQNDt3CUSu8Bogov4aoWRZVrSjZtjZobReA3k2XkI9ZKlg&amp;oe=6AC60715" alt="Wild Life" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/1c2b09fa-b35d-4deb-832c-a9780702a270-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -731,7 +682,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/742942202_1505932510687441_8827342335452416039_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=X7EbH7FS1oEQ7kNvwFjA8HG&amp;_nc_oc=AdrPXauNa05whGSvCSnPE4TJUKvy5GHW_AKlE9_08ZAqBJzuOC3JFvMMnfmAtsJ61YA&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQMoRmUVaOq0BVYCXOGQkZLb2TyoqHKvu582I1j5CHjLhg&amp;oe=6AC609AB" alt="Grand Lizard" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/89aff2d3-511b-4da8-abfa-757ea7acd121-medium.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/742942202_1505932510687441_8827342335452416039_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=X7EbH7FS1oEQ7kNvwFjA8HG&amp;_nc_oc=AdrPXauNa05whGSvCSnPE4TJUKvy5GHW_AKlE9_08ZAqBJzuOC3JFvMMnfmAtsJ61YA&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQNotdyfVQfdw3Sevz412O_AL96qUpq6RtJcJNfGDaCIcQ&amp;oe=6AC609AB" alt="Grand Lizard" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/89aff2d3-511b-4da8-abfa-757ea7acd121-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -788,7 +739,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/780917523_1359432475862767_5164911945967640374_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=ueOk676p274Q7kNvwEgvD04&amp;_nc_oc=AdrgHq3QsVXxFzBgReZGw1-5FacXCsg-hHARDWZgJHtlDFjPRLqkSqbx5BFQX7BcyTk&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQNNJZKYhPNnLymu7qEBdQ22DUeB85EmMN71eEaa1EswXQ&amp;oe=6AC61267" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/780917523_1359432475862767_5164911945967640374_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=ueOk676p274Q7kNvwEgvD04&amp;_nc_oc=AdrgHq3QsVXxFzBgReZGw1-5FacXCsg-hHARDWZgJHtlDFjPRLqkSqbx5BFQX7BcyTk&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQNCDOV6TWETetQJ8phFZLIX-kfE7r9r0OLjHqqmkMuuvg&amp;oe=6AC61267" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -845,7 +796,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/790414404_966382019802392_8410670564593300107_n.jpg?stp=c0.0.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=9QJ2L4GLfc4Q7kNvwFhfiTC&amp;_nc_oc=AdpDTgr3lxccwtX9OvzDIG2peuxuX6KnUOAKbov3wgrroPGTgiYo98MU_Plsb2fbH8A&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQO-MyQbuSIO4aOew_QuvA2VgQr2CPgeu_xSm6sK--FYOw&amp;oe=6AC6164F" alt="Attack from Mars" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/9/54/95462cf80674f76263ebcf1c9e8fb1dc8c86d8a7/resized/medium/95462cf80674f76263ebcf1c9e8fb1dc8c86d8a7.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/790414404_966382019802392_8410670564593300107_n.jpg?stp=c0.0.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=9QJ2L4GLfc4Q7kNvwFhfiTC&amp;_nc_oc=AdpDTgr3lxccwtX9OvzDIG2peuxuX6KnUOAKbov3wgrroPGTgiYo98MU_Plsb2fbH8A&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQOGhfndk4mDP1xc9T2Zhy0-EhfW8tRc6_oeVJHB56hWlQ&amp;oe=6AC6164F" alt="Attack from Mars" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/9/54/95462cf80674f76263ebcf1c9e8fb1dc8c86d8a7/resized/medium/95462cf80674f76263ebcf1c9e8fb1dc8c86d8a7.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -856,7 +807,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Bally • 1995</span>
-                    <span class="distance-pill">~145 mi from Bixby</span>
+                    <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Attack From Mars Digital Pinball Machine. Arcade1Up. 10 Tables.">Attack from Mars</h3>
                 <div class="raw-title-sub">Listing: "Attack From Mars Digital Pinball Machine. Arcade1Up. 10 Tables."</div>
@@ -874,7 +825,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Wichita, KS</span>
+                    <span>Tulsa, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -959,7 +910,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/796324878_1624663566117928_7393957895298233250_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=OJrgBD_aG8gQ7kNvwEg4Oq-&amp;_nc_oc=AdqO3J3pmLbp9PetFROyLBW6u--JhLNp2GlhcLWx8EKYeP7lDgMMDor1ZGf5sQQ5JUY&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQPFw1su2PJ5jvl9TpJVVkwhL7Jx9oJQ8O_rZHv9iPLylw&amp;oe=6AC62CEE" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/796324878_1624663566117928_7393957895298233250_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=OJrgBD_aG8gQ7kNvwEg4Oq-&amp;_nc_oc=AdqO3J3pmLbp9PetFROyLBW6u--JhLNp2GlhcLWx8EKYeP7lDgMMDor1ZGf5sQQ5JUY&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=l0AYLyJKvQoILJAWB8tNzA&amp;_nc_ss=7b20f&amp;oh=00_AQMN-Pxw8DBEdAixicqaLk9oREFQ-2uTUaZq5E-TBhdNrg&amp;oe=6AC62CEE" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -970,7 +921,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Bell Games • 1983</span>
-                    <span class="distance-pill">~16 mi from Bixby</span>
+                    <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pac-Man Tabletop Pinball Game">Pinball</h3>
                 <div class="raw-title-sub">Listing: "Pac-Man Tabletop Pinball Game"</div>
@@ -988,7 +939,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Tulsa, OK</span>
+                    <span>Oklahoma City, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -1130,7 +1081,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/776020714_1515007110338436_2984388199642889661_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=wrhOl8ZY5KEQ7kNvwGxH1aC&amp;_nc_oc=Ado6WBOyDUzt93DiaBcG2NPRQGybw43xgJ6ZML12cZaJdSTK0HWrZmxunAUsM0vltrQ&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQMAdY4fP-4NyHQTChCU0yS2sPTxUrHprbYwPdaFcMJ26A&amp;oe=6AC60705" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/776020714_1515007110338436_2984388199642889661_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=wrhOl8ZY5KEQ7kNvwGxH1aC&amp;_nc_oc=Ado6WBOyDUzt93DiaBcG2NPRQGybw43xgJ6ZML12cZaJdSTK0HWrZmxunAUsM0vltrQ&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQMeee0WFk7iWjYRAZGp4ON_5ds0IZ_WjiDKs6NAI8at1Q&amp;oe=6AC60705" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1244,7 +1195,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/831119059_1408985831411166_5813749547556020001_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=Ik5i6OpY80kQ7kNvwGMKYIQ&amp;_nc_oc=Adp-tqBR8jFXQBsMXci5CU-1g8Oa9T7OKa_KIxhdvkz0uUd7Y52RnNbpqRZY-mQn-Us&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQMHg2Ctykjt__SX4aCu6EuSFx9jn1n8kN7XplQgmF1AbA&amp;oe=6AC62B82" alt="Family Guy" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/2/98/298516d2ca82283bf3721389c97b830d1a938c5b/resized/medium/298516d2ca82283bf3721389c97b830d1a938c5b.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/831119059_1408985831411166_5813749547556020001_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=Ik5i6OpY80kQ7kNvwGMKYIQ&amp;_nc_oc=Adp-tqBR8jFXQBsMXci5CU-1g8Oa9T7OKa_KIxhdvkz0uUd7Y52RnNbpqRZY-mQn-Us&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQM9nGVZehJm7_9Trk7gwSfEG3V2MvVJFDS234FVBaSgEw&amp;oe=6AC62B82" alt="Family Guy" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/2/98/298516d2ca82283bf3721389c97b830d1a938c5b/resized/medium/298516d2ca82283bf3721389c97b830d1a938c5b.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1301,7 +1252,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/728399507_1019823443855743_2211766429496923731_n.jpg?stp=c90.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=RmgRK-WT61gQ7kNvwHzth1i&amp;_nc_oc=Ado2HDvX3S5KdevNDUc1v-wf0QAy6cLBp6qIpfilgwinxbWl44gLSaZwk2GWutysJxw&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=kgqiQaAV15OdEMy8mHjVww&amp;_nc_ss=7b20f&amp;oh=00_AQPT3a_sYC8V1BSRwstQncZbziYsTL4Vy8rUwTRg7bku3Q&amp;oe=6AC61473" alt="Cosmos" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/628cfd8e-cb24-429a-b488-53cb10b3a14b-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/728399507_1019823443855743_2211766429496923731_n.jpg?stp=c90.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=RmgRK-WT61gQ7kNvwHzth1i&amp;_nc_oc=Ado2HDvX3S5KdevNDUc1v-wf0QAy6cLBp6qIpfilgwinxbWl44gLSaZwk2GWutysJxw&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQNpKZYqHdannG7brEbWwNNSIFGq5DcbIOefnBQy4nBPYA&amp;oe=6AC61473" alt="Cosmos" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/628cfd8e-cb24-429a-b488-53cb10b3a14b-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1312,7 +1263,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Bally • 1969</span>
-                    <span class="distance-pill">~97 mi from Bixby</span>
+                    <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Cosmos Digital Pinaball">Cosmos</h3>
                 <div class="raw-title-sub">Listing: "Cosmos Digital Pinaball"</div>
@@ -1330,7 +1281,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Oklahoma City, OK</span>
+                    <span>Tulsa, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -1358,7 +1309,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/809772518_1884316119640988_8976163106403282880_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=0FtFz5w5nlkQ7kNvwHwdpy0&amp;_nc_oc=AdrJ5xDlJjoMGcLnTI6Vjy9bT-epjrMaVAoJ3BSS8n1EgfoUpqe7atdWsXC_gUyZPfk&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQO4OMm2z40PYLh1ABwTYLW_hZoQppSPAQLjPQ0b_fZHdA&amp;oe=6AC62430" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/809772518_1884316119640988_8976163106403282880_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=0FtFz5w5nlkQ7kNvwHwdpy0&amp;_nc_oc=AdrJ5xDlJjoMGcLnTI6Vjy9bT-epjrMaVAoJ3BSS8n1EgfoUpqe7atdWsXC_gUyZPfk&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQMG5mLgnPfYNtT1X2AtSoJn5qK2GBxaLIOPd93KVdwZcQ&amp;oe=6AC62430" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1415,7 +1366,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/818599019_1645919387249119_1359453600388850396_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=C_hMaUr1wcgQ7kNvwFMdFRa&amp;_nc_oc=Adrkpg5hP2QqnioXJ2zy8sAXwaU_JZqIX9aToRYaCt8eJWWMS4MktCiftguXBf_VTY0&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=kgqiQaAV15OdEMy8mHjVww&amp;_nc_ss=7b20f&amp;oh=00_AQOQICUbymiP29W2YtThpSgbniGOHKQzXfKmvPCFOHNyfw&amp;oe=6AC61A1E" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/818599019_1645919387249119_1359453600388850396_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=C_hMaUr1wcgQ7kNvwFMdFRa&amp;_nc_oc=Adrkpg5hP2QqnioXJ2zy8sAXwaU_JZqIX9aToRYaCt8eJWWMS4MktCiftguXBf_VTY0&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQMXkw-6Jvg-2JAh7Z90girlZWfEa0ldqga2pYKlUUy8mA&amp;oe=6AC61A1E" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1426,7 +1377,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Bell Games • 1983</span>
-                    <span class="distance-pill">~97 mi from Bixby</span>
+                    <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="I’m looking for nonworking pinball machines">Pinball</h3>
                 <div class="raw-title-sub">Listing: "I’m looking for nonworking pinball machines"</div>
@@ -1444,7 +1395,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Oklahoma City, OK</span>
+                    <span>Tulsa, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -1472,7 +1423,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/753857407_1818920539471482_2966496187737444084_n.jpg?stp=c0.140.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=VcnJcb5VxEQQ7kNvwHcr5bz&amp;_nc_oc=AdosC7fbFuXLbwbEuZ9-LAz2Tda2vFnPzDN-CtZp2IxltinSsGOb_V_EimFORoiM3tU&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=xlNQ4VQGkcROonpeiD-gsg&amp;_nc_ss=7b20f&amp;oh=00_AQOxnK9vCqQ7hV8k9CaMWw3o9ZkLSMxtnSBg1p_eN1wkVg&amp;oe=6AC5FB2D" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/753857407_1818920539471482_2966496187737444084_n.jpg?stp=c0.140.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=VcnJcb5VxEQQ7kNvwHcr5bz&amp;_nc_oc=AdosC7fbFuXLbwbEuZ9-LAz2Tda2vFnPzDN-CtZp2IxltinSsGOb_V_EimFORoiM3tU&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQPYdrNYPce-wswxS_hR2yDCnPQEnMDsoYa_YA-8kov9rQ&amp;oe=6AC6336D" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1482,7 +1433,7 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 1983</span>
+                    <span class="mfg-year">Bell Games • 1983</span>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="1950’s ‘State Fair’ strength tester child’s pinball machine.">Pinball</h3>
@@ -1512,7 +1463,7 @@
                 <div class="score-breakdown-details">
                     <details>
                         <summary>Rule Scoring Breakdown</summary>
-                        <ul><li>Exact pinball machine/table phrase match (+3)</li><li>Asking price $150-$399 (0)</li></ul>
+                        <ul><li>Exact pinball machine/table phrase match (+3)</li><li>Asking price $150-$399 (0)</li><li>Exceptional Deal: $160 is 98% below ~$9,500 market value! (+5)</li></ul>
                     </details>
                 </div>
 
@@ -1529,7 +1480,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/698680708_981010244569328_438596326662444904_n.jpg?stp=c0.305.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=NOnkKyExOeIQ7kNvwECxoHC&amp;_nc_oc=Adr8ql7jnqhmbHgoFcgmaXyyLyfq-i4RKhvdSXT3UkX-qOreWGyXD23wY-8jAMvJE_I&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=m3v9zG7p2Gq3B_aQp5aTXQ&amp;_nc_ss=7b20f&amp;oh=00_AQM_qslg_Y2lfbshS5YyFLa_eYj1fNW59lfve_mT3Xid1A&amp;oe=6AC6046B" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/698680708_981010244569328_438596326662444904_n.jpg?stp=c0.305.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=NOnkKyExOeIQ7kNvwECxoHC&amp;_nc_oc=Adr8ql7jnqhmbHgoFcgmaXyyLyfq-i4RKhvdSXT3UkX-qOreWGyXD23wY-8jAMvJE_I&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=l0AYLyJKvQoILJAWB8tNzA&amp;_nc_ss=7b20f&amp;oh=00_AQN0WVV4KbxsGEnrqPRzE_5uYFfvm04q-cCT3p9rjBo89g&amp;oe=6AC6046B" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1540,7 +1491,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Bell Games • 1983</span>
-                    <span class="distance-pill">~16 mi from Bixby</span>
+                    <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Legends pinball machine">Pinball</h3>
                 <div class="raw-title-sub">Listing: "Legends pinball machine"</div>
@@ -1558,7 +1509,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Tulsa, OK</span>
+                    <span>Oklahoma City, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -1586,7 +1537,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/806129207_1566928214428780_4313046134816140622_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=Y6OP3Oumd00Q7kNvwGYlxD-&amp;_nc_oc=AdoctXVkxVmjjwOCA4i7TswTYOEPhOtgdCoTvJ3e9d5k3-UyZNnVocJBR0oA47dTBjQ&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=kgqiQaAV15OdEMy8mHjVww&amp;_nc_ss=7b20f&amp;oh=00_AQN3pdhvoCcb1DcCPJDKWDArmKZFV7hrZwwt6k0n1q8Scg&amp;oe=6AC60D86" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/806129207_1566928214428780_4313046134816140622_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=Y6OP3Oumd00Q7kNvwGYlxD-&amp;_nc_oc=AdoctXVkxVmjjwOCA4i7TswTYOEPhOtgdCoTvJ3e9d5k3-UyZNnVocJBR0oA47dTBjQ&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQM9CMyeFthQx-EL5r8jhKa4vPiKbuR58rXm-HYvmAtE5A&amp;oe=6AC60D86" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1597,7 +1548,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Bell Games • 1983</span>
-                    <span class="distance-pill">~97 mi from Bixby</span>
+                    <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Vintage Wolverine Electric Pinball Machine">Pinball</h3>
                 <div class="raw-title-sub">Listing: "Vintage Wolverine Electric Pinball Machine"</div>
@@ -1615,7 +1566,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Oklahoma City, OK</span>
+                    <span>Tulsa, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -1643,7 +1594,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/723101072_918411690657613_2253142092980940754_n.jpg?stp=c0.82.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=LfcOOWrNRA4Q7kNvwHFqg_b&amp;_nc_oc=Adqp02XDR_zydQMOknuQxjRuV-15DlvGKWlP55uao_Dgo9Ut0fezyqqeT9BdhmD-Wmo&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=NyGV3n9SIXJVZA_dlgiroQ&amp;_nc_ss=7b20f&amp;oh=00_AQPpJYwJULc173Qv07Ik7yeUdwwwVmwZd5eOB-CS23o87Q&amp;oe=6AC5E3DE" alt="Star Wars (Stern)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/a78f76fa-f790-4f49-8704-a89e04f2a977-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/723101072_918411690657613_2253142092980940754_n.jpg?stp=c0.82.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=LfcOOWrNRA4Q7kNvwHFqg_b&amp;_nc_oc=Adqp02XDR_zydQMOknuQxjRuV-15DlvGKWlP55uao_Dgo9Ut0fezyqqeT9BdhmD-Wmo&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=l0AYLyJKvQoILJAWB8tNzA&amp;_nc_ss=7b20f&amp;oh=00_AQN1eAF8o6JXDmBdpNm0i4jM_JWkjl1eYb4efC9h_3U05Q&amp;oe=6AC61C1E" alt="Star Wars (Stern)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/0/e2/0e2f5b66d6c6e7a2b963b65ef3df23be53e3fa2f/resized/medium/0e2f5b66d6c6e7a2b963b65ef3df23be53e3fa2f.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1654,7 +1605,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Stern • 2017</span>
-                    <span class="distance-pill">~110 mi from Bixby</span>
+                    <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Star Wars Pinball">Star Wars (Stern)</h3>
                 <div class="raw-title-sub">Listing: "Star Wars Pinball"</div>
@@ -1672,7 +1623,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Joplin, MO</span>
+                    <span>Oklahoma City, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -1690,6 +1641,120 @@
                 <div class="card-actions">
                     <a href="https://www.facebook.com/marketplace/item/848067435041825" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-facebook">View Listing ↗</a>
                     <a href="https://pinside.com/pinball/machine/star-wars-stern" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+                        Pinside Machine Details ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="pinball-card">
+            <div class="card-image-wrap">
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t45.5328-4/471546838_1710705002824098_4921951858825623979_n.jpg?stp=c132.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=247b10&amp;_nc_ohc=_XSS34vrKKIQ7kNvwEEer6M&amp;_nc_oc=AdoeTZgEWzxJGWkantbZOYCYDU9AlFlmMUiCsEDRbnkyiFrfOrh79sJzLy_Dkm1BpC8&amp;_nc_zt=23&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=l0AYLyJKvQoILJAWB8tNzA&amp;_nc_ss=7b20f&amp;oh=00_AQO7sWkOyAcDqL8Z7R0C79W8NB2Oncm-6jF0jX1mu3PcDA&amp;oe=6AC62CE1" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <div class="image-overlay">
+                    <div style="display:flex; gap:4px; align-items:center;">
+                        <span class="badge badge-facebook">FACEBOOK</span>
+                        <span class="badge badge-img-type">Posting Photo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-header-meta">
+                    <span class="mfg-year">Bell Games • 1983</span>
+                    <span class="distance-pill">~97 mi from Bixby</span>
+                </div>
+                <h3 class="card-title" title="24&quot;x13&quot; Pinball Machine Acrylic Neon Sign Real Glass Handmade Sign Shipping from US">Pinball</h3>
+                <div class="raw-title-sub">Listing: "24&quot;x13&quot; Pinball Machine Acrylic Neon Sign Real Glass Handmade Sign Shipping from US"</div>
+                
+                <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
+                    <div>
+                        <div class="price-val">$149 <span class="price-type" style="">(Asking Price)</span></div>
+                        <div style="font-size:0.75rem;color:#64748b;margin-top:2px;">Est. Market: ~$9,500</div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+                        <span class="badge" style="background:#e11d48;color:#fff;font-weight:700;letter-spacing:0.5px;">🔥 DEAL ALERT (35%+ OFF)</span>
+                        
+                    </div>
+                </div>
+
+                <div class="location-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Oklahoma City, OK</span>
+                </div>
+
+                <div class="date-row date-estimated">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>Marketplace in Oklahoma City, OK (Estimated Relative)</span>
+                </div>
+
+                <div class="score-breakdown-details">
+                    <details>
+                        <summary>Rule Scoring Breakdown</summary>
+                        <ul><li>Exact pinball machine/table phrase match (+3)</li><li>Asking price &lt; $150 (likely parts/toy) (-3)</li><li>Exceptional Deal: $149 is 98% below ~$9,500 market value! (+5)</li></ul>
+                    </details>
+                </div>
+
+                <div class="card-actions">
+                    <a href="https://www.facebook.com/marketplace/item/1737201797151480" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-facebook">View Listing ↗</a>
+                    <a href="https://pinside.com/pinball/machine/pinball" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+                        Pinside Machine Details ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="pinball-card">
+            <div class="card-image-wrap">
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/818353831_3001664670181361_4578093434755063002_n.jpg?stp=c0.308.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=-0ocpDmco3MQ7kNvwEFoffu&amp;_nc_oc=AdqGUWt1IthXWP_LIqC3X3S6KdFVHuVh0NSxl2ssbx8HUw0AI7P-mwv3_kfQdPEE33w&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQMPuz1LfpyjVe94xRVKnftEKy5qC8EZUezZMBOEnBr0gw&amp;oe=6AC60206" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <div class="image-overlay">
+                    <div style="display:flex; gap:4px; align-items:center;">
+                        <span class="badge badge-facebook">FACEBOOK</span>
+                        <span class="badge badge-img-type">Posting Photo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-header-meta">
+                    <span class="mfg-year">Bell Games • 1983</span>
+                    <span class="distance-pill">~16 mi from Bixby</span>
+                </div>
+                <h3 class="card-title" title="Pinball machine maker (available)">Pinball</h3>
+                <div class="raw-title-sub">Listing: "Pinball machine maker (available)"</div>
+                
+                <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
+                    <div>
+                        <div class="price-val">$10 <span class="price-type" style="">(Asking Price)</span></div>
+                        <div style="font-size:0.75rem;color:#64748b;margin-top:2px;">Est. Market: ~$9,500</div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+                        <span class="badge" style="background:#e11d48;color:#fff;font-weight:700;letter-spacing:0.5px;">🔥 DEAL ALERT (35%+ OFF)</span>
+                        
+                    </div>
+                </div>
+
+                <div class="location-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Tulsa, OK</span>
+                </div>
+
+                <div class="date-row date-estimated">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>Marketplace in Oklahoma City, OK (Estimated Relative)</span>
+                </div>
+
+                <div class="score-breakdown-details">
+                    <details>
+                        <summary>Rule Scoring Breakdown</summary>
+                        <ul><li>Exact pinball machine/table phrase match (+3)</li><li>Asking price &lt; $150 (likely parts/toy) (-3)</li><li>Exceptional Deal: $10 is 100% below ~$9,500 market value! (+5)</li></ul>
+                    </details>
+                </div>
+
+                <div class="card-actions">
+                    <a href="https://www.facebook.com/marketplace/item/4453449431538340" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-facebook">View Listing ↗</a>
+                    <a href="https://pinside.com/pinball/machine/pinball" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
                         Pinside Machine Details ↗
                     </a>
@@ -1871,7 +1936,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/828652685_2667123977090957_6026765818016579285_n.jpg?stp=c89.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=xwcNrw-gKdcQ7kNvwERYSN1&amp;_nc_oc=AdrkCYippUYst8tenEO6t1buX2s4v1KS0gzseu7jQlmYatkHY1gYj-b0EmNKzoM1T6A&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQPfVWN7AAJx0YNQ_xC0TCHGd_5hsCnX7MXNnklL3YEkoA&amp;oe=6AC6028E" alt="Judge Dredd" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/f/36/f3661eb1bb3801ec6a117b35ea0f33dfec9ba2ff/resized/medium/f3661eb1bb3801ec6a117b35ea0f33dfec9ba2ff.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/828652685_2667123977090957_6026765818016579285_n.jpg?stp=c89.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=xwcNrw-gKdcQ7kNvwERYSN1&amp;_nc_oc=AdrkCYippUYst8tenEO6t1buX2s4v1KS0gzseu7jQlmYatkHY1gYj-b0EmNKzoM1T6A&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQMmj3ZWPjbKjM10SBhTwDeJkCnHZODYcth6d4pFf1xKBw&amp;oe=6AC6028E" alt="Judge Dredd" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/f/36/f3661eb1bb3801ec6a117b35ea0f33dfec9ba2ff/resized/medium/f3661eb1bb3801ec6a117b35ea0f33dfec9ba2ff.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1928,7 +1993,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/825286277_1379861104310348_7264190196403633897_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=rg5Q1AIDvNEQ7kNvwFz0Vgk&amp;_nc_oc=Ado7-ansmoivS52ITeUW8hVV_ttil-4DuBFmUS8sa8_wBWJAO7hTV-P-gz205xSOKJU&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQPFqjRTeNSO-B6GQPOa6Se2vWO_tEwqGc126X26SaENAA&amp;oe=6AC62479" alt="Flash" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/3/dc/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a/resized/medium/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/825286277_1379861104310348_7264190196403633897_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=rg5Q1AIDvNEQ7kNvwFz0Vgk&amp;_nc_oc=Ado7-ansmoivS52ITeUW8hVV_ttil-4DuBFmUS8sa8_wBWJAO7hTV-P-gz205xSOKJU&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQMQf-0S6kApM1___CjRUSmSNksTRuNxDRBxWzrO1e4mnA&amp;oe=6AC62479" alt="Flash" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/3/dc/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a/resized/medium/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -1985,7 +2050,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/727551350_981285491419625_3627564867060496276_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=ZqsNJB9afA8Q7kNvwEgKdNS&amp;_nc_oc=AdoQ8j8ANjBZB0wvRiY0YvpdpQaSWCwapJXLKJL7SeANI2Gdhhdkti3dRGwZZQtPwuU&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQOY036xDIFUry8XI3xQy32Tad2xDvaknavHReoR63Rb9g&amp;oe=6AC616BC" alt="Playboy (Bally)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d3cb5490-5c82-4c08-8a78-e270817fb3a1-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/727551350_981285491419625_3627564867060496276_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=ZqsNJB9afA8Q7kNvwEgKdNS&amp;_nc_oc=AdoQ8j8ANjBZB0wvRiY0YvpdpQaSWCwapJXLKJL7SeANI2Gdhhdkti3dRGwZZQtPwuU&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQMF1ylH73afF98U14bARXcgRHiwb01LKmPpRABtK8Gf3w&amp;oe=6AC616BC" alt="Playboy (Bally)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d3cb5490-5c82-4c08-8a78-e270817fb3a1-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -2053,7 +2118,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Stern • 2016</span>
-                    <span class="distance-pill">~333 mi from Bixby</span>
+                    <span class="distance-pill">~222 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Ghostbusters (LE)">Ghostbusters (Stern)</h3>
                 <div class="raw-title-sub">Listing: "Ghostbusters (LE)"</div>
@@ -2071,7 +2136,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Pacific, MO</span>
+                    <span>Prairie Village, KS</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -2099,36 +2164,36 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg" alt="Scoregasm Master" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg';"/>
+                <img src="https://images.pinside.com/e/6a/e6a5756bc37d04d162c761e389e8210344d2d483/resized/medium/e6a5756bc37d04d162c761e389e8210344d2d483.jpg" alt="Jaws (Stern)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-pinside">PINSIDE</span>
-                        <span class="badge badge-img-type">Posting Photo</span>
+                        <span class="badge badge-img-type">OPDB Backglass</span>
                     </div>
                 </div>
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Spooky • 2024</span>
-                    <span class="distance-pill">~222 mi from Bixby</span>
+                    <span class="mfg-year">Stern • 2024</span>
+                    <span class="distance-pill">~194 mi from Bixby</span>
                 </div>
-                <h3 class="card-title" title="Scoregasm Master">Scoregasm Master</h3>
-                <div class="raw-title-sub">Listing: "Scoregasm Master"</div>
+                <h3 class="card-title" title="Loaded Jaws (Prem) w/ Topper and Accessories">Jaws (Stern)</h3>
+                <div class="raw-title-sub">Listing: "Loaded Jaws (Prem) w/ Topper and Accessories"</div>
                 
                 <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
                     <div>
-                        <div class="price-val">$5,500 <span class="price-type" style="color:#38bdf8;">(Market Estimate)</span></div>
+                        <div class="price-val">$4,500 <span class="price-type" style="color:#38bdf8;">(Market Estimate)</span></div>
                         <div style="font-size:0.75rem;color:#38bdf8;margin-top:2px;">Historical sales median benchmark</div>
                     </div>
                     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
                         <span class="badge" style="background:rgba(56, 189, 248, 0.15);color:#38bdf8;border:1px solid rgba(56, 189, 248, 0.3);">Est. Market Value</span>
-                        
+                        <span class="badge badge-warning">Price Change</span>
                     </div>
                 </div>
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Prairie Village, KS</span>
+                    <span>Prosper, TX</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -2144,8 +2209,8 @@
                 </div>
 
                 <div class="card-actions">
-                    <a href="https://pinside.com/pinball/market/classifieds/ad/214424" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-pinside">View Listing ↗</a>
-                    <a href="https://pinside.com/pinball/machine/scoregasm-master" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
+                    <a href="https://pinside.com/pinball/market/classifieds/ad/220443" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-pinside">View Listing ↗</a>
+                    <a href="https://pinside.com/pinball/machine/jaws-stern" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
                         Pinside Machine Details ↗
                     </a>
@@ -2167,7 +2232,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Stern • 2020</span>
-                    <span class="distance-pill">~168 mi from Bixby</span>
+                    <span class="distance-pill">~342 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Heavy Metal">Heavy Metal</h3>
                 <div class="raw-title-sub">Listing: "Heavy Metal"</div>
@@ -2185,7 +2250,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Springfield, MO</span>
+                    <span>Lake Saint Louis, MO</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -2281,7 +2346,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Williams • 1979</span>
-                    <span class="distance-pill">~299 mi from Bixby</span>
+                    <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Gorgar">Gorgar</h3>
                 <div class="raw-title-sub">Listing: "Gorgar"</div>
@@ -2299,7 +2364,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Elkhart, TX</span>
+                    <span>Fort Worth, TX</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -2338,7 +2403,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Jersey Jack • 2016</span>
-                    <span class="distance-pill">~299 mi from Bixby</span>
+                    <span class="distance-pill">~333 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="The Hobbit">The Hobbit</h3>
                 <div class="raw-title-sub">Listing: "The Hobbit"</div>
@@ -2356,7 +2421,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Elkhart, TX</span>
+                    <span>Pacific, MO</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -2395,7 +2460,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Data East • 1988</span>
-                    <span class="distance-pill">~342 mi from Bixby</span>
+                    <span class="distance-pill">~168 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Time Machine">Time Machine (Data East)</h3>
                 <div class="raw-title-sub">Listing: "Time Machine"</div>
@@ -2413,7 +2478,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Lake Saint Louis, MO</span>
+                    <span>Springfield, MO</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -2441,7 +2506,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://img.opdb.org/b1051e47-38ea-4e21-a7d7-a54879a2ac53-medium.jpg" alt="Quicksilver" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg';"/>
+                <img src="https://img.opdb.org/b2a3df2d-bd75-4bed-a7ea-aef9fe7e7d69-medium.jpg" alt="The Mandalorian" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-pinside">PINSIDE</span>
@@ -2451,15 +2516,15 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern Electronics • 1980</span>
+                    <span class="mfg-year">Stern • 2021</span>
                     <span class="distance-pill">~299 mi from Bixby</span>
                 </div>
-                <h3 class="card-title" title="Quicksilver">Quicksilver</h3>
-                <div class="raw-title-sub">Listing: "Quicksilver"</div>
+                <h3 class="card-title" title="The Mandalorian (Pro)">The Mandalorian</h3>
+                <div class="raw-title-sub">Listing: "The Mandalorian (Pro)"</div>
                 
                 <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
                     <div>
-                        <div class="price-val">$4,800 <span class="price-type" style="color:#38bdf8;">(Market Estimate)</span></div>
+                        <div class="price-val">$6,800 <span class="price-type" style="color:#38bdf8;">(Market Estimate)</span></div>
                         <div style="font-size:0.75rem;color:#38bdf8;margin-top:2px;">Historical sales median benchmark</div>
                     </div>
                     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
@@ -2486,122 +2551,8 @@
                 </div>
 
                 <div class="card-actions">
-                    <a href="https://pinside.com/pinball/market/classifieds/ad/222288" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-pinside">View Listing ↗</a>
-                    <a href="https://pinside.com/pinball/machine/quicksilver" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
-                        Pinside Machine Details ↗
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="pinball-card">
-            <div class="card-image-wrap">
-                <img src="https://img.opdb.org/b2a3df2d-bd75-4bed-a7ea-aef9fe7e7d69-medium.jpg" alt="The Mandalorian" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg';"/>
-                <div class="image-overlay">
-                    <div style="display:flex; gap:4px; align-items:center;">
-                        <span class="badge badge-pinside">PINSIDE</span>
-                        <span class="badge badge-img-type">OPDB Backglass</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2021</span>
-                    <span class="distance-pill">~235 mi from Bixby</span>
-                </div>
-                <h3 class="card-title" title="The Mandalorian (Pro)">The Mandalorian</h3>
-                <div class="raw-title-sub">Listing: "The Mandalorian (Pro)"</div>
-                
-                <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
-                    <div>
-                        <div class="price-val">$6,800 <span class="price-type" style="color:#38bdf8;">(Market Estimate)</span></div>
-                        <div style="font-size:0.75rem;color:#38bdf8;margin-top:2px;">Historical sales median benchmark</div>
-                    </div>
-                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-                        <span class="badge" style="background:rgba(56, 189, 248, 0.15);color:#38bdf8;border:1px solid rgba(56, 189, 248, 0.3);">Est. Market Value</span>
-                        
-                    </div>
-                </div>
-
-                <div class="location-row">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Fort Worth, TX</span>
-                </div>
-
-                <div class="date-row date-estimated">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Listed on Pinside (Estimated Relative)</span>
-                </div>
-
-                <div class="score-breakdown-details">
-                    <details>
-                        <summary>Rule Scoring Breakdown</summary>
-                        <ul><li>Pinside classifieds dedicated pinball market context (+3)</li><li>Estimated FMV benchmark pricing (+2)</li></ul>
-                    </details>
-                </div>
-
-                <div class="card-actions">
                     <a href="https://pinside.com/pinball/market/classifieds/ad/222068" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-pinside">View Listing ↗</a>
                     <a href="https://pinside.com/pinball/machine/the-mandalorian" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
-                        Pinside Machine Details ↗
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="pinball-card">
-            <div class="card-image-wrap">
-                <img src="https://img.opdb.org/645e49fc-c1d8-4fcd-b3dd-1157378f3d41-medium.jpg" alt="Beetlejuice" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg';"/>
-                <div class="image-overlay">
-                    <div style="display:flex; gap:4px; align-items:center;">
-                        <span class="badge badge-pinside">PINSIDE</span>
-                        <span class="badge badge-img-type">OPDB Backglass</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2024</span>
-                    <span class="distance-pill">~341 mi from Bixby</span>
-                </div>
-                <h3 class="card-title" title="Beetlejuice Loaded w Butter / Topper / Glass / etc">Beetlejuice</h3>
-                <div class="raw-title-sub">Listing: "Beetlejuice Loaded w Butter / Topper / Glass / etc"</div>
-                
-                <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
-                    <div>
-                        <div class="price-val">$7,500 <span class="price-type" style="color:#38bdf8;">(Market Estimate)</span></div>
-                        <div style="font-size:0.75rem;color:#38bdf8;margin-top:2px;">Historical sales median benchmark</div>
-                    </div>
-                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-                        <span class="badge" style="background:rgba(56, 189, 248, 0.15);color:#38bdf8;border:1px solid rgba(56, 189, 248, 0.3);">Est. Market Value</span>
-                        
-                    </div>
-                </div>
-
-                <div class="location-row">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Festus, MO</span>
-                </div>
-
-                <div class="date-row date-estimated">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Listed on Pinside (Estimated Relative)</span>
-                </div>
-
-                <div class="score-breakdown-details">
-                    <details>
-                        <summary>Rule Scoring Breakdown</summary>
-                        <ul><li>Pinside classifieds dedicated pinball market context (+3)</li><li>Estimated FMV benchmark pricing (+2)</li></ul>
-                    </details>
-                </div>
-
-                <div class="card-actions">
-                    <a href="https://pinside.com/pinball/market/classifieds/ad/220565" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-pinside">View Listing ↗</a>
-                    <a href="https://pinside.com/pinball/machine/beetlejuice" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
                         Pinside Machine Details ↗
                     </a>
@@ -3115,63 +3066,6 @@
                 <div class="card-actions">
                     <a href="https://pinside.com/pinball/market/classifieds/ad/214270" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-pinside">View Listing ↗</a>
                     <a href="https://pinside.com/pinball/machine/rush" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
-                        Pinside Machine Details ↗
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="pinball-card">
-            <div class="card-image-wrap">
-                <img src="https://img.opdb.org/312fc488-4701-426e-8ce8-707f8a7abe14-medium.jpg" alt="The Godfather" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg';"/>
-                <div class="image-overlay">
-                    <div style="display:flex; gap:4px; align-items:center;">
-                        <span class="badge badge-pinside">PINSIDE</span>
-                        <span class="badge badge-img-type">OPDB Backglass</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-header-meta">
-                    <span class="mfg-year">Jersey Jack • 2023</span>
-                    <span class="distance-pill">~230 mi from Bixby</span>
-                </div>
-                <h3 class="card-title" title="The Godfather (CE)">The Godfather</h3>
-                <div class="raw-title-sub">Listing: "The Godfather (CE)"</div>
-                
-                <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
-                    <div>
-                        <div class="price-val">$9,800 <span class="price-type" style="color:#38bdf8;">(Market Estimate)</span></div>
-                        <div style="font-size:0.75rem;color:#38bdf8;margin-top:2px;">Historical sales median benchmark</div>
-                    </div>
-                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-                        <span class="badge" style="background:rgba(56, 189, 248, 0.15);color:#38bdf8;border:1px solid rgba(56, 189, 248, 0.3);">Est. Market Value</span>
-                        
-                    </div>
-                </div>
-
-                <div class="location-row">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Kansas City, MO</span>
-                </div>
-
-                <div class="date-row date-estimated">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Listed on Pinside (Estimated Relative)</span>
-                </div>
-
-                <div class="score-breakdown-details">
-                    <details>
-                        <summary>Rule Scoring Breakdown</summary>
-                        <ul><li>Pinside classifieds dedicated pinball market context (+3)</li><li>Estimated FMV benchmark pricing (+2)</li></ul>
-                    </details>
-                </div>
-
-                <div class="card-actions">
-                    <a href="https://pinside.com/pinball/market/classifieds/ad/221883" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-pinside">View Listing ↗</a>
-                    <a href="https://pinside.com/pinball/machine/the-godfather" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
                         Pinside Machine Details ↗
                     </a>
@@ -6260,7 +6154,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/825267161_1836664650847232_9175737814093194936_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=suSmY9BrY-oQ7kNvwHrt2Zi&amp;_nc_oc=AdqhjHyvJN-8WeDSm3GufVkQ1lVkuOIsbKMf5-tX4YbH0BRoa58mh1YLvVAZuRyZvXE&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQMarCBeb-ykbZhKJVzwik2_vcW5wrMKZwLat6zPZoAakA&amp;oe=6AC60FC0" alt="Alice Goes to Wonderland" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/78efaf9a-f6af-4bf7-8953-808124f02829-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/825267161_1836664650847232_9175737814093194936_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=suSmY9BrY-oQ7kNvwHrt2Zi&amp;_nc_oc=AdqhjHyvJN-8WeDSm3GufVkQ1lVkuOIsbKMf5-tX4YbH0BRoa58mh1YLvVAZuRyZvXE&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQNBlfxN-kYcrPCamdVAywp9XXHypVxBPbUbfM0scJ1xHQ&amp;oe=6AC60FC0" alt="Alice Goes to Wonderland" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/78efaf9a-f6af-4bf7-8953-808124f02829-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6317,7 +6211,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/813244255_1097566016072127_3964013786417638420_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=_frCw-tu0LgQ7kNvwGes5WB&amp;_nc_oc=AdrrXBFfsmeJCxVX-LBRndeq-1t8HcB3ny09e2ZhcXIuN7Ro0bmHbzMwiqGq-FQQ4UM&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQNc5TQzu1NbzOzNWZz5PNd5TMRBgdIBRLwfcQOwIo4zLQ&amp;oe=6AC62128" alt="Star Wars (Stern)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/0/e2/0e2f5b66d6c6e7a2b963b65ef3df23be53e3fa2f/resized/medium/0e2f5b66d6c6e7a2b963b65ef3df23be53e3fa2f.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/813244255_1097566016072127_3964013786417638420_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=_frCw-tu0LgQ7kNvwGes5WB&amp;_nc_oc=AdrrXBFfsmeJCxVX-LBRndeq-1t8HcB3ny09e2ZhcXIuN7Ro0bmHbzMwiqGq-FQQ4UM&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQMA_PA4zEeifBrNB7x1dTCZh2iN_jG_LpvnShtLwAtHzA&amp;oe=6AC62128" alt="Star Wars (Stern)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/0/e2/0e2f5b66d6c6e7a2b963b65ef3df23be53e3fa2f/resized/medium/0e2f5b66d6c6e7a2b963b65ef3df23be53e3fa2f.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6374,7 +6268,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/784352461_1033682869510408_8464826790612633660_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=yiZsfLLCVEEQ7kNvwHBKHpI&amp;_nc_oc=AdqT6rJ2gUBl-nxHIzBCXHRy2Y6iuFWIFG8HA5PZ4AAgSFdPo2vcIagVOnP2juycfxI&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQOlsutYv3wnhY09BKLy1PSqmXRdcd9-hGlKcHTtfRiWmQ&amp;oe=6AC61C32" alt="Revenge From Mars" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/9/54/95462cf80674f76263ebcf1c9e8fb1dc8c86d8a7/resized/medium/95462cf80674f76263ebcf1c9e8fb1dc8c86d8a7.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/784352461_1033682869510408_8464826790612633660_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=yiZsfLLCVEEQ7kNvwHBKHpI&amp;_nc_oc=AdqT6rJ2gUBl-nxHIzBCXHRy2Y6iuFWIFG8HA5PZ4AAgSFdPo2vcIagVOnP2juycfxI&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQNo2isHsnt7I0kmpUkCn_M43euRxxnoS2rM55HU7VKCzg&amp;oe=6AC61C32" alt="Revenge From Mars" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/9/54/95462cf80674f76263ebcf1c9e8fb1dc8c86d8a7/resized/medium/95462cf80674f76263ebcf1c9e8fb1dc8c86d8a7.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6488,7 +6382,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/799869151_1798208708038884_109850115217107303_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=zl3Nih3uu_kQ7kNvwHTI5OB&amp;_nc_oc=AdpuVsClUqWv9I75GUGPeoTaKIB5SQk_VJNafRNqoXzsQb0O0hvYgBuNHC-3R5kbaS0&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQO-AqQsSEy7DOtoCU8Qwu-__EYUIZXbz7H5y3-T2JyTrg&amp;oe=6AC60D3D" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/799869151_1798208708038884_109850115217107303_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=zl3Nih3uu_kQ7kNvwHTI5OB&amp;_nc_oc=AdpuVsClUqWv9I75GUGPeoTaKIB5SQk_VJNafRNqoXzsQb0O0hvYgBuNHC-3R5kbaS0&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQPw2QxQZsPS0aoLJZchx4bbvV8ACGmuMz6wFimbG0RJjA&amp;oe=6AC60D3D" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6545,7 +6439,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t45.5328-4/779049255_905354988848811_7544710543230547328_n.jpg?stp=c89.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=247b10&amp;_nc_ohc=L7kYBjCzRpAQ7kNvwHRx1ZO&amp;_nc_oc=AdpvIDVo9RoVb2lGkhvSQYAdoBu-fln_J-wZWFtP9Un9Eyd4ZY9eFlxJylz3E3zR3AY&amp;_nc_zt=23&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQMrQG-pGSmbnMgc3e0xacg_J70_ClSAII_oc17w9ezbHg&amp;oe=6AC62D76" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t45.5328-4/779049255_905354988848811_7544710543230547328_n.jpg?stp=c89.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=247b10&amp;_nc_ohc=L7kYBjCzRpAQ7kNvwHRx1ZO&amp;_nc_oc=AdpvIDVo9RoVb2lGkhvSQYAdoBu-fln_J-wZWFtP9Un9Eyd4ZY9eFlxJylz3E3zR3AY&amp;_nc_zt=23&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQPEamv6DW81lbEQ-I1T000C19ROAZhWCqvY_PamMN_FwA&amp;oe=6AC62D76" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6602,7 +6496,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/805998057_1775065493690133_8652986248004421272_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=tWOzp_CNqS4Q7kNvwFOoVYE&amp;_nc_oc=Adou9qDlwDbwDiZ69FwGgpGHf0V3MueWdQtX-2qluLV2VlOxcaZlDCALh6qINmas7U4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQMfzxRNrAzWkGqolQrujJp9ydIOWGTVacR8BfB6f5bj8A&amp;oe=6AC601F4" alt="Rush" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/c/52/c528fbb72605eb8035b1d40c57171e1b12b591b9/resized/medium/c528fbb72605eb8035b1d40c57171e1b12b591b9.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/805998057_1775065493690133_8652986248004421272_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=tWOzp_CNqS4Q7kNvwFOoVYE&amp;_nc_oc=Adou9qDlwDbwDiZ69FwGgpGHf0V3MueWdQtX-2qluLV2VlOxcaZlDCALh6qINmas7U4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQMmjtFv0x15uc2-J_Dp_h_Nq9B4mAN9d6pyB0qf9n2eYQ&amp;oe=6AC601F4" alt="Rush" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/c/52/c528fbb72605eb8035b1d40c57171e1b12b591b9/resized/medium/c528fbb72605eb8035b1d40c57171e1b12b591b9.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6659,64 +6553,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/690730700_805006685731597_8019534369959741707_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=liY9JZtaRRoQ7kNvwHDRF-Z&amp;_nc_oc=AdpQC11z2galcoH_dheVfwkkBIpnTXwDo8nXETTTN2udt6i4RudmLFZ4UE6jQfRiHA4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=NSGzcFXs6Hb6uLosJepbvQ&amp;_nc_ss=7b20f&amp;oh=00_AQN8ZsOWAF53v0yJwWxQSsFewVVgwSAcba5mZPp_9DVq5w&amp;oe=6AC5ECAA" alt="Theatre of Magic" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/bd193819-5e80-4e4b-88fe-48ed160efff1-medium.jpg';"/>
-                <div class="image-overlay">
-                    <div style="display:flex; gap:4px; align-items:center;">
-                        <span class="badge badge-facebook">FACEBOOK</span>
-                        <span class="badge badge-img-type">Posting Photo</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1995</span>
-                    <span class="distance-pill">~225 mi from Bixby</span>
-                </div>
-                <h3 class="card-title" title="THEATER OF MAGIC PINBALL MACHINE - STUNNING!!">Theatre of Magic</h3>
-                <div class="raw-title-sub">Listing: "THEATER OF MAGIC PINBALL MACHINE - STUNNING!!"</div>
-                
-                <div class="pricing-row" style="flex-wrap:wrap;gap:6px;">
-                    <div>
-                        <div class="price-val">$12,500 <span class="price-type" style="">(Asking Price)</span></div>
-                        <div style="font-size:0.75rem;color:#64748b;margin-top:2px;">Est. Market: ~$8,500</div>
-                    </div>
-                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-                        
-                        
-                    </div>
-                </div>
-
-                <div class="location-row">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Dallas, TX</span>
-                </div>
-
-                <div class="date-row date-estimated">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Marketplace in Dallas, TX (Estimated Relative)</span>
-                </div>
-
-                <div class="score-breakdown-details">
-                    <details>
-                        <summary>Rule Scoring Breakdown</summary>
-                        <ul><li>Exact pinball machine/table phrase match (+3)</li><li>Asking price &gt;= $800 (+3)</li><li>Priced Above Market: $12,500 vs ~$8,500 market benchmark (-2)</li></ul>
-                    </details>
-                </div>
-
-                <div class="card-actions">
-                    <a href="https://www.facebook.com/marketplace/item/958932837066687" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-source-facebook">View Listing ↗</a>
-                    <a href="https://pinside.com/pinball/machine/theatre-of-magic" target="_blank" rel="noopener noreferrer" class="btn-pinside-link">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
-                        Pinside Machine Details ↗
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="pinball-card">
-            <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/764947137_1385198793564641_6738888307258741838_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=ZSCEwzAxVuYQ7kNvwGRinH2&amp;_nc_oc=AdoL9EOjTx50p7OI4-JKJgsBQjDO5tzTFOJQONHOwWlJWmXfe1A-ugX_CFKJ_VAHZ_c&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=Cjpd568GnxiMRSWJnmDdIg&amp;_nc_ss=7b20f&amp;oh=00_AQMYEbeWaIE3H6OavWR03U8-9E7-pqFdvpqwxeL9qFBp1Q&amp;oe=6AC5FADE" alt="Family Guy" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/2/98/298516d2ca82283bf3721389c97b830d1a938c5b/resized/medium/298516d2ca82283bf3721389c97b830d1a938c5b.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/764947137_1385198793564641_6738888307258741838_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=ZSCEwzAxVuYQ7kNvwGRinH2&amp;_nc_oc=AdoL9EOjTx50p7OI4-JKJgsBQjDO5tzTFOJQONHOwWlJWmXfe1A-ugX_CFKJ_VAHZ_c&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=LELwBoV87-ZoyzJoUuJMKg&amp;_nc_ss=7b20f&amp;oh=00_AQNaFQgJPlS2CMh_CpAvRPZiO4VSTRm7BuADOqhubz9NAQ&amp;oe=6AC6331E" alt="Family Guy" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/2/98/298516d2ca82283bf3721389c97b830d1a938c5b/resized/medium/298516d2ca82283bf3721389c97b830d1a938c5b.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6830,7 +6667,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/765796778_2465096980632094_3247250574541582710_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=E15TgBF5ui0Q7kNvwFcVI0H&amp;_nc_oc=Ado9i0s1Nom6PH16dEyxhMDtUBI7qz6D64Yr4uR7neVhpj8eEaybngzlDlzV_MF4YnY&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=Cjpd568GnxiMRSWJnmDdIg&amp;_nc_ss=7b20f&amp;oh=00_AQOkAQC2OwhDcDM9JTGEFjKSWI4dTpTTTlSoldoxj5Mflg&amp;oe=6AC62627" alt="Elvis" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/2/98/298516d2ca82283bf3721389c97b830d1a938c5b/resized/medium/298516d2ca82283bf3721389c97b830d1a938c5b.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/765796778_2465096980632094_3247250574541582710_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=E15TgBF5ui0Q7kNvwFcVI0H&amp;_nc_oc=Ado9i0s1Nom6PH16dEyxhMDtUBI7qz6D64Yr4uR7neVhpj8eEaybngzlDlzV_MF4YnY&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=LELwBoV87-ZoyzJoUuJMKg&amp;_nc_ss=7b20f&amp;oh=00_AQO6nXfRi9ICkdekUU0rQmM1O-CzFw9ea_rgrFI-X7noyQ&amp;oe=6AC62627" alt="Elvis" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/2/98/298516d2ca82283bf3721389c97b830d1a938c5b/resized/medium/298516d2ca82283bf3721389c97b830d1a938c5b.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6887,7 +6724,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/799383596_1773333540378463_5696511020349041839_n.jpg?stp=c0.204.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=zGIXj1TAFe0Q7kNvwF3Pdam&amp;_nc_oc=AdpeeXkBCrYQbp4cxgfNnf8im1JSctupjxTfPLsAVmhQXftgbtkzulOP4qP8t0dQ8DI&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=4WT_u383cAtlPsWgwPTBaA&amp;_nc_ss=7b20f&amp;oh=00_AQOZt9BJO8Lq06j4JQxjzGseABFqxAS98Wkhen-D-kG1Dg&amp;oe=6AC611F7" alt="Rick and Morty" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/0ec0b5bd-c067-43ed-97ee-1db23eedf4c8-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/799383596_1773333540378463_5696511020349041839_n.jpg?stp=c0.204.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=zGIXj1TAFe0Q7kNvwF3Pdam&amp;_nc_oc=AdpeeXkBCrYQbp4cxgfNnf8im1JSctupjxTfPLsAVmhQXftgbtkzulOP4qP8t0dQ8DI&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=nHCR29UxonqvSoiEwCimYA&amp;_nc_ss=7b20f&amp;oh=00_AQN81GM3EcyA8sOSciQXRPuu1vbB6rix0DiCb8jokX1EOA&amp;oe=6AC611F7" alt="Rick and Morty" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/0ec0b5bd-c067-43ed-97ee-1db23eedf4c8-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6944,7 +6781,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/825340623_894630896919145_3882819832657787196_n.jpg?stp=c0.86.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=2QYMkWYEEGQQ7kNvwFcqMck&amp;_nc_oc=AdpP3Utd7FvSIu5Tb9W7C4apvq6hO6U6zGdg63sYM46sElKOYSLbe7Komx6Jte1HLzs&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQMBP68H9V6eAMtLoVeesEHPmPmzQ7FDJkyqQzz1bbJjew&amp;oe=6AC62BF2" alt="Back to the Future" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d1d5a6b1-c8bc-4c17-a835-1dba152af02e-medium.jpg';"/>
+                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/825340623_894630896919145_3882819832657787196_n.jpg?stp=c0.86.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=2QYMkWYEEGQQ7kNvwFcqMck&amp;_nc_oc=AdpP3Utd7FvSIu5Tb9W7C4apvq6hO6U6zGdg63sYM46sElKOYSLbe7Komx6Jte1HLzs&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=ndEpXekzk_crvOHQe-vvuw&amp;_nc_ss=7b20f&amp;oh=00_AQPmbK8C9sb5JtvehMmG5iRDDxI_m2l3PU0nfU648cnYyw&amp;oe=6AC62BF2" alt="Back to the Future" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d1d5a6b1-c8bc-4c17-a835-1dba152af02e-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -6955,7 +6792,7 @@
             <div class="card-body">
                 <div class="card-header-meta">
                     <span class="mfg-year">Data East • 1990</span>
-                    <span class="distance-pill">~145 mi from Bixby</span>
+                    <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Back to the future pinball machine">Back to the Future</h3>
                 <div class="raw-title-sub">Listing: "Back to the future pinball machine"</div>
@@ -6973,7 +6810,7 @@
 
                 <div class="location-row">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Wichita, KS</span>
+                    <span>Tulsa, OK</span>
                 </div>
 
                 <div class="date-row date-estimated">
@@ -7001,7 +6838,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/800842627_1612409080330725_378958154424442237_n.jpg?stp=c244.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=jxxQIzyFHeUQ7kNvwGwgjDI&amp;_nc_oc=AdqoyJlIrYP_3gHBWOrjMplpdjrEv4roWvTsazoWQ1GdztN26riabxBVDhI1i4l4lzM&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQOE5Fb-zwos9dKT7RZ1_PATzf3R0BVmd2SLEQVgP3x7zQ&amp;oe=6AC616D5" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/800842627_1612409080330725_378958154424442237_n.jpg?stp=c244.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=jxxQIzyFHeUQ7kNvwGwgjDI&amp;_nc_oc=AdqoyJlIrYP_3gHBWOrjMplpdjrEv4roWvTsazoWQ1GdztN26riabxBVDhI1i4l4lzM&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQP8_enkluHE-kW_UoZNRLgdbjr3NTgDUdsxnx_8LBKq5g&amp;oe=6AC616D5" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7058,7 +6895,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/725159984_2040914426309602_352087452768293507_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=5ScnaYborfAQ7kNvwH6m5Qn&amp;_nc_oc=Adrguoy1l2HpZj8DuWW3mI737mKgUKaKanquXxeFpeqB1ryxPHPkJF1lJORM0szaJL4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQPWh6qR2ONNspRMlt2o44MoF0LwcZ2dR4csOXn1CDEk_A&amp;oe=6AC6260A" alt="Jurassic Park (Data East)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/6/15/615a6b579a32c253d5a47ea37e8c07d3969ef678/resized/medium/615a6b579a32c253d5a47ea37e8c07d3969ef678.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/725159984_2040914426309602_352087452768293507_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=5ScnaYborfAQ7kNvwH6m5Qn&amp;_nc_oc=Adrguoy1l2HpZj8DuWW3mI737mKgUKaKanquXxeFpeqB1ryxPHPkJF1lJORM0szaJL4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQP6zTlPZ0OQfKDBlGB2IxQac4vozDo65Q_HkOzHOBdTpg&amp;oe=6AC6260A" alt="Jurassic Park (Data East)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/6/15/615a6b579a32c253d5a47ea37e8c07d3969ef678/resized/medium/615a6b579a32c253d5a47ea37e8c07d3969ef678.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7115,7 +6952,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/725592957_1490176322806886_9059208498514004067_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=eAKpezr3dXcQ7kNvwG86q7M&amp;_nc_oc=AdpPIzGofHbp2BylG0fhQeoQuDCPsCQLa6NUhIbofi5s1pFYZjBQPXmwgZ7F_kHHJ-4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQOeVnbmY9r42rhfRq4p1Gf0BednGO_Ne9nJ3Tghd8dCIg&amp;oe=6AC62D8B" alt="Batman Forever" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/934b4669-f98f-4b72-bff7-0fcd8e8099c4-medium.jpg';"/>
+                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/725592957_1490176322806886_9059208498514004067_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=eAKpezr3dXcQ7kNvwG86q7M&amp;_nc_oc=AdpPIzGofHbp2BylG0fhQeoQuDCPsCQLa6NUhIbofi5s1pFYZjBQPXmwgZ7F_kHHJ-4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQNvnpRVUW4HZL8CHcr0GWqexCgDzHaUDy26GKfqkuKgcQ&amp;oe=6AC62D8B" alt="Batman Forever" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/934b4669-f98f-4b72-bff7-0fcd8e8099c4-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7172,7 +7009,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/717803020_2242828886529511_3171669245493500403_n.jpg?stp=c0.0.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=YsgM-3ecQUoQ7kNvwENcqxL&amp;_nc_oc=AdoggQy86thKEVYRAhhy4NY2FGZBigi6kjq78ZX7sjs4oYecSGgsjrwlTk79T6R57yg&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQOY3WbjhQGbhF-9JzO67Mf0ZrobiPuQxV-ZQE9fhyX8LQ&amp;oe=6AC60B8E" alt="Teenage Mutant Ninja Turtles (Stern)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/4/3e/43edfb8ef1c16ce6aa475eb3cbe99c85304f5ad2/resized/medium/43edfb8ef1c16ce6aa475eb3cbe99c85304f5ad2.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/717803020_2242828886529511_3171669245493500403_n.jpg?stp=c0.0.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=YsgM-3ecQUoQ7kNvwENcqxL&amp;_nc_oc=AdoggQy86thKEVYRAhhy4NY2FGZBigi6kjq78ZX7sjs4oYecSGgsjrwlTk79T6R57yg&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQNvJaO2taHR8Vm2YvyETnO6Uc4CitM-Cvq2Id19nJbYfA&amp;oe=6AC60B8E" alt="Teenage Mutant Ninja Turtles (Stern)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/4/3e/43edfb8ef1c16ce6aa475eb3cbe99c85304f5ad2/resized/medium/43edfb8ef1c16ce6aa475eb3cbe99c85304f5ad2.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7229,7 +7066,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/668571146_25769664429373652_5774902441847601343_n.jpg?stp=c90.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=gsj-gaYB3GoQ7kNvwEfzsx7&amp;_nc_oc=AdpXyVFELxdEtURLuzOuyP18aGz0vJMTPKzIQtUVgD2QDXgtYadixt3B9ssjkSSEU6Y&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQOVCwcdVgrlyRWW40iFC-pwnojg1B764AKd8k5cPf-CKw&amp;oe=6AC62619" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/668571146_25769664429373652_5774902441847601343_n.jpg?stp=c90.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=gsj-gaYB3GoQ7kNvwEfzsx7&amp;_nc_oc=AdpXyVFELxdEtURLuzOuyP18aGz0vJMTPKzIQtUVgD2QDXgtYadixt3B9ssjkSSEU6Y&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQMoRBsnQn31y1PU61dbJsXNYTfCqOdSEXm1MY4sYb669w&amp;oe=6AC62619" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7286,7 +7123,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/825267411_1420111236921407_7194858713114919639_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=WMmQj4H7fIcQ7kNvwFZgbu1&amp;_nc_oc=Ado_gXmzeuS84wFpG9fX282oGymBIm-6VQt_SQRaCRKGlKlztyp0Uunf-OazzJqcHI0&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQM6MFmjr0v7B_qOFqBq6KgvWqh61Nk3v15DpUx61ETgfA&amp;oe=6AC60DA7" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/825267411_1420111236921407_7194858713114919639_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=WMmQj4H7fIcQ7kNvwFZgbu1&amp;_nc_oc=Ado_gXmzeuS84wFpG9fX282oGymBIm-6VQt_SQRaCRKGlKlztyp0Uunf-OazzJqcHI0&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQNaeL0rVQ8jngRwLV-BLMzQK_SQ_qOIYLrxqlnA-1BzbA&amp;oe=6AC60DA7" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7343,7 +7180,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/789925262_1837149670988482_214966310327622842_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=Pj1XR-NruiwQ7kNvwFjGvZi&amp;_nc_oc=AdrF5r78NtC_oW83cd6whnuvxBonsOdnW9bCHlgBw_MDcosnGJJHTHys-kn5YjWJvZY&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQOUHQAboA9QC0Q6kAUqbUswVvZiReJilIb6FfnLfj96Uw&amp;oe=6AC5F84C" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/789925262_1837149670988482_214966310327622842_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=Pj1XR-NruiwQ7kNvwFjGvZi&amp;_nc_oc=AdrF5r78NtC_oW83cd6whnuvxBonsOdnW9bCHlgBw_MDcosnGJJHTHys-kn5YjWJvZY&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQOQc58NsId9bd9cFdeyqkRZm1xb8Sswdt1oCEl4oPVmbQ&amp;oe=6AC6308C" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7400,7 +7237,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/828286065_1103763695571692_2302143382533212367_n.jpg?stp=c0.195.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=SIHHvqfChiIQ7kNvwEt1kSM&amp;_nc_oc=AdoSV1H7p9-Gee_46nMyUBvCE4wBMZ_GVMOnUhtF6ekPSHVOyWtHbqj-x8jV4vCt8hc&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQMLfBNQJB5-NEY-TjdMd5fgmiTrUG_k9WtLeKN_AXn8lw&amp;oe=6AC61BFA" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/828286065_1103763695571692_2302143382533212367_n.jpg?stp=c0.195.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=SIHHvqfChiIQ7kNvwEt1kSM&amp;_nc_oc=AdoSV1H7p9-Gee_46nMyUBvCE4wBMZ_GVMOnUhtF6ekPSHVOyWtHbqj-x8jV4vCt8hc&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQM3LeptCf6VdNgFck1ep4Iq0gCrZPwnfFBQLFpJM7DjiQ&amp;oe=6AC61BFA" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7457,7 +7294,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/773363051_1945140369475393_4211897916010122818_n.jpg?stp=c0.178.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=neHU88nbm1wQ7kNvwFUYat5&amp;_nc_oc=AdphhutluJbaq77M8FmNWm7F0AIKJVsOuqVmipoaVWqTstSwMzZlTobpObkbAZ-NUsA&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=BE0KqTH7Gj_efkCPPpfcPQ&amp;_nc_ss=7b20f&amp;oh=00_AQOrvucvOyWlzwVqdcf3-pNaCLNyriOhTA8arpxFeqE5tw&amp;oe=6AC62AAE" alt="Kiss (Bally)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/3/dc/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a/resized/medium/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/773363051_1945140369475393_4211897916010122818_n.jpg?stp=c0.178.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=neHU88nbm1wQ7kNvwFUYat5&amp;_nc_oc=AdphhutluJbaq77M8FmNWm7F0AIKJVsOuqVmipoaVWqTstSwMzZlTobpObkbAZ-NUsA&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=-ATKmNElnLJBKRjv86LayA&amp;_nc_ss=7b20f&amp;oh=00_AQNtf5XvsKNdSX5pIqiRF4xbxwQ6JADnZDAADCcVG2CloQ&amp;oe=6AC62AAE" alt="Kiss (Bally)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/3/dc/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a/resized/medium/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7514,7 +7351,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/763762019_2241223663277751_1825791810825711531_n.jpg?stp=c0.189.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=LHOwKuCEKhkQ7kNvwFB5pOT&amp;_nc_oc=Adoj0NbIdjSlV54gb3uRH-XxTZe89jyqxOSwPFw0B_hcSBaIU1N3wU-299_qHE8Gz3M&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQPK95hE-r6aQLMqT_lUpC7JKyE6sCol14sHMgZkMjI-LA&amp;oe=6AC5F938" alt="Gay 90&#x27;s" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/062f9c70-5057-490c-b043-f91197a8a98e-medium.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/763762019_2241223663277751_1825791810825711531_n.jpg?stp=c0.189.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=LHOwKuCEKhkQ7kNvwFB5pOT&amp;_nc_oc=Adoj0NbIdjSlV54gb3uRH-XxTZe89jyqxOSwPFw0B_hcSBaIU1N3wU-299_qHE8Gz3M&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQPMIOqFDq6ic0K0gXHJJdzRMnEg3D3fC7B-5RcFHnbLIA&amp;oe=6AC63178" alt="Gay 90&#x27;s" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/062f9c70-5057-490c-b043-f91197a8a98e-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7571,7 +7408,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/792917464_4531675493788345_7753269613647618609_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=OG1FgckuVbEQ7kNvwHyZsZd&amp;_nc_oc=AdrcPsiRWsEl6HDOqiFZotQGsJAXD7Cn6zhU27fJaiLh4o6tMuXZ76GAJ2K7WQIQwVY&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQPQ51yyPT_ePfPWVAtf3r3Up41jYns4XduBN9Q2BpXUAQ&amp;oe=6AC6159C" alt="Baseball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/3202a910-87aa-4eec-947c-7886305a0049-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/792917464_4531675493788345_7753269613647618609_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=OG1FgckuVbEQ7kNvwHyZsZd&amp;_nc_oc=AdrcPsiRWsEl6HDOqiFZotQGsJAXD7Cn6zhU27fJaiLh4o6tMuXZ76GAJ2K7WQIQwVY&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQOMsnEQ5Gg93fafetY_bheGMeXUCbkU-OxALfQuuWoQzA&amp;oe=6AC6159C" alt="Baseball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/3202a910-87aa-4eec-947c-7886305a0049-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7628,7 +7465,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/760511308_938205445985327_2875258191688634835_n.jpg?stp=c210.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=I7AevgSF9cMQ7kNvwH5jQpn&amp;_nc_oc=AdocKzFU1fatSV6dxGFaK2rRqvRzjxAvKs2xcscHX5L7LSocGzOZ_DFQystB2UEQF8Y&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQMHpaLiwXAZFJw4zTG7iO3tDxyREkkU7HI6v9NWjRHkJQ&amp;oe=6AC61A0F" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/760511308_938205445985327_2875258191688634835_n.jpg?stp=c210.0.540.540a_dst-jpg_p180x540_tt6&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=I7AevgSF9cMQ7kNvwH5jQpn&amp;_nc_oc=AdocKzFU1fatSV6dxGFaK2rRqvRzjxAvKs2xcscHX5L7LSocGzOZ_DFQystB2UEQF8Y&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQN0ETuuQOluHzgrlQFW69DFiT4c92SegRqGYZvUBBesew&amp;oe=6AC61A0F" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7685,7 +7522,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/768205679_1697978064618104_2326030336409874342_n.jpg?stp=c0.86.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=IlS4FGiN_BwQ7kNvwH0PXJJ&amp;_nc_oc=AdrVP9Vvk8Y87akUo04QXtpokAcKXFFsfb8Y-Nuaoo6Sp7HqC9V9jVBJDdYthtWrdCk&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQO-CQpW97Le_8K--nThNIyjqDhlCh6fKUIeeezlZ2w5bA&amp;oe=6AC60178" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/768205679_1697978064618104_2326030336409874342_n.jpg?stp=c0.86.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=IlS4FGiN_BwQ7kNvwH0PXJJ&amp;_nc_oc=AdrVP9Vvk8Y87akUo04QXtpokAcKXFFsfb8Y-Nuaoo6Sp7HqC9V9jVBJDdYthtWrdCk&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQPoyvJQKaZWsD57qP77MtCbxvhjP4dwiW6GRbTbitYE-g&amp;oe=6AC60178" alt="Pinball" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/6d94576a-03e7-4fb2-9013-08c3ac1fefef-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7742,7 +7579,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/829711071_1583040770533227_959240343458544983_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=8zpF1tmnSMAQ7kNvwFmXpfK&amp;_nc_oc=AdrYxRMIwe9yy9igV112CNOxlLf5LZ7kV9cDmoI4vaaxvXt6BPGObMGD9dSO3-t32ew&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQNYH_PgbsLpp16ELxxzbXgxUCcgc2TNwL04YxYjg0Ubog&amp;oe=6AC61FC3" alt="Cyclone" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/f/3f/f3fa4e1c7c9c0fb2ffbe315b7410058b85b6ea93/resized/medium/f3fa4e1c7c9c0fb2ffbe315b7410058b85b6ea93.jpg';"/>
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.84726-6/829711071_1583040770533227_959240343458544983_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=8zpF1tmnSMAQ7kNvwFmXpfK&amp;_nc_oc=AdrYxRMIwe9yy9igV112CNOxlLf5LZ7kV9cDmoI4vaaxvXt6BPGObMGD9dSO3-t32ew&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-1.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQP7VCP-Q5dD2tmCX-Sl7q-3u60MFYoAI2pBdw1eI9Z6fQ&amp;oe=6AC61FC3" alt="Cyclone" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/f/3f/f3fa4e1c7c9c0fb2ffbe315b7410058b85b6ea93/resized/medium/f3fa4e1c7c9c0fb2ffbe315b7410058b85b6ea93.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7799,7 +7636,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/814779690_2527182831095788_5318918749724605283_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=viCFzEmY3JsQ7kNvwHwSSuv&amp;_nc_oc=AdqWGL2yXorDq9pAXDAI58cqZS9ZCiu6kcAIumqyrhv33AHMBL5I4wrc1e2Jw4303P4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQO13ep1grPcAAhjdAEsn7J8HSBBpe38GVeoa47ebcC2Pg&amp;oe=6AC60118" alt="Tee&#x27;d Off" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/6/15/615a6b579a32c253d5a47ea37e8c07d3969ef678/resized/medium/615a6b579a32c253d5a47ea37e8c07d3969ef678.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/814779690_2527182831095788_5318918749724605283_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=viCFzEmY3JsQ7kNvwHwSSuv&amp;_nc_oc=AdqWGL2yXorDq9pAXDAI58cqZS9ZCiu6kcAIumqyrhv33AHMBL5I4wrc1e2Jw4303P4&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQMx603f3kbCoBLDwjv_cfjejGwwY1IK8DvJz-YJRFm8bQ&amp;oe=6AC60118" alt="Tee&#x27;d Off" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/6/15/615a6b579a32c253d5a47ea37e8c07d3969ef678/resized/medium/615a6b579a32c253d5a47ea37e8c07d3969ef678.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7856,7 +7693,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/762081085_3674736082681031_1146181372153324874_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=I1Krr0f-KRQQ7kNvwHb5ZPh&amp;_nc_oc=AdphFKY8OzUV0fGZTraC3lfajTxCECcHwct4gfpGlEtBS2P3vQ_ithxhV3JQh8Dbemk&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQPDLthqMv3tg9ZAX8o_JqPPpIfQn3MTHs7p44MXv3od5A&amp;oe=6AC5F727" alt="Playboy (Bally)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d3cb5490-5c82-4c08-8a78-e270817fb3a1-medium.jpg';"/>
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.84726-6/762081085_3674736082681031_1146181372153324874_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=I1Krr0f-KRQQ7kNvwHb5ZPh&amp;_nc_oc=AdphFKY8OzUV0fGZTraC3lfajTxCECcHwct4gfpGlEtBS2P3vQ_ithxhV3JQh8Dbemk&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQOgO3BCdZGcFCkavfk3BToHs8CdpJ4r2VUwrNGEMbnwMA&amp;oe=6AC62F67" alt="Playboy (Bally)" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://img.opdb.org/d3cb5490-5c82-4c08-8a78-e270817fb3a1-medium.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7913,7 +7750,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/798728940_1404128291685773_8222031962099491912_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=88NcYBpWcOsQ7kNvwGstmoX&amp;_nc_oc=Adol8JCnDDaM6mUBCDtSlhxRqXcWa5URYjW-v60WscdORe0-gOxrJI40E5qxbYkJJxM&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQPk63bwG-8mI_KCT_1N0ylsvq-fcAfvqvn4gNqeLGnAlQ&amp;oe=6AC5FE77" alt="Flash" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/3/dc/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a/resized/medium/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/798728940_1404128291685773_8222031962099491912_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=88NcYBpWcOsQ7kNvwGstmoX&amp;_nc_oc=Adol8JCnDDaM6mUBCDtSlhxRqXcWa5URYjW-v60WscdORe0-gOxrJI40E5qxbYkJJxM&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQPDIUqABM_P-KBU0G6FCxSoS-VOhJOEfMhxqGTtQnHaiQ&amp;oe=6AC636B7" alt="Flash" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/3/dc/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a/resized/medium/3dcbe9aeecf0d5718dfd058a5c37890f670f5e1a.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -7970,7 +7807,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/825266813_1073798622167122_5030963044083731439_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=rQytzpddJ1kQ7kNvwG2lu1O&amp;_nc_oc=Adpky5bOZAxrHVZLKwR_JQ3I96C_E04Z6O_f2tHlPhbJkZ8jMGrPeXYqjaaZqGgBn3w&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQMKLCIgEKAvex5AB6euKQB1yRVGhiAqwg0UormDDnlqTw&amp;oe=6AC61C81" alt="Freddy: A Nightmare on Elm Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/3/93/393bc67ef5d469493f2f81907cbffbc10a52df2f/resized/medium/393bc67ef5d469493f2f81907cbffbc10a52df2f.jpg';"/>
+                <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.84726-6/825266813_1073798622167122_5030963044083731439_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=rQytzpddJ1kQ7kNvwG2lu1O&amp;_nc_oc=Adpky5bOZAxrHVZLKwR_JQ3I96C_E04Z6O_f2tHlPhbJkZ8jMGrPeXYqjaaZqGgBn3w&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw6-2.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQOv8cTvWCxh6WdLWfZm9FxydN8799IJSULGmfP_zoeL0Q&amp;oe=6AC61C81" alt="Freddy: A Nightmare on Elm Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/3/93/393bc67ef5d469493f2f81907cbffbc10a52df2f/resized/medium/393bc67ef5d469493f2f81907cbffbc10a52df2f.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>
@@ -8027,7 +7864,7 @@
 
         <div class="pinball-card">
             <div class="card-image-wrap">
-                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/745357085_1373273161370769_8776462792642654784_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=AU3qU-yoF4MQ7kNvwGxfyo2&amp;_nc_oc=AdpaHNLjXB1chtpOvF002NQ99w2KO1OsYHMtqfnL0xiyAugj3leasdHJJrpbO9COVYg&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=I-SPrrF3zZCNDbcDa3V8kA&amp;_nc_ss=7b20f&amp;oh=00_AQNa3negEf0NWHv3rn-3N-a3cPNYReUtsLoGaBggPhab0w&amp;oe=6AC61C9C" alt="The Games" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/8/78/878df0ce0e6f6631ad1845112fa7f975440d99ef/resized/medium/878df0ce0e6f6631ad1845112fa7f975440d99ef.jpg';"/>
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.84726-6/745357085_1373273161370769_8776462792642654784_n.jpg?stp=c0.87.526.526a_dst-jpg_p526x395_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=92e707&amp;_nc_ohc=AU3qU-yoF4MQ7kNvwGxfyo2&amp;_nc_oc=AdpaHNLjXB1chtpOvF002NQ99w2KO1OsYHMtqfnL0xiyAugj3leasdHJJrpbO9COVYg&amp;_nc_zt=14&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=yTRUm9AqNPcrXfgKiVczHA&amp;_nc_ss=7b20f&amp;oh=00_AQP54gF7WnnTYCpSHBcHtBm3iVym73DPIb5DKCeY-KnMtA&amp;oe=6AC61C9C" alt="The Games" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.pinside.com/8/78/878df0ce0e6f6631ad1845112fa7f975440d99ef/resized/medium/878df0ce0e6f6631ad1845112fa7f975440d99ef.jpg';"/>
                 <div class="image-overlay">
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span class="badge badge-facebook">FACEBOOK</span>

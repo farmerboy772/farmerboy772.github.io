@@ -6,8 +6,37 @@
 let allListings = [];
 let dashboardState = null;
 
+// Eye Comfort Theme Controller
+function initTheme() {
+    const savedTheme = localStorage.getItem("pinball_eye_comfort_theme") || "dark";
+    applyTheme(savedTheme);
+}
+
+function applyTheme(theme) {
+    const icon = document.getElementById("theme-icon");
+    const label = document.getElementById("theme-label");
+    if (theme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+        if (icon) icon.textContent = "🌙";
+        if (label) label.textContent = "Eye Comfort: Dark";
+    } else {
+        document.documentElement.removeAttribute("data-theme");
+        if (icon) icon.textContent = "☀️";
+        if (label) label.textContent = "Eye Comfort: Light";
+    }
+    localStorage.setItem("pinball_eye_comfort_theme", theme);
+}
+
+function toggleEyeComfortTheme() {
+    const isLight = document.documentElement.getAttribute("data-theme") === "light";
+    applyTheme(isLight ? "dark" : "light");
+}
+window.toggleEyeComfortTheme = toggleEyeComfortTheme;
+
 // Initialize on load
 function initDashboard() {
+    initTheme();
+
     // 1. Initial render from static data if available
     if (window.STATIC_DASHBOARD_STATE) {
         applyDashboardState(window.STATIC_DASHBOARD_STATE);
@@ -275,8 +304,8 @@ function renderCatalogGrid() {
             dealBadge = `<span class="badge" style="background:rgba(56, 189, 248, 0.15); color:#38bdf8; border:1px solid rgba(56, 189, 248, 0.3);">Est. Market Value</span>`;
         }
         const fmvSub = pType === "Market Estimate"
-            ? `<div style="font-size:0.75rem; color:#38bdf8; margin-top:2px;">Historical sales median benchmark</div>`
-            : (item.fmv ? `<div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">Est. Market: ~$${Number(item.fmv).toLocaleString()}</div>` : '');
+            ? `<div style="font-size:0.84rem; color:var(--accent-cyan); margin-top:3px; font-weight:500;">Historical sales median benchmark</div>`
+            : (item.fmv ? `<div style="font-size:0.84rem; color:var(--text-secondary); margin-top:3px; font-weight:500;">Est. Market: ~$${Number(item.fmv).toLocaleString()}</div>` : '');
 
         const dateBasisClass = item.posted_date_basis === "Verified" ? "date-verified" : (item.posted_date_basis === "Estimated Relative" ? "date-estimated" : "date-unknown");
         const dateStr = item.posted_date_wording || (item.posted_date_iso ? item.posted_date_iso.substring(0, 10) : "Date Unknown");
@@ -405,35 +434,35 @@ function renderAuditTable() {
             <td class="font-mono">${escapeHtml(item.listing_id)}</td>
             <td>
                 <strong>${escapeHtml(canon)}</strong>
-                <div style="font-size:0.75rem; color:var(--text-muted);">${escapeHtml(item.raw_title)}</div>
+                <div style="font-size:0.82rem; color:var(--text-muted); margin-top:2px;">${escapeHtml(item.raw_title)}</div>
             </td>
             <td>${escapeHtml(item.manufacturer || '-')}</td>
             <td>${escapeHtml(item.year || '-')}</td>
             <td><span class="pill pill-${item.technology}">${escapeHtml(item.technology)}</span></td>
             <td>
                 <strong>${priceDisp}</strong>
-                <div style="font-size:0.75rem; color:${pType === 'Market Estimate' ? '#38bdf8' : 'var(--text-muted)'};">${escapeHtml(pType)}</div>
-                ${item.fmv && pType !== 'Market Estimate' ? `<div style="font-size:0.72rem; color:var(--accent-cyan); margin-top:2px;">FMV: ~$${Number(item.fmv).toLocaleString()}</div>` : ''}
+                <div style="font-size:0.82rem; color:${pType === 'Market Estimate' ? 'var(--accent-cyan)' : 'var(--text-secondary)'}; font-weight:500;">${escapeHtml(pType)}</div>
+                ${item.fmv && pType !== 'Market Estimate' ? `<div style="font-size:0.80rem; color:var(--accent-cyan); margin-top:2px; font-weight:600;">FMV: ~$${Number(item.fmv).toLocaleString()}</div>` : ''}
                 ${priceBadge}
             </td>
             <td>
                 ${item.deal_tier && item.deal_tier !== "Normal" ? `
-                    <span class="badge" style="${item.deal_tier === 'Steal' ? 'background:#e11d48; color:#fff;' : (item.deal_tier === 'Great Deal' ? 'background:#0284c7; color:#fff;' : (item.deal_tier === 'Good Value' ? 'background:#059669; color:#fff;' : 'background:var(--border-color); color:var(--text-secondary);'))} font-size:0.72rem;">
+                    <span class="badge" style="${item.deal_tier === 'Steal' ? 'background:#e11d48; color:#fff;' : (item.deal_tier === 'Great Deal' ? 'background:#0284c7; color:#fff;' : (item.deal_tier === 'Good Value' ? 'background:#059669; color:#fff;' : 'background:var(--bg-surface-elevated); border:1px solid var(--border-color); color:var(--text-secondary);'))} font-size:0.80rem;">
                         ${escapeHtml(item.deal_tier)}
                     </span>
-                    ${item.discount_percent ? `<div style="font-size:0.75rem; font-weight:600; color:${item.discount_percent > 0 ? 'var(--accent-green)' : 'var(--accent-red)'}; margin-top:2px;">${item.discount_percent > 0 ? '+' : ''}${item.discount_percent}%</div>` : ''}
-                ` : `<span style="color:var(--text-muted); font-size:0.75rem;">-</span>`}
+                    ${item.discount_percent ? `<div style="font-size:0.82rem; font-weight:700; color:${item.discount_percent > 0 ? 'var(--accent-green)' : 'var(--accent-red)'}; margin-top:2px;">${item.discount_percent > 0 ? '+' : ''}${item.discount_percent}%</div>` : ''}
+                ` : `<span style="color:var(--text-muted); font-size:0.82rem;">-</span>`}
             </td>
             <td>
                 ${escapeHtml(item.city)}, ${escapeHtml(item.state)}
-                <div style="font-size:0.75rem; color:var(--accent-cyan);">${escapeHtml(dist)}</div>
+                <div style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">${escapeHtml(dist)}</div>
             </td>
             <td><strong>${item.score}</strong></td>
             <td>${statusBadge}</td>
             <td>${item.consecutive_misses}</td>
             <td>
                 ${escapeHtml(item.posted_date_wording || '-')}
-                <div style="font-size:0.75rem; color:var(--text-muted);">${escapeHtml(item.posted_date_basis)}</div>
+                <div style="font-size:0.82rem; color:var(--text-muted);">${escapeHtml(item.posted_date_basis)}</div>
             </td>
             <td style="white-space:nowrap;">
                 <a href="${escapeHtml(item.direct_url || '#')}" target="_blank" class="link-source-${item.source}">Open ↗</a>
