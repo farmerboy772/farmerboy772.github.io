@@ -11,10 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="ambient-glow animate-pulse-slow" aria-hidden="true"></div>
     <div class="app-layout">
         <!-- Top Navigation Bar -->
-        <header class="top-nav glass-panel">
+        <header class="top-nav">
             <div class="brand">
                 <div class="brand-logo">
                     <span class="flipper-left">/</span>
@@ -29,7 +28,7 @@
             <div class="top-actions">
                 <div class="status-indicator">
                     <span class="pulse-dot"></span>
-                    <span id="system-time">Last Scraped: 2026-10-04 11:55 CDT</span>
+                    <span id="system-time">Last Scraped: 2026-10-04 12:31 CDT</span>
                 </div>
             </div>
         </header>
@@ -41,37 +40,37 @@
             </div>
             
             <div class="kpi-grid">
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-observed">
+                <div class="kpi-card" id="kpi-observed">
                     <div class="kpi-label">TOTAL OBSERVED</div>
                     <div class="kpi-val" id="metric-total-observed">--</div>
                     <div class="kpi-sub">Across FB, HiBid & Pinside</div>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-active-ss">
+                <div class="kpi-card accent-neon" id="kpi-active-ss">
                     <div class="kpi-label">ACTIVE REGIONAL SOLID-STATE</div>
                     <div class="kpi-val" id="metric-active-ss">--</div>
                     <div class="kpi-sub">Confirmed OK, KS, AR, MO, TX</div>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-new">
+                <div class="kpi-card" id="kpi-new">
                     <div class="kpi-label">NEWLY DISCOVERED</div>
                     <div class="kpi-val" id="metric-newly-discovered">--</div>
                     <div class="kpi-sub">Initial observation run</div>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-gold" id="kpi-price-changes">
+                <div class="kpi-card accent-gold" id="kpi-price-changes">
                     <div class="kpi-label">PRICE ALTERATIONS</div>
                     <div class="kpi-val" id="metric-price-altered">--</div>
                     <div class="kpi-sub">With logged price history</div>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-removed">
+                <div class="kpi-card" id="kpi-removed">
                     <div class="kpi-label">REMOVED / DELISTED</div>
                     <div class="kpi-val" id="metric-removed">--</div>
                     <div class="kpi-sub">Consecutive misses ≥ 3</div>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-warning" id="kpi-unconfirmed">
+                <div class="kpi-card accent-warning" id="kpi-unconfirmed">
                     <div class="kpi-label">UNCONFIRMED LOCATION</div>
                     <div class="kpi-val" id="metric-unconfirmed">--</div>
                     <div class="kpi-sub">Shipping-only / Unknown State</div>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-deals">
+                <div class="kpi-card" id="kpi-deals" style="border-color: rgba(255, 0, 127, 0.4); background: rgba(255, 0, 127, 0.06);">
                     <div class="kpi-label" style="color: var(--accent-neon);">🔥 DEAL RADAR (≥20% OFF)</div>
                     <div class="kpi-val" id="metric-deal-count" style="color: var(--accent-neon);">--</div>
                     <div class="kpi-sub">Steals & Great Deals Active</div>
@@ -81,7 +80,7 @@
             <!-- Coverage & Breakdown Matrix -->
             <div class="matrix-grid">
                 <!-- Source Coverage -->
-                <div class="matrix-card glass-panel">
+                <div class="matrix-card">
                     <div class="card-title-sm">PROVIDER COVERAGE BREAKDOWN</div>
                     <div class="source-list" id="source-coverage-list">
                         <div class="source-row">
@@ -91,7 +90,7 @@
                         </div>
                         <div class="source-row">
                             <span class="source-tag tag-hibid">HiBid</span>
-                            <span class="source-desc">250mi Radius (ZIP 74008) • Regional Portals (OK, TX, KS, MO, AR)</span>
+                            <span class="source-desc">Nationwide & 250mi (ZIP 74008) • 2 Passes</span>
                             <span class="badge badge-success" id="hibid-coverage-count">5 active</span>
                         </div>
                         <div class="source-row">
@@ -103,7 +102,7 @@
                 </div>
 
                 <!-- OPDB Enrichment & Date Status -->
-                <div class="matrix-card glass-panel">
+                <div class="matrix-card">
                     <div class="card-title-sm">OPDB ENRICHMENT & DATE RESOLUTION</div>
                     <div class="enrich-stats">
                         <div class="stat-group">
@@ -118,7 +117,7 @@
                             <div class="stat-header">Date Resolution Status</div>
                             <div class="pill-group">
                                 <span class="pill pill-verified">Verified: <strong id="stat-date-verified">--</strong></span>
-                                <span class="pill pill-estimated">Estimated: <strong id="stat-date-estimated">--</strong></span>
+                                <span class="pill pill-estimated">Estimated Relative: <strong id="stat-date-estimated">--</strong></span>
                                 <span class="pill pill-unknown">Unknown: <strong id="stat-date-unknown">--</strong></span>
                             </div>
                         </div>
@@ -128,21 +127,21 @@
         </section>
 
         <!-- Navigation Tabs -->
-        <nav class="nav-tabs glass-panel-subtle no-scrollbar" role="tablist" aria-label="Dashboard view sections">
-            <button class="tab-btn active" id="tab-btn-catalog" role="tab" aria-selected="true" aria-controls="tab-catalog" tabindex="0" onclick="switchTab('catalog')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('catalog')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                 Regional Solid-State Catalog (Grid)
             </button>
-            <button class="tab-btn" id="tab-btn-audit" role="tab" aria-selected="false" aria-controls="tab-audit" tabindex="-1" onclick="switchTab('audit')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            <button class="tab-btn" onclick="switchTab('audit')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
                 Desktop Audit Table (List)
             </button>
-            <button class="tab-btn" id="tab-btn-unconfirmed" role="tab" aria-selected="false" aria-controls="tab-unconfirmed" tabindex="-1" onclick="switchTab('unconfirmed')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <button class="tab-btn" onclick="switchTab('unconfirmed')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 Unconfirmed Locations (<span id="unconfirmed-tab-count">0</span>)
             </button>
-            <button class="tab-btn" id="tab-btn-exports" role="tab" aria-selected="false" aria-controls="tab-exports" tabindex="-1" onclick="switchTab('exports')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <button class="tab-btn" onclick="switchTab('exports')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Downloads & View Links
             </button>
         </nav>
@@ -150,11 +149,11 @@
         <!-- Main Content Area -->
         <main class="main-content">
             <!-- TAB 1: Grid View -->
-            <div id="tab-catalog" class="tab-pane active" role="tabpanel" aria-labelledby="tab-btn-catalog">
+            <div id="tab-catalog" class="tab-pane active">
                 <div class="pane-toolbar">
-                    <div class="filter-group no-scrollbar">
-                        <input type="text" id="grid-search" aria-label="Search catalog machines by title, manufacturer, or city" placeholder="Search machine, manufacturer, or city..." oninput="filterGrid()">
-                        <select id="grid-deal-filter" aria-label="Filter catalog by deal rating" onchange="filterGrid()">
+                    <div class="filter-group">
+                        <input type="text" id="grid-search" placeholder="Search machine, manufacturer, or city..." oninput="filterGrid()">
+                        <select id="grid-deal-filter" onchange="filterGrid()">
                             <option value="all">All Deals & Valuation</option>
                             <option value="deals_only">🔥 Deals Radar Only (≥15% off)</option>
                             <option value="steals">🚨 Steals Only (≥35% off)</option>
@@ -162,13 +161,13 @@
                             <option value="good">✓ Good Value (10%–20% off)</option>
                             <option value="auction">🔨 Live Auction Bids</option>
                         </select>
-                        <select id="grid-source-filter" aria-label="Filter catalog by source platform" onchange="filterGrid()">
+                        <select id="grid-source-filter" onchange="filterGrid()">
                             <option value="all">All Sources</option>
                             <option value="facebook">Facebook Marketplace</option>
                             <option value="hibid">HiBid</option>
                             <option value="pinside">Pinside</option>
                         </select>
-                        <select id="grid-state-filter" aria-label="Filter catalog by regional state" onchange="filterGrid()">
+                        <select id="grid-state-filter" onchange="filterGrid()">
                             <option value="all">All Regional States (OK, KS, AR, MO, TX)</option>
                             <option value="OK">Oklahoma (OK)</option>
                             <option value="TX">Texas (TX)</option>
@@ -176,7 +175,7 @@
                             <option value="MO">Missouri (MO)</option>
                             <option value="AR">Arkansas (AR)</option>
                         </select>
-                        <select id="grid-sort-by" aria-label="Sort catalog machines" onchange="filterGrid()">
+                        <select id="grid-sort-by" onchange="filterGrid()">
                             <option value="date-desc">Posted Date (Newest First)</option>
                             <option value="discount-desc">🔥 Deal Discount (Highest Savings %)</option>
                             <option value="distance-asc">📍 Distance (Closest to Bixby)</option>
@@ -194,10 +193,10 @@
             </div>
 
             <!-- TAB 2: Dense Audit Table -->
-            <div id="tab-audit" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-audit">
+            <div id="tab-audit" class="tab-pane">
                 <div class="pane-toolbar">
-                    <input type="text" id="audit-search" aria-label="Filter audit table listings" placeholder="Filter audit table..." oninput="filterAudit()">
-                    <select id="audit-deal-filter" aria-label="Filter audit table by valuation tier" onchange="filterAudit()">
+                    <input type="text" id="audit-search" placeholder="Filter audit table..." oninput="filterAudit()">
+                    <select id="audit-deal-filter" onchange="filterAudit()">
                         <option value="all">All Valuation Tiers</option>
                         <option value="deals">🔥 Deals Only (≥15% off)</option>
                         <option value="steals">🚨 Steals (≥35% off)</option>
@@ -207,18 +206,18 @@
                         <option value="above">Above Market</option>
                         <option value="auction">🔨 Auction Bids</option>
                     </select>
-                    <select id="audit-status-filter" aria-label="Filter audit table by listing status" onchange="filterAudit()">
+                    <select id="audit-status-filter" onchange="filterAudit()">
                         <option value="all">All Statuses (Active & Removed)</option>
                         <option value="active" selected>Active Only</option>
                         <option value="removed">Removed Only (Misses ≥ 3)</option>
                     </select>
-                    <select id="audit-scoring-filter" aria-label="Filter audit table by scoring result" onchange="filterAudit()">
+                    <select id="audit-scoring-filter" onchange="filterAudit()">
                         <option value="all">All Scoring Results</option>
                         <option value="passed" selected>Passed Scoring Only</option>
                         <option value="rejected">Rejected by Filters Only</option>
                     </select>
                 </div>
-                <div class="table-wrap glass-panel no-scrollbar">
+                <div class="table-wrap">
                     <table class="data-table" id="audit-table">
                         <thead>
                             <tr>
@@ -246,12 +245,12 @@
             </div>
 
             <!-- TAB 3: Unconfirmed Location Review Queue -->
-            <div id="tab-unconfirmed" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-unconfirmed">
+            <div id="tab-unconfirmed" class="tab-pane">
                 <div class="pane-header">
                     <h3>Unconfirmed Location & Shipping-Only Review Queue</h3>
                     <p>These listings were excluded from the primary Regional Solid-State report because they lack confirmed location data (states outside OK/KS/AR/MO/TX, shipping-only, or unknown distance). You can review or verify them here.</p>
                 </div>
-                <div class="table-wrap glass-panel no-scrollbar">
+                <div class="table-wrap">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -272,21 +271,21 @@
             </div>
 
             <!-- TAB 4: Downloads & View Links -->
-            <div id="tab-exports" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-exports">
+            <div id="tab-exports" class="tab-pane">
                 <div class="exports-grid">
-                    <div class="export-card glass-panel glass-panel-interactive">
+                    <div class="export-card">
                         <div class="export-icon">📄</div>
                         <div class="export-title">Clean Tabular CSV</div>
                         <div class="export-desc">Full metadata export for spreadsheet analysis, matching all final report fields.</div>
                         <a href="pinball_listings.csv" download class="btn btn-secondary">Download CSV</a>
                     </div>
-                    <div class="export-card glass-panel glass-panel-interactive">
+                    <div class="export-card">
                         <div class="export-icon">🖼️</div>
                         <div class="export-title">HTML Grid View</div>
                         <div class="export-desc">Visual card catalog featuring artwork, score breakdowns, price pills, and links.</div>
                         <a href="catalog_grid.html" target="_blank" class="btn btn-secondary">Open Grid View ↗</a>
                     </div>
-                    <div class="export-card glass-panel glass-panel-interactive">
+                    <div class="export-card">
                         <div class="export-icon">📋</div>
                         <div class="export-title">HTML Dense List View</div>
                         <div class="export-desc">Audit table layout optimized for desktop review and rapid comparison.</div>
@@ -297,7 +296,7 @@
         </main>
     </div>
 
-    <script src="static_data.js?v=202610041656"></script>
-    <script src="dashboard.js?v=202610041656"></script>
+    <script src="static_data.js?v=202610041731"></script>
+    <script src="dashboard.js?v=202610041731"></script>
 </body>
 </html>
