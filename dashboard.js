@@ -329,7 +329,16 @@ function formatListingDate(item) {
     const basis = item.posted_date_basis || "Unknown";
 
     let calDate = "";
-    if (iso) {
+    // If wording contains an explicit YYYY-MM-DD (e.g. Pinside 'Added: 2026-10-04...'), preserve its calendar date
+    const ymdMatch = wording.match(/(\d{4})-(\d{2})-(\d{2})/);
+    if (ymdMatch) {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const mIdx = parseInt(ymdMatch[2], 10) - 1;
+        const dNum = parseInt(ymdMatch[3], 10);
+        if (mIdx >= 0 && mIdx < 12) {
+            calDate = `${months[mIdx]} ${dNum}, ${ymdMatch[1]}`;
+        }
+    } else if (iso) {
         try {
             const d = new Date(iso);
             if (!isNaN(d.getTime())) {
@@ -367,6 +376,14 @@ function formatListingDate(item) {
             return { displayDate: `Posted: ${calDate}`, dateClass };
         }
         return { displayDate: "Date Unknown", dateClass: "date-unknown" };
+    }
+
+    // Pinside verified added dates
+    if (wording.toLowerCase().startsWith("added:") || (item.source === "pinside" && basis === "Verified")) {
+        if (calDate) {
+            return { displayDate: `Added: ${calDate}`, dateClass: "date-verified" };
+        }
+        return { displayDate: wording, dateClass: "date-verified" };
     }
 
     if (calDate) {
