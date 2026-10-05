@@ -22,7 +22,7 @@
                     <span class="flipper-right">\</span>
                 </div>
                 <div>
-                    <h1 class="brand-title">PINBALL AGGREGATOR</h1>
+                    <h1 class="brand-title">Pinball Aggregator</h1>
                     <div class="brand-subtitle">Operations Hub • Collector Station: Bixby, OK (ZIP 74008)</div>
                 </div>
             </div>
@@ -38,43 +38,51 @@
         <section class="summary-section">
             <div class="section-header">
                 <h2>EXECUTIVE SUMMARY & REFRESH METRICS</h2>
+                <div style="font-size:0.80rem; color:var(--text-muted);">Click any card or provider to filter listings view</div>
             </div>
             
             <div class="kpi-grid">
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-observed">
+                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-observed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('observed', 'Total Observed')" onkeydown="handleKpiKey(event, 'observed', 'Total Observed')" title="Click to filter by Total Observed listings">
                     <div class="kpi-label">TOTAL OBSERVED</div>
                     <div class="kpi-val" id="metric-total-observed">--</div>
                     <div class="kpi-sub">Across FB, HiBid & Pinside</div>
+                    <span class="kpi-filter-tag">Filter Metric ↗</span>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-active-ss">
+                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-active-ss" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('active_ss', 'Active Regional Solid-State')" onkeydown="handleKpiKey(event, 'active_ss', 'Active Regional Solid-State')" title="Click to filter by Active Regional Solid-State">
                     <div class="kpi-label">ACTIVE REGIONAL SOLID-STATE</div>
                     <div class="kpi-val" id="metric-active-ss">--</div>
                     <div class="kpi-sub">Confirmed OK, KS, AR, MO, TX</div>
+                    <span class="kpi-filter-tag">Filter Metric ↗</span>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-new">
+                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-new" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('new', 'Newly Discovered')" onkeydown="handleKpiKey(event, 'new', 'Newly Discovered')" title="Click to filter strictly newly discovered listings from latest scrape">
                     <div class="kpi-label">NEWLY DISCOVERED</div>
                     <div class="kpi-val" id="metric-newly-discovered">--</div>
                     <div class="kpi-sub">Initial observation run</div>
+                    <span class="kpi-filter-tag">Filter Metric ↗</span>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-gold" id="kpi-price-changes">
+                <div class="kpi-card glass-panel glass-panel-interactive accent-gold" id="kpi-price-changes" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('price_changes', 'Price Alterations')" onkeydown="handleKpiKey(event, 'price_changes', 'Price Alterations')" title="Click to filter listings with logged price history">
                     <div class="kpi-label">PRICE ALTERATIONS</div>
                     <div class="kpi-val" id="metric-price-altered">--</div>
                     <div class="kpi-sub">With logged price history</div>
+                    <span class="kpi-filter-tag">Filter Metric ↗</span>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-removed">
+                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-removed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('removed', 'Removed / Delisted')" onkeydown="handleKpiKey(event, 'removed', 'Removed / Delisted')" title="Click to view removed and delisted listings">
                     <div class="kpi-label">REMOVED / DELISTED</div>
                     <div class="kpi-val" id="metric-removed">--</div>
                     <div class="kpi-sub">Consecutive misses ≥ 3</div>
+                    <span class="kpi-filter-tag">Filter Metric ↗</span>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-warning" id="kpi-unconfirmed">
+                <div class="kpi-card glass-panel glass-panel-interactive accent-warning" id="kpi-unconfirmed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('unconfirmed', 'Unconfirmed Location')" onkeydown="handleKpiKey(event, 'unconfirmed', 'Unconfirmed Location')" title="Click to view listings with unconfirmed location">
                     <div class="kpi-label">UNCONFIRMED LOCATION</div>
                     <div class="kpi-val" id="metric-unconfirmed">--</div>
                     <div class="kpi-sub">Shipping-only / Unknown State</div>
+                    <span class="kpi-filter-tag">Filter Metric ↗</span>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-deals">
+                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-deals" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('deals', '🔥 Deal Radar (≥20% Off)')" onkeydown="handleKpiKey(event, 'deals', '🔥 Deal Radar (≥20% Off)')" title="Click to filter Steals and Great Deals">
                     <div class="kpi-label" style="color: var(--accent-neon);">🔥 DEAL RADAR (≥20% OFF)</div>
                     <div class="kpi-val" id="metric-deal-count" style="color: var(--accent-neon);">--</div>
                     <div class="kpi-sub">Steals & Great Deals Active</div>
+                    <span class="kpi-filter-tag">Filter Metric ↗</span>
                 </div>
             </div>
 
@@ -84,17 +92,17 @@
                 <div class="matrix-card glass-panel">
                     <div class="card-title-sm">PROVIDER COVERAGE BREAKDOWN</div>
                     <div class="source-list" id="source-coverage-list">
-                        <div class="source-row">
+                        <div class="source-row" id="source-row-fb" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('source_facebook', 'Facebook Marketplace')" onkeydown="handleKpiKey(event, 'source_facebook', 'Facebook Marketplace')" title="Click to filter by Facebook Marketplace">
                             <span class="source-tag tag-facebook">Facebook Marketplace</span>
                             <span class="source-desc">10 Regional Cities • 12 Scrolls (~1.8s delay)</span>
                             <span class="badge badge-success" id="fb-coverage-count">13 active</span>
                         </div>
-                        <div class="source-row">
+                        <div class="source-row" id="source-row-hibid" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('source_hibid', 'HiBid Auctions')" onkeydown="handleKpiKey(event, 'source_hibid', 'HiBid Auctions')" title="Click to filter by HiBid Auctions">
                             <span class="source-tag tag-hibid">HiBid</span>
                             <span class="source-desc">250mi Radius (ZIP 74008) • Regional Portals (OK, TX, KS, MO, AR)</span>
                             <span class="badge badge-success" id="hibid-coverage-count">5 active</span>
                         </div>
-                        <div class="source-row">
+                        <div class="source-row" id="source-row-pinside" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('source_pinside', 'Pinside Classifieds')" onkeydown="handleKpiKey(event, 'source_pinside', 'Pinside Classifieds')" title="Click to filter by Pinside Classifieds">
                             <span class="source-tag tag-pinside">Pinside</span>
                             <span class="source-desc">500 km Radius Endpoint • Solid-State</span>
                             <span class="badge badge-success" id="pinside-coverage-count">5 active</span>
@@ -109,9 +117,9 @@
                         <div class="stat-group">
                             <div class="stat-header">Machine Technology</div>
                             <div class="pill-group">
-                                <span class="pill pill-ss">Solid-State: <strong id="stat-tech-ss">--</strong></span>
-                                <span class="pill pill-em">EM: <strong id="stat-tech-em">--</strong></span>
-                                <span class="pill pill-unverified">Unverified: <strong id="stat-tech-unverified">--</strong></span>
+                                <span class="pill pill-ss" id="pill-tech-ss" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('tech_ss', 'Solid-State Technology')" onkeydown="handleKpiKey(event, 'tech_ss', 'Solid-State Technology')" title="Filter Solid-State">Solid-State: <strong id="stat-tech-ss">--</strong></span>
+                                <span class="pill pill-em" id="pill-tech-em" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('tech_em', 'EM Technology')" onkeydown="handleKpiKey(event, 'tech_em', 'EM Technology')" title="Filter EM">EM: <strong id="stat-tech-em">--</strong></span>
+                                <span class="pill pill-unverified" id="pill-tech-unverified" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('tech_unverified', 'Unverified Technology')" onkeydown="handleKpiKey(event, 'tech_unverified', 'Unverified Technology')" title="Filter Unverified">Unverified: <strong id="stat-tech-unverified">--</strong></span>
                             </div>
                         </div>
                         <div class="stat-group" style="margin-top: 12px;">
@@ -126,6 +134,18 @@
                 </div>
             </div>
         </section>
+
+        <!-- Active Metric Filter Banner -->
+        <div id="active-kpi-banner" class="active-kpi-banner glass-panel" style="display: none;">
+            <div class="active-kpi-content">
+                <span class="active-kpi-badge">METRIC FILTER ACTIVE</span>
+                <span class="active-kpi-label">Filtering View: <strong id="active-kpi-name">Newly Discovered</strong></span>
+                <span id="active-kpi-count" class="active-kpi-count">0 matching machines</span>
+            </div>
+            <button type="button" class="btn-clear-kpi" onclick="clearKpiFilter()" aria-label="Clear active metric filter">
+                Reset to All Listings ✕
+            </button>
+        </div>
 
         <!-- Navigation Tabs -->
         <nav class="nav-tabs glass-panel-subtle no-scrollbar" role="tablist" aria-label="Dashboard view sections">
@@ -312,7 +332,7 @@
         </main>
     </div>
 
-    <script src="static_data.js?v=202610050104"></script>
-    <script src="dashboard.js?v=202610050104"></script>
+    <script src="static_data.js?v=202610050112"></script>
+    <script src="dashboard.js?v=202610050112"></script>
 </body>
 </html>

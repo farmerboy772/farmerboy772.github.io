@@ -5,6 +5,119 @@
 
 let allListings = [];
 let dashboardState = null;
+let activeKpiFilter = null;
+let activeKpiName = null;
+
+function toggleKpiFilter(filterKey, filterName) {
+    if (activeKpiFilter === filterKey) {
+        clearKpiFilter();
+        return;
+    }
+    activeKpiFilter = filterKey;
+    activeKpiName = filterName;
+    updateKpiUiState();
+    renderAllViews();
+}
+
+function clearKpiFilter() {
+    activeKpiFilter = null;
+    activeKpiName = null;
+    updateKpiUiState();
+    renderAllViews();
+}
+
+function handleKpiKey(event, filterKey, filterName) {
+    if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+        event.preventDefault();
+        toggleKpiFilter(filterKey, filterName);
+    }
+}
+
+function updateKpiUiState() {
+    const kpiElements = [
+        { key: "observed", id: "kpi-observed" },
+        { key: "active_ss", id: "kpi-active-ss" },
+        { key: "new", id: "kpi-new" },
+        { key: "price_changes", id: "kpi-price-changes" },
+        { key: "removed", id: "kpi-removed" },
+        { key: "unconfirmed", id: "kpi-unconfirmed" },
+        { key: "deals", id: "kpi-deals" },
+        { key: "source_facebook", id: "source-row-fb" },
+        { key: "source_hibid", id: "source-row-hibid" },
+        { key: "source_pinside", id: "source-row-pinside" },
+        { key: "tech_ss", id: "pill-tech-ss" },
+        { key: "tech_em", id: "pill-tech-em" },
+        { key: "tech_unverified", id: "pill-tech-unverified" }
+    ];
+
+    kpiElements.forEach(item => {
+        const el = document.getElementById(item.id);
+        if (!el) return;
+        const isActive = (activeKpiFilter === item.key);
+        el.classList.toggle("is-active", isActive);
+        el.setAttribute("aria-pressed", isActive ? "true" : "false");
+        const tag = el.querySelector(".kpi-filter-tag");
+        if (tag) {
+            tag.textContent = isActive ? "Active Filter ✕" : "Filter Metric ↗";
+        }
+    });
+
+    const banner = document.getElementById("active-kpi-banner");
+    const nameEl = document.getElementById("active-kpi-name");
+    if (banner && nameEl) {
+        if (activeKpiFilter) {
+            banner.style.display = "flex";
+            nameEl.textContent = activeKpiName || activeKpiFilter;
+        } else {
+            banner.style.display = "none";
+        }
+    }
+}
+
+function matchesKpiFilter(item, kpiKey) {
+    if (!kpiKey) return true;
+    const allowedStates = ["OK", "KS", "AR", "MO", "TX"];
+    if (kpiKey === "observed") {
+        return true;
+    }
+    if (kpiKey === "active_ss") {
+        return item.status === "active" && !item.unconfirmed_location && allowedStates.includes(item.state) && item.technology !== "em" && item.passes_scoring;
+    }
+    if (kpiKey === "new") {
+        return Boolean(item.is_new || (item.first_seen && item.first_seen === item.last_seen && item.status === "active"));
+    }
+    if (kpiKey === "price_changes") {
+        return Boolean(item.has_price_change);
+    }
+    if (kpiKey === "removed") {
+        return item.status === "removed" || (item.consecutive_misses && item.consecutive_misses >= 3);
+    }
+    if (kpiKey === "unconfirmed") {
+        return Boolean(item.unconfirmed_location);
+    }
+    if (kpiKey === "deals") {
+        return item.deal_tier === "Steal" || item.deal_tier === "Great Deal" || (item.discount_percent && item.discount_percent >= 20);
+    }
+    if (kpiKey === "source_facebook") {
+        return item.source === "facebook";
+    }
+    if (kpiKey === "source_hibid") {
+        return item.source === "hibid";
+    }
+    if (kpiKey === "source_pinside") {
+        return item.source === "pinside";
+    }
+    if (kpiKey === "tech_ss") {
+        return item.technology === "solid_state";
+    }
+    if (kpiKey === "tech_em") {
+        return item.technology === "em";
+    }
+    if (kpiKey === "tech_unverified") {
+        return item.technology === "unverified";
+    }
+    return true;
+}
 
 // Initialize on load
 function initDashboard() {
@@ -274,13 +387,17 @@ function renderCatalogGrid() {
 
     const allowedStates = ["OK", "KS", "AR", "MO", "TX"];
 
-    // Filter Step 6 criteria: active, not unconfirmed_location, regional states, technology != em, passes_scoring
+    // Filter criteria: if activeKpiFilter is set, check matchesKpiFilter; otherwise standard criteria
     let filtered = allListings.filter(item => {
-        if (item.status !== "active") return false;
-        if (item.unconfirmed_location) return false;
-        if (!allowedStates.includes(item.state)) return false;
-        if (item.technology === "em") return false;
-        if (!item.passes_scoring) return false;
+        if (activeKpiFilter) {
+            if (!matchesKpiFilter(item, activeKpiFilter)) return false;
+        } else {
+            if (item.status !== "active") return false;
+            if (item.unconfirmed_location) return false;
+            if (!allowedStates.includes(item.state)) return false;
+            if (item.technology === "em") return false;
+            if (!item.passes_scoring) return false;
+        }
 
         if (sourceFilter !== "all" && item.source !== sourceFilter) return false;
         if (stateFilter !== "all" && item.state !== stateFilter) return false;
@@ -336,19 +453,27 @@ function renderCatalogGrid() {
         return 0;
     });
 
-    document.getElementById("grid-result-count").textContent = `Showing ${filtered.length} regional solid-state machines`;
+    const filterNotice = activeKpiName ? ` (Filtered by: ${activeKpiName})` : "";
+    const countLabel = activeKpiName ? `Showing ${filtered.length} machines${filterNotice}` : `Showing ${filtered.length} regional solid-state machines`;
+    const countEl = document.getElementById("grid-result-count");
+    if (countEl) countEl.textContent = countLabel;
+
+    const bannerCount = document.getElementById("active-kpi-count");
+    if (bannerCount) {
+        bannerCount.textContent = `${filtered.length} matching machine${filtered.length === 1 ? '' : 's'}`;
+    }
 
     if (filtered.length === 0) {
-        container.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--text-secondary);">No matching regional solid-state pinball machines found.</div>`;
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--text-secondary);">No matching pinball machines found for the active criteria.</div>`;
         return;
     }
 
     container.innerHTML = filtered.map(item => {
-        const postingImg = (item.image_url && !item.image_url.includes("unsplash")) ? item.image_url : null;
+        const postingImg = item.local_image_url || ((item.image_url && !item.image_url.includes("unsplash")) ? item.image_url : null);
         const opdbImg = (item.artwork_url && !item.artwork_url.includes("unsplash")) ? item.artwork_url : null;
         const defaultImg = "https://img.opdb.org/d71148a2-23cf-4460-bf04-2e00a14b3e63-medium.jpg";
 
-        // Use posting photo first; fallback to official OPDB backglass image
+        // Use local cached image or posting photo first; fallback to official OPDB backglass image
         const primaryImg = postingImg || opdbImg || defaultImg;
         const fallbackImg = (postingImg && opdbImg) ? opdbImg : defaultImg;
         const isOpdbArt = (!postingImg && opdbImg);
@@ -484,6 +609,7 @@ function renderAuditTable() {
     const priceFilter = document.getElementById("audit-price-filter")?.value || "100";
 
     let filtered = allListings.filter(item => {
+        if (activeKpiFilter && !matchesKpiFilter(item, activeKpiFilter)) return false;
         if (statusFilter !== "all" && item.status !== statusFilter) return false;
         if (scoringFilter === "passed" && !item.passes_scoring) return false;
         if (scoringFilter === "rejected" && item.passes_scoring) return false;

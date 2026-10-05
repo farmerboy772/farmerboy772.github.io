@@ -95,13 +95,13 @@ window.STATIC_DASHBOARD_STATE = {
     "last_scraped_cdt": "2026-10-04 20:04 CDT",
     "last_scraped_at": "2026-10-05T01:04:30.277207+00:00",
     "last_deploy": {
-      "id": 24,
-      "commit_hash": "0f9b104",
-      "commit_message": "Update pinball listings: 2026-10-04 17:32 CDT",
-      "timestamp": "2026-10-04T22:32:16.909689+00:00",
+      "id": 25,
+      "commit_hash": "edaf466",
+      "commit_message": "Update pinball listings: 2026-10-04 20:04 CDT",
+      "timestamp": "2026-10-05T01:04:45.964626+00:00",
       "status": "success",
       "target_url": "https://farmerboy772.github.io/",
-      "logs": "[22:32:16] Initializing GitHub Pages deployment pipeline...\n[22:32:16] Target repository: https://github.com/farmerboy772/farmerboy772.github.io.git (branch: main)\n[22:32:16] Created isolated deployment workspace: /var/folders/sr/gxc1dv8s7lb8n5605fnm_7nh0000gn/T/gh_pages_deploy_51y7p2xt\n[22:32:16] Attempting clone of remote branch...\n[22:32:17] Clearing destination root files (preserving .git)...\n[22:32:17] Copying Step 6 generated artifacts into repository root...\n[22:32:17]   -> Copied index.html\n[22:32:17]   -> Copied catalog_grid.html\n[22:32:17]   -> Copied styles.css\n[22:32:17]   -> Copied dashboard.html\n[22:32:17]   -> Copied audit_list.html\n[22:32:17]   -> Copied static_data.js\n[22:32:17]   -> Copied dashboard.js\n[22:32:17]   -> Copied pinball_listings.csv\n[22:32:17] Staging files and creating commit: 'Update pinball listings: 2026-10-04 17:32 CDT'\n[22:32:17] Commit created: [0f9b104] Update pinball listings: 2026-10-04 17:32 CDT\n[22:32:17] Executing: git push --force-with-lease origin main...\n[22:32:19] Successfully deployed listings to GitHub Pages! Commit: 0f9b104 at 2026-10-04 17:32 CDT\n[22:32:19] Target live URL: https://farmerboy772.github.io/"
+      "logs": "[01:04:45] Initializing GitHub Pages deployment pipeline...\n[01:04:45] Target repository: https://github.com/farmerboy772/farmerboy772.github.io.git (branch: main)\n[01:04:45] Created isolated deployment workspace: /var/folders/sr/gxc1dv8s7lb8n5605fnm_7nh0000gn/T/gh_pages_deploy_tuqhxuc4\n[01:04:45] Attempting clone of remote branch...\n[01:04:47] Clearing destination root files (preserving .git)...\n[01:04:47] Copying Step 6 generated artifacts into repository root...\n[01:04:47]   -> Copied index.html\n[01:04:47]   -> Copied catalog_grid.html\n[01:04:47]   -> Copied styles.css\n[01:04:47]   -> Copied dashboard.html\n[01:04:47]   -> Copied audit_list.html\n[01:04:47]   -> Copied static_data.js\n[01:04:47]   -> Copied dashboard.js\n[01:04:47]   -> Copied pinball_listings.csv\n[01:04:47] Staging files and creating commit: 'Update pinball listings: 2026-10-04 20:04 CDT'\n[01:04:47] Commit created: [edaf466] Update pinball listings: 2026-10-04 20:04 CDT\n[01:04:47] Executing: git push --force-with-lease origin main...\n[01:04:50] Successfully deployed listings to GitHub Pages! Commit: edaf466 at 2026-10-04 20:04 CDT\n[01:04:50] Target live URL: https://farmerboy772.github.io/"
     }
   },
   "session_health": {
@@ -173,7 +173,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 263.2,
-    "distance_str": "~263 mi from Bixby"
+    "distance_str": "~263 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_322306630.jpg"
   },
   {
     "id": "pinside:pin_222438",
@@ -227,7 +229,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $12,000 (Benchmark: ~$9,800)",
     "is_uncertain": false,
     "distance_miles": 214.3,
-    "distance_str": "~214 mi from Bixby"
+    "distance_str": "~214 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/pinside_pin_222438.jpg"
   },
   {
     "id": "facebook:fb_1676161213487557",
@@ -286,7 +290,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/facebook_fb_1676161213487557.jpg"
   },
   {
     "id": "facebook:fb_1015357711569809",
@@ -340,7 +346,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/facebook_fb_1015357711569809.jpg"
   },
   {
     "id": "facebook:fb_28591336040531412",
@@ -394,7 +402,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,500 (Benchmark: ~$4,500)",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/facebook_fb_28591336040531412.jpg"
   },
   {
     "id": "facebook:fb_975266438657081",
@@ -458,7 +468,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $4,000 vs ~$3,000 market benchmark",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/facebook_fb_975266438657081.jpg"
   },
   {
     "id": "facebook:fb_26266461746386359",
@@ -512,7 +524,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_26266461746386359.jpg"
   },
   {
     "id": "facebook:fb_2196595110909470",
@@ -566,7 +580,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2196595110909470.jpg"
   },
   {
     "id": "facebook:fb_1196167795968067",
@@ -620,7 +636,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1196167795968067.jpg"
   },
   {
     "id": "facebook:fb_1804929774031188",
@@ -679,7 +697,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $1,800 is 36% below ~$2,800 market value!",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1804929774031188.jpg"
   },
   {
     "id": "facebook:fb_1011191858603800",
@@ -733,7 +753,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1011191858603800.jpg"
   },
   {
     "id": "facebook:fb_1554797139660038",
@@ -787,7 +809,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1554797139660038.jpg"
   },
   {
     "id": "facebook:fb_1747099756736170",
@@ -846,7 +870,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,000 (Benchmark: ~$2,800)",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1747099756736170.jpg"
   },
   {
     "id": "facebook:fb_1488297348949478",
@@ -900,7 +926,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1488297348949478.jpg"
   },
   {
     "id": "facebook:fb_1603888261565215",
@@ -964,7 +992,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1603888261565215.jpg"
   },
   {
     "id": "facebook:fb_1568501628624463",
@@ -1018,7 +1048,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1568501628624463.jpg"
   },
   {
     "id": "facebook:fb_1027074459953358",
@@ -1077,7 +1109,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1027074459953358.jpg"
   },
   {
     "id": "facebook:fb_1314994500708078",
@@ -1136,7 +1170,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1314994500708078.jpg"
   },
   {
     "id": "facebook:fb_1081720137566478",
@@ -1200,7 +1236,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $5,750 is 23% below ~$7,500 market value",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1081720137566478.jpg"
   },
   {
     "id": "facebook:fb_1345071534146984",
@@ -1264,7 +1302,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $1,500 is 42% below ~$2,600 market value!",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1345071534146984.jpg"
   },
   {
     "id": "facebook:fb_1358106383166169",
@@ -1318,7 +1358,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1358106383166169.jpg"
   },
   {
     "id": "facebook:fb_1313346363931793",
@@ -1382,7 +1424,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $950 is 79% below ~$4,500 market value!",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1313346363931793.jpg"
   },
   {
     "id": "facebook:fb_1318597840227470",
@@ -1446,7 +1490,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $400 is 91% below ~$4,500 market value!",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1318597840227470.jpg"
   },
   {
     "id": "facebook:fb_1366450851580513",
@@ -1510,7 +1556,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $11,000 vs ~$2,800 market benchmark",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1366450851580513.jpg"
   },
   {
     "id": "facebook:fb_27189293657362288",
@@ -1564,7 +1612,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_27189293657362288.jpg"
   },
   {
     "id": "facebook:fb_1100429629193710",
@@ -1628,7 +1678,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $1,500 is 32% below ~$2,200 market value",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1100429629193710.jpg"
   },
   {
     "id": "facebook:fb_1852403975741889",
@@ -1687,7 +1739,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $1,200 is 73% below ~$4,500 market value!",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1852403975741889.jpg"
   },
   {
     "id": "facebook:fb_1888212851831490",
@@ -1751,7 +1805,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1888212851831490.jpg"
   },
   {
     "id": "facebook:fb_3358534844317635",
@@ -1820,7 +1876,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $250 is 96% below ~$6,800 market value!",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_3358534844317635.jpg"
   },
   {
     "id": "facebook:fb_1041069875357477",
@@ -1879,7 +1937,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $3,200 is 42% below ~$5,500 market value!",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1041069875357477.jpg"
   },
   {
     "id": "facebook:fb_4365356840347922",
@@ -1933,7 +1993,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4365356840347922.jpg"
   },
   {
     "id": "facebook:fb_818427091334167",
@@ -1987,7 +2049,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_818427091334167.jpg"
   },
   {
     "id": "facebook:fb_2311650529603013",
@@ -2046,7 +2110,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2311650529603013.jpg"
   },
   {
     "id": "facebook:fb_2928440287494244",
@@ -2105,7 +2171,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2928440287494244.jpg"
   },
   {
     "id": "pinside:pin_222375",
@@ -2169,7 +2237,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $8,899 vs ~$6,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222375.jpg"
   },
   {
     "id": "pinside:pin_219468",
@@ -2228,7 +2298,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $1,900 is 32% below ~$2,800 market value",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_219468.jpg"
   },
   {
     "id": "facebook:fb_1082748044145735",
@@ -2292,7 +2364,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $5,500 is 27% below ~$7,500 market value",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1082748044145735.jpg"
   },
   {
     "id": "facebook:fb_1783866345861006",
@@ -2346,7 +2420,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1783866345861006.jpg"
   },
   {
     "id": "facebook:fb_1300708765340724",
@@ -2406,7 +2482,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1300708765340724.jpg"
   },
   {
     "id": "facebook:fb_1507409023691828",
@@ -2465,7 +2543,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1507409023691828.jpg"
   },
   {
     "id": "facebook:fb_1743796126758870",
@@ -2519,7 +2599,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1743796126758870.jpg"
   },
   {
     "id": "facebook:fb_1682234390574995",
@@ -2578,7 +2660,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $3,000 is 54% below ~$6,500 market value!",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1682234390574995.jpg"
   },
   {
     "id": "facebook:fb_1987309918597930",
@@ -2642,7 +2726,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $6,000 (12% below ~$6,800 market value)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1987309918597930.jpg"
   },
   {
     "id": "facebook:fb_1584706370050168",
@@ -2696,7 +2782,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1584706370050168.jpg"
   },
   {
     "id": "facebook:fb_2508787002965695",
@@ -2755,7 +2843,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2508787002965695.jpg"
   },
   {
     "id": "facebook:fb_1447627903896768",
@@ -2819,7 +2909,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $285 is 94% below ~$4,500 market value!",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1447627903896768.jpg"
   },
   {
     "id": "facebook:fb_1111224468001752",
@@ -2878,7 +2970,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,999 (Benchmark: ~$8,500)",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1111224468001752.jpg"
   },
   {
     "id": "facebook:fb_1113325744557628",
@@ -2932,7 +3026,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1113325744557628.jpg"
   },
   {
     "id": "facebook:fb_1627869082110865",
@@ -2986,7 +3082,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1627869082110865.jpg"
   },
   {
     "id": "facebook:fb_3179859785546156",
@@ -3045,7 +3143,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $7,199 (12% below ~$8,200 market value)",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_3179859785546156.jpg"
   },
   {
     "id": "facebook:fb_3139254153083971",
@@ -3104,7 +3204,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $3,900 is 33% below ~$5,800 market value",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_3139254153083971.jpg"
   },
   {
     "id": "facebook:fb_1579113783078864",
@@ -3158,7 +3260,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1579113783078864.jpg"
   },
   {
     "id": "facebook:fb_971511935978264",
@@ -3212,7 +3316,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_971511935978264.jpg"
   },
   {
     "id": "facebook:fb_4576727625873644",
@@ -3271,7 +3377,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4576727625873644.jpg"
   },
   {
     "id": "facebook:fb_2101929643732196",
@@ -3326,7 +3434,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2101929643732196.jpg"
   },
   {
     "id": "facebook:fb_2519558348537423",
@@ -3385,7 +3495,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2519558348537423.jpg"
   },
   {
     "id": "facebook:fb_1046577185006451",
@@ -3439,7 +3551,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1046577185006451.jpg"
   },
   {
     "id": "facebook:fb_1053901124316821",
@@ -3503,7 +3617,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1053901124316821.jpg"
   },
   {
     "id": "facebook:fb_910513825188081",
@@ -3557,7 +3673,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $2,000 (Benchmark: ~$1,800)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_910513825188081.jpg"
   },
   {
     "id": "facebook:fb_1089118463539276",
@@ -3621,7 +3739,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 98.0,
-    "distance_str": "~98 mi from Bixby"
+    "distance_str": "~98 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1089118463539276.jpg"
   },
   {
     "id": "facebook:fb_1021464514112783",
@@ -3675,7 +3795,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1021464514112783.jpg"
   },
   {
     "id": "pinside:pin_220443",
@@ -3735,7 +3857,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "generic_or_low_confidence",
     "distance_miles": 194.1,
-    "distance_str": "~194 mi from Bixby"
+    "distance_str": "~194 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220443.jpg"
   },
   {
     "id": "pinside:pin_221696",
@@ -3789,7 +3913,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,500 (Benchmark: ~$8,500)",
     "is_uncertain": false,
     "distance_miles": 298.7,
-    "distance_str": "~299 mi from Bixby"
+    "distance_str": "~299 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221696.jpg"
   },
   {
     "id": "pinside:pin_220698",
@@ -3848,7 +3974,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $5,000 vs ~$2,400 market benchmark",
     "is_uncertain": false,
     "distance_miles": 332.9,
-    "distance_str": "~333 mi from Bixby"
+    "distance_str": "~333 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220698.jpg"
   },
   {
     "id": "pinside:pin_214424",
@@ -3907,7 +4035,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $4,000 is 27% below ~$5,500 market value",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_214424.jpg"
   },
   {
     "id": "pinside:pin_222288",
@@ -3961,7 +4091,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,900 (Benchmark: ~$4,800)",
     "is_uncertain": false,
     "distance_miles": 194.1,
-    "distance_str": "~194 mi from Bixby"
+    "distance_str": "~194 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222288.jpg"
   },
   {
     "id": "pinside:pin_221839",
@@ -4015,7 +4147,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,900 (Benchmark: ~$3,200)",
     "is_uncertain": false,
     "distance_miles": 342.4,
-    "distance_str": "~342 mi from Bixby"
+    "distance_str": "~342 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221839.jpg"
   },
   {
     "id": "pinside:pin_213077",
@@ -4074,7 +4208,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $16,250 vs ~$7,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 168.3,
-    "distance_str": "~168 mi from Bixby"
+    "distance_str": "~168 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_213077.jpg"
   },
   {
     "id": "pinside:pin_222068",
@@ -4133,7 +4269,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $5,500 (19% below ~$6,800 market value)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222068.jpg"
   },
   {
     "id": "pinside:pin_222198",
@@ -4187,7 +4325,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,600 (Benchmark: ~$4,500)",
     "is_uncertain": false,
     "distance_miles": 221.5,
-    "distance_str": "~222 mi from Bixby"
+    "distance_str": "~222 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222198.jpg"
   },
   {
     "id": "pinside:pin_220978",
@@ -4246,7 +4386,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $9,000 vs ~$5,800 market benchmark",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220978.jpg"
   },
   {
     "id": "facebook:fb_836763772827650",
@@ -4300,7 +4442,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,000 (Benchmark: ~$2,600)",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_836763772827650.jpg"
   },
   {
     "id": "facebook:fb_1794174278492215",
@@ -4359,7 +4503,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $1,000 is 78% below ~$4,500 market value!",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1794174278492215.jpg"
   },
   {
     "id": "facebook:fb_1833876381299572",
@@ -4413,7 +4559,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1833876381299572.jpg"
   },
   {
     "id": "facebook:fb_3297630450422724",
@@ -4467,7 +4615,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_3297630450422724.jpg"
   },
   {
     "id": "facebook:fb_1421489243252758",
@@ -4526,7 +4676,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $900 is 80% below ~$4,500 market value!",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1421489243252758.jpg"
   },
   {
     "id": "facebook:fb_1624173992464538",
@@ -4580,7 +4732,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,100 (Benchmark: ~$3,200)",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1624173992464538.jpg"
   },
   {
     "id": "facebook:fb_1605450894572239",
@@ -4634,7 +4788,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1605450894572239.jpg"
   },
   {
     "id": "facebook:fb_1819503819040574",
@@ -4688,7 +4844,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1819503819040574.jpg"
   },
   {
     "id": "facebook:fb_857503197298113",
@@ -4742,7 +4900,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_857503197298113.jpg"
   },
   {
     "id": "facebook:fb_1999153007444004",
@@ -4806,7 +4966,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $2,500 vs ~$1,800 market benchmark",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1999153007444004.jpg"
   },
   {
     "id": "facebook:fb_1542803863727261",
@@ -4860,7 +5022,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1542803863727261.jpg"
   },
   {
     "id": "facebook:fb_1042332765306629",
@@ -4914,7 +5078,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1042332765306629.jpg"
   },
   {
     "id": "facebook:fb_4453449431538340",
@@ -4968,7 +5134,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4453449431538340.jpg"
   },
   {
     "id": "facebook:fb_962230600238462",
@@ -5027,7 +5195,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_962230600238462.jpg"
   },
   {
     "id": "facebook:fb_1395164289191137",
@@ -5081,7 +5251,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,000 (Benchmark: ~$2,600)",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1395164289191137.jpg"
   },
   {
     "id": "facebook:fb_1421237602671621",
@@ -5136,7 +5308,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1421237602671621.jpg"
   },
   {
     "id": "facebook:fb_1104444708784618",
@@ -5195,7 +5369,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1104444708784618.jpg"
   },
   {
     "id": "facebook:fb_903847775750097",
@@ -5259,7 +5435,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $1,234 is 31% below ~$1,800 market value",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_903847775750097.jpg"
   },
   {
     "id": "facebook:fb_28277803511820060",
@@ -5313,7 +5491,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_28277803511820060.jpg"
   },
   {
     "id": "facebook:fb_1912698596780310",
@@ -5372,7 +5552,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $4,800 (13% below ~$5,500 market value)",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1912698596780310.jpg"
   },
   {
     "id": "facebook:fb_848067435041825",
@@ -5427,7 +5609,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_848067435041825.jpg"
   },
   {
     "id": "facebook:fb_1737201797151480",
@@ -5486,7 +5670,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1737201797151480.jpg"
   },
   {
     "id": "facebook:fb_1729006258546706",
@@ -5550,7 +5736,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $300 is 83% below ~$1,800 market value!",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1729006258546706.jpg"
   },
   {
     "id": "facebook:fb_4312452845677959",
@@ -5610,7 +5798,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 109.6,
-    "distance_str": "~110 mi from Bixby"
+    "distance_str": "~110 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4312452845677959.jpg"
   },
   {
     "id": "facebook:fb_1863529920985228",
@@ -5664,7 +5854,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1863529920985228.jpg"
   },
   {
     "id": "facebook:fb_2312704166156604",
@@ -5728,7 +5920,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $2,500 is 22% below ~$3,200 market value",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2312704166156604.jpg"
   },
   {
     "id": "facebook:fb_1475106714447618",
@@ -5787,7 +5981,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $850 is 87% below ~$6,500 market value!",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1475106714447618.jpg"
   },
   {
     "id": "facebook:fb_1653238353051010",
@@ -5851,7 +6047,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $750 is 58% below ~$1,800 market value!",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1653238353051010.jpg"
   },
   {
     "id": "facebook:fb_1856682549028458",
@@ -5905,7 +6103,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1856682549028458.jpg"
   },
   {
     "id": "facebook:fb_1293154336353987",
@@ -5964,7 +6164,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $9,500 vs ~$5,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1293154336353987.jpg"
   },
   {
     "id": "facebook:fb_1750790559475491",
@@ -6023,7 +6225,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1750790559475491.jpg"
   },
   {
     "id": "facebook:fb_1500670342114477",
@@ -6077,7 +6281,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1500670342114477.jpg"
   },
   {
     "id": "facebook:fb_1025823700508002",
@@ -6136,7 +6342,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $385 is 86% below ~$2,800 market value!",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1025823700508002.jpg"
   },
   {
     "id": "facebook:fb_1961023724564116",
@@ -6200,7 +6408,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $6,900 vs ~$3,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1961023724564116.jpg"
   },
   {
     "id": "facebook:fb_2219537532315588",
@@ -6254,7 +6464,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2219537532315588.jpg"
   },
   {
     "id": "facebook:fb_1731796140702259",
@@ -6308,7 +6520,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1731796140702259.jpg"
   },
   {
     "id": "facebook:fb_1578326163274118",
@@ -6363,7 +6577,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1578326163274118.jpg"
   },
   {
     "id": "facebook:fb_958932837066687",
@@ -6422,7 +6638,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $12,500 vs ~$8,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_958932837066687.jpg"
   },
   {
     "id": "facebook:fb_1612177940326915",
@@ -6481,7 +6699,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1612177940326915.jpg"
   },
   {
     "id": "facebook:fb_4019595455002989",
@@ -6535,7 +6755,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4019595455002989.jpg"
   },
   {
     "id": "facebook:fb_2069019387051100",
@@ -6594,7 +6816,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $6,500 (Benchmark: ~$6,800)",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2069019387051100.jpg"
   },
   {
     "id": "facebook:fb_921269360405267",
@@ -6658,7 +6882,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $4,315 (17% below ~$5,200 market value)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_921269360405267.jpg"
   },
   {
     "id": "facebook:fb_1567388147666309",
@@ -6717,7 +6943,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1567388147666309.jpg"
   },
   {
     "id": "facebook:fb_1372346725074348",
@@ -6776,7 +7004,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $12,500 vs ~$9,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1372346725074348.jpg"
   },
   {
     "id": "facebook:fb_1872067704166954",
@@ -6830,7 +7060,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1872067704166954.jpg"
   },
   {
     "id": "facebook:fb_2488600071619702",
@@ -6884,7 +7116,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,750 (Benchmark: ~$8,500)",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2488600071619702.jpg"
   },
   {
     "id": "facebook:fb_2029491647674030",
@@ -6943,7 +7177,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2029491647674030.jpg"
   },
   {
     "id": "facebook:fb_4159150394375312",
@@ -7002,7 +7238,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4159150394375312.jpg"
   },
   {
     "id": "facebook:fb_1429577195657322",
@@ -7061,7 +7299,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $5,300 (Benchmark: ~$5,200)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1429577195657322.jpg"
   },
   {
     "id": "facebook:fb_1585032973666363",
@@ -7120,7 +7360,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $7,000 vs ~$4,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1585032973666363.jpg"
   },
   {
     "id": "facebook:fb_2255643991891093",
@@ -7179,7 +7421,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2255643991891093.jpg"
   },
   {
     "id": "facebook:fb_2044774700257969",
@@ -7243,7 +7487,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,500 (Benchmark: ~$4,500)",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2044774700257969.jpg"
   },
   {
     "id": "facebook:fb_1721498842392030",
@@ -7302,7 +7548,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1721498842392030.jpg"
   },
   {
     "id": "facebook:fb_2077604959787543",
@@ -7366,7 +7614,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $1,300 is 28% below ~$1,800 market value",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2077604959787543.jpg"
   },
   {
     "id": "facebook:fb_26970879202611479",
@@ -7425,7 +7675,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,500 (Benchmark: ~$3,800)",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_26970879202611479.jpg"
   },
   {
     "id": "facebook:fb_4348119625505075",
@@ -7489,7 +7741,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $5,400 (17% below ~$6,500 market value)",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4348119625505075.jpg"
   },
   {
     "id": "facebook:fb_1822656758735521",
@@ -7543,7 +7797,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1822656758735521.jpg"
   },
   {
     "id": "facebook:fb_1559413408526477",
@@ -7597,7 +7853,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1559413408526477.jpg"
   },
   {
     "id": "facebook:fb_4341997172739777",
@@ -7656,7 +7914,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4341997172739777.jpg"
   },
   {
     "id": "facebook:fb_3430015200540433",
@@ -7711,7 +7971,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_3430015200540433.jpg"
   },
   {
     "id": "facebook:fb_1114233177625334",
@@ -7765,7 +8027,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1114233177625334.jpg"
   },
   {
     "id": "facebook:fb_4678692415741594",
@@ -7824,7 +8088,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_4678692415741594.jpg"
   },
   {
     "id": "facebook:fb_1102988942428469",
@@ -7883,7 +8149,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $4,300 (17% below ~$5,200 market value)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1102988942428469.jpg"
   },
   {
     "id": "facebook:fb_1564102882129050",
@@ -7937,7 +8205,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1564102882129050.jpg"
   },
   {
     "id": "facebook:fb_1355710769715468",
@@ -7996,7 +8266,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $2,600 (13% below ~$3,000 market value)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1355710769715468.jpg"
   },
   {
     "id": "facebook:fb_1666389301801100",
@@ -8055,7 +8327,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $900 is 80% below ~$4,500 market value!",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1666389301801100.jpg"
   },
   {
     "id": "facebook:fb_1745084420027451",
@@ -8109,7 +8383,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1745084420027451.jpg"
   },
   {
     "id": "facebook:fb_1112115434647757",
@@ -8169,7 +8445,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1112115434647757.jpg"
   },
   {
     "id": "facebook:fb_1782316872963739",
@@ -8224,7 +8502,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1782316872963739.jpg"
   },
   {
     "id": "facebook:fb_1413255077331531",
@@ -8283,7 +8563,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1413255077331531.jpg"
   },
   {
     "id": "facebook:fb_2092525768098881",
@@ -8342,7 +8624,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $3,150 (10% below ~$3,500 market value)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2092525768098881.jpg"
   },
   {
     "id": "facebook:fb_886400131225397",
@@ -8396,7 +8680,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,600 (Benchmark: ~$4,500)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_886400131225397.jpg"
   },
   {
     "id": "facebook:fb_1070466205733978",
@@ -8455,7 +8741,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $2,650 (12% below ~$3,000 market value)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1070466205733978.jpg"
   },
   {
     "id": "facebook:fb_1081096761537685",
@@ -8514,7 +8802,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $1,800 is 40% below ~$3,000 market value!",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1081096761537685.jpg"
   },
   {
     "id": "facebook:fb_2074894066492014",
@@ -8578,7 +8868,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $1,501 is 32% below ~$2,200 market value",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_2074894066492014.jpg"
   },
   {
     "id": "facebook:fb_960066609798873",
@@ -8637,7 +8929,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_960066609798873.jpg"
   },
   {
     "id": "facebook:fb_1675941707001308",
@@ -8701,7 +8995,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $1,250 is 38% below ~$2,000 market value!",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/facebook_fb_1675941707001308.jpg"
   },
   {
     "id": "hibid:hibid_323995194",
@@ -8760,7 +9056,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Benchmark: ~$3,200 (Title Benchmark)",
     "is_uncertain": false,
     "distance_miles": 263.2,
-    "distance_str": "~263 mi from Bixby"
+    "distance_str": "~263 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_323995194.jpg"
   },
   {
     "id": "pinside:pin_222460",
@@ -8819,7 +9117,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $1,700 is 39% below ~$2,800 market value!",
     "is_uncertain": false,
     "distance_miles": 168.3,
-    "distance_str": "~168 mi from Bixby"
+    "distance_str": "~168 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/pinside_pin_222460.jpg"
   },
   {
     "id": "pinside:pin_222389",
@@ -8878,7 +9178,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $3,500 is 44% below ~$6,200 market value!",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222389.jpg"
   },
   {
     "id": "pinside:pin_222336",
@@ -8937,7 +9239,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $6,000 (12% below ~$6,800 market value)",
     "is_uncertain": false,
     "distance_miles": 194.5,
-    "distance_str": "~194 mi from Bixby"
+    "distance_str": "~194 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222336.jpg"
   },
   {
     "id": "pinside:pin_214429",
@@ -8997,7 +9301,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "generic_or_low_confidence",
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_214429.jpg"
   },
   {
     "id": "pinside:pin_219873",
@@ -9056,7 +9362,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $2,400 is 63% below ~$6,500 market value!",
     "is_uncertain": false,
     "distance_miles": 215.4,
-    "distance_str": "~215 mi from Bixby"
+    "distance_str": "~215 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_219873.jpg"
   },
   {
     "id": "pinside:pin_212016",
@@ -9110,7 +9418,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $11,000 (Benchmark: ~$9,500)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/pinside_pin_212016.jpg"
   },
   {
     "id": "pinside:pin_213581",
@@ -9164,7 +9474,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,000 (Benchmark: ~$2,800)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/pinside_pin_213581.jpg"
   },
   {
     "id": "pinside:pin_213485",
@@ -9223,7 +9535,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $13,000 vs ~$9,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": true,
+    "local_image_url": "images/thumbnails/pinside_pin_213485.jpg"
   },
   {
     "id": "pinside:pin_222323",
@@ -9277,7 +9591,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $6,495 (Benchmark: ~$6,800)",
     "is_uncertain": false,
     "distance_miles": 237.8,
-    "distance_str": "~238 mi from Bixby"
+    "distance_str": "~238 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222323.jpg"
   },
   {
     "id": "hibid:hibid_320388903",
@@ -9336,7 +9652,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_320388903.jpg"
   },
   {
     "id": "hibid:hibid_320389228",
@@ -9390,7 +9708,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Benchmark: ~$4,500 (Solid-State Market Baseline)",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_320389228.jpg"
   },
   {
     "id": "hibid:hibid_320388952",
@@ -9444,7 +9764,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Benchmark: ~$2,800 (Early Solid-State Era Average ($2,200-$3,500))",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_320388952.jpg"
   },
   {
     "id": "hibid:hibid_320388935",
@@ -9498,7 +9820,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_320388935.jpg"
   },
   {
     "id": "hibid:hibid_320388946",
@@ -9552,7 +9876,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Benchmark: ~$6,200 (Title Benchmark)",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_320388946.jpg"
   },
   {
     "id": "hibid:hibid_321889947",
@@ -9606,7 +9932,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_321889947.jpg"
   },
   {
     "id": "hibid:hibid_321888993",
@@ -9665,7 +9993,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_321888993.jpg"
   },
   {
     "id": "hibid:hibid_320388840",
@@ -9724,7 +10054,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_320388840.jpg"
   },
   {
     "id": "hibid:hibid_320388949",
@@ -9783,7 +10115,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_320388949.jpg"
   },
   {
     "id": "pinside:pin_219777",
@@ -9837,7 +10171,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $6,800 (Benchmark: ~$7,500)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_219777.jpg"
   },
   {
     "id": "pinside:pin_222273",
@@ -9896,7 +10232,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $5,500 (15% below ~$6,500 market value)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222273.jpg"
   },
   {
     "id": "pinside:pin_222264",
@@ -9955,7 +10293,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $4,500 (18% below ~$5,500 market value)",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222264.jpg"
   },
   {
     "id": "pinside:pin_222257",
@@ -10014,7 +10354,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $14,500 vs ~$7,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 324.5,
-    "distance_str": "~324 mi from Bixby"
+    "distance_str": "~324 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222257.jpg"
   },
   {
     "id": "pinside:pin_222217",
@@ -10068,7 +10410,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,495 (Benchmark: ~$7,800)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222217.jpg"
   },
   {
     "id": "pinside:pin_222203",
@@ -10127,7 +10471,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $5,500 is 27% below ~$7,500 market value",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222203.jpg"
   },
   {
     "id": "pinside:pin_213484",
@@ -10181,7 +10527,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $2,800 (Benchmark: ~$2,800)",
     "is_uncertain": false,
     "distance_miles": 221.5,
-    "distance_str": "~222 mi from Bixby"
+    "distance_str": "~222 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_213484.jpg"
   },
   {
     "id": "hibid:hibid_324149638",
@@ -10235,7 +10583,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 263.2,
-    "distance_str": "~263 mi from Bixby"
+    "distance_str": "~263 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_324149638.jpg"
   },
   {
     "id": "pinside:pin_216367",
@@ -10289,7 +10639,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $7,250 (Benchmark: ~$6,500)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_216367.jpg"
   },
   {
     "id": "pinside:pin_215469",
@@ -10343,7 +10695,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,000 (Benchmark: ~$6,200)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_215469.jpg"
   },
   {
     "id": "pinside:pin_222124",
@@ -10402,7 +10756,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $1,500 is 32% below ~$2,200 market value",
     "is_uncertain": false,
     "distance_miles": 346.9,
-    "distance_str": "~347 mi from Bixby"
+    "distance_str": "~347 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222124.jpg"
   },
   {
     "id": "hibid:hibid_324168816",
@@ -10456,7 +10812,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 218.7,
-    "distance_str": "~219 mi from Bixby"
+    "distance_str": "~219 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_324168816.jpg"
   },
   {
     "id": "pinside:pin_222094",
@@ -10510,7 +10868,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $7,500 (Benchmark: ~$7,500)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222094.jpg"
   },
   {
     "id": "pinside:pin_222093",
@@ -10564,7 +10924,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,000 (Benchmark: ~$2,800)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222093.jpg"
   },
   {
     "id": "pinside:pin_222092",
@@ -10618,7 +10980,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $7,300 (Benchmark: ~$7,500)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222092.jpg"
   },
   {
     "id": "pinside:pin_222088",
@@ -10672,7 +11036,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,800 (Benchmark: ~$3,800)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222088.jpg"
   },
   {
     "id": "pinside:pin_222087",
@@ -10731,7 +11097,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $5,800 is 23% below ~$7,500 market value",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222087.jpg"
   },
   {
     "id": "pinside:pin_222085",
@@ -10785,7 +11153,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,400 (Benchmark: ~$8,200)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222085.jpg"
   },
   {
     "id": "pinside:pin_222083",
@@ -10849,7 +11219,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $3,500 is 22% below ~$4,500 market value",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222083.jpg"
   },
   {
     "id": "pinside:pin_222081",
@@ -10903,7 +11275,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $7,800 (Benchmark: ~$7,200)",
     "is_uncertain": false,
     "distance_miles": 259.0,
-    "distance_str": "~259 mi from Bixby"
+    "distance_str": "~259 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_222081.jpg"
   },
   {
     "id": "pinside:pin_213711",
@@ -10962,7 +11336,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $11,000 vs ~$7,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 355.0,
-    "distance_str": "~355 mi from Bixby"
+    "distance_str": "~355 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_213711.jpg"
   },
   {
     "id": "pinside:pin_191660",
@@ -11016,7 +11392,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,000 (Benchmark: ~$2,600)",
     "is_uncertain": false,
     "distance_miles": 0.0,
-    "distance_str": "~0 mi from Bixby (Local)"
+    "distance_str": "~0 mi from Bixby (Local)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_191660.jpg"
   },
   {
     "id": "pinside:pin_221970",
@@ -11075,7 +11453,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $10,900 vs ~$7,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 212.9,
-    "distance_str": "~213 mi from Bixby"
+    "distance_str": "~213 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221970.jpg"
   },
   {
     "id": "pinside:pin_221940",
@@ -11134,7 +11514,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $6,000 is 20% below ~$7,500 market value",
     "is_uncertain": false,
     "distance_miles": 97.3,
-    "distance_str": "~97 mi from Bixby"
+    "distance_str": "~97 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221940.jpg"
   },
   {
     "id": "pinside:pin_214270",
@@ -11188,7 +11570,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $7,900 (Benchmark: ~$6,800)",
     "is_uncertain": false,
     "distance_miles": 218.7,
-    "distance_str": "~219 mi from Bixby"
+    "distance_str": "~219 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_214270.jpg"
   },
   {
     "id": "pinside:pin_221873",
@@ -11242,7 +11626,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $11,500 (Benchmark: ~$9,800)",
     "is_uncertain": false,
     "distance_miles": 363.3,
-    "distance_str": "~363 mi from Bixby"
+    "distance_str": "~363 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221873.jpg"
   },
   {
     "id": "hibid:hibid_324850720",
@@ -11302,7 +11688,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "price_outlier_low",
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_324850720.jpg"
   },
   {
     "id": "hibid:hibid_324730527",
@@ -11361,7 +11749,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_324730527.jpg"
   },
   {
     "id": "pinside:pin_214374",
@@ -11420,7 +11810,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $16,000 vs ~$7,200 market benchmark",
     "is_uncertain": false,
     "distance_miles": 206.5,
-    "distance_str": "~206 mi from Bixby"
+    "distance_str": "~206 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_214374.jpg"
   },
   {
     "id": "pinside:pin_217041",
@@ -11479,7 +11871,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $10,500 vs ~$6,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_217041.jpg"
   },
   {
     "id": "hibid:hibid_320687793",
@@ -11538,7 +11932,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_320687793.jpg"
   },
   {
     "id": "pinside:pin_221686",
@@ -11597,7 +11993,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $5,000 is 23% below ~$6,500 market value",
     "is_uncertain": false,
     "distance_miles": 324.5,
-    "distance_str": "~324 mi from Bixby"
+    "distance_str": "~324 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221686.jpg"
   },
   {
     "id": "pinside:pin_221685",
@@ -11651,7 +12049,8 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Benchmark: ~$7,500 (Title Benchmark)",
     "is_uncertain": false,
     "distance_miles": 324.5,
-    "distance_str": "~324 mi from Bixby"
+    "distance_str": "~324 mi from Bixby",
+    "is_new": false
   },
   {
     "id": "pinside:pin_221684",
@@ -11705,7 +12104,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Benchmark: ~$2,200 (Title Benchmark)",
     "is_uncertain": false,
     "distance_miles": 324.5,
-    "distance_str": "~324 mi from Bixby"
+    "distance_str": "~324 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221684.jpg"
   },
   {
     "id": "pinside:pin_221683",
@@ -11764,7 +12165,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $1,800 is 71% below ~$6,200 market value!",
     "is_uncertain": false,
     "distance_miles": 324.5,
-    "distance_str": "~324 mi from Bixby"
+    "distance_str": "~324 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221683.jpg"
   },
   {
     "id": "pinside:pin_221681",
@@ -11818,7 +12221,8 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Benchmark: ~$7,200 (Title Benchmark)",
     "is_uncertain": false,
     "distance_miles": 324.5,
-    "distance_str": "~324 mi from Bixby"
+    "distance_str": "~324 mi from Bixby",
+    "is_new": false
   },
   {
     "id": "pinside:pin_221679",
@@ -11877,7 +12281,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $8,300 (13% below ~$9,500 market value)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221679.jpg"
   },
   {
     "id": "pinside:pin_220736",
@@ -11936,7 +12342,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $17,500 vs ~$7,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 324.5,
-    "distance_str": "~324 mi from Bixby"
+    "distance_str": "~324 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220736.jpg"
   },
   {
     "id": "pinside:pin_221596",
@@ -11995,7 +12403,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $8,250 (16% below ~$9,800 market value)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221596.jpg"
   },
   {
     "id": "pinside:pin_221592",
@@ -12049,7 +12459,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $11,250 (Benchmark: ~$9,800)",
     "is_uncertain": false,
     "distance_miles": 229.5,
-    "distance_str": "~230 mi from Bixby"
+    "distance_str": "~230 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221592.jpg"
   },
   {
     "id": "hibid:hibid_322820137",
@@ -12103,7 +12515,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_322820137.jpg"
   },
   {
     "id": "hibid:hibid_322820100",
@@ -12157,7 +12571,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Price unavailable for valuation",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/hibid_hibid_322820100.jpg"
   },
   {
     "id": "pinside:pin_221551",
@@ -12216,7 +12632,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $5,250 (19% below ~$6,500 market value)",
     "is_uncertain": false,
     "distance_miles": 9.5,
-    "distance_str": "~10 mi from Bixby"
+    "distance_str": "~10 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221551.jpg"
   },
   {
     "id": "pinside:pin_221541",
@@ -12280,7 +12698,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $10,000 vs ~$4,200 market benchmark",
     "is_uncertain": false,
     "distance_miles": 9.5,
-    "distance_str": "~10 mi from Bixby"
+    "distance_str": "~10 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221541.jpg"
   },
   {
     "id": "pinside:pin_221532",
@@ -12339,7 +12759,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,400 (Benchmark: ~$7,500)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221532.jpg"
   },
   {
     "id": "pinside:pin_221263",
@@ -12398,7 +12820,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $8,633 vs ~$4,800 market benchmark",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221263.jpg"
   },
   {
     "id": "pinside:pin_221411",
@@ -12452,7 +12876,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $2,300 (Benchmark: ~$2,400)",
     "is_uncertain": false,
     "distance_miles": 355.0,
-    "distance_str": "~355 mi from Bixby"
+    "distance_str": "~355 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221411.jpg"
   },
   {
     "id": "pinside:pin_221408",
@@ -12506,7 +12932,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $2,900 (Benchmark: ~$2,600)",
     "is_uncertain": false,
     "distance_miles": 355.0,
-    "distance_str": "~355 mi from Bixby"
+    "distance_str": "~355 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221408.jpg"
   },
   {
     "id": "pinside:pin_221402",
@@ -12560,7 +12988,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $6,200 (Benchmark: ~$6,500)",
     "is_uncertain": false,
     "distance_miles": 355.0,
-    "distance_str": "~355 mi from Bixby"
+    "distance_str": "~355 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221402.jpg"
   },
   {
     "id": "pinside:pin_221352",
@@ -12619,7 +13049,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $5,800 vs ~$3,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 284.8,
-    "distance_str": "~285 mi from Bixby"
+    "distance_str": "~285 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221352.jpg"
   },
   {
     "id": "pinside:pin_221314",
@@ -12673,7 +13105,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $6,500 (Benchmark: ~$6,800)",
     "is_uncertain": false,
     "distance_miles": 224.9,
-    "distance_str": "~225 mi from Bixby"
+    "distance_str": "~225 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221314.jpg"
   },
   {
     "id": "pinside:pin_204623",
@@ -12727,7 +13161,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $9,150 (Benchmark: ~$8,200)",
     "is_uncertain": false,
     "distance_miles": 168.3,
-    "distance_str": "~168 mi from Bixby"
+    "distance_str": "~168 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_204623.jpg"
   },
   {
     "id": "pinside:pin_221174",
@@ -12781,7 +13217,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,999 (Benchmark: ~$8,600)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221174.jpg"
   },
   {
     "id": "pinside:pin_221172",
@@ -12840,7 +13278,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $6,050 (11% below ~$6,800 market value)",
     "is_uncertain": false,
     "distance_miles": 355.0,
-    "distance_str": "~355 mi from Bixby"
+    "distance_str": "~355 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221172.jpg"
   },
   {
     "id": "pinside:pin_218727",
@@ -12899,7 +13339,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $5,000 (14% below ~$5,800 market value)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_218727.jpg"
   },
   {
     "id": "pinside:pin_204222",
@@ -12958,7 +13400,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $3,500 vs ~$2,200 market benchmark",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_204222.jpg"
   },
   {
     "id": "pinside:pin_221141",
@@ -13017,7 +13461,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $6,000 (12% below ~$6,800 market value)",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221141.jpg"
   },
   {
     "id": "pinside:pin_221058",
@@ -13071,7 +13517,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $2,600 (Benchmark: ~$2,600)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221058.jpg"
   },
   {
     "id": "pinside:pin_221044",
@@ -13135,7 +13583,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $6,990 is 26% below ~$9,500 market value",
     "is_uncertain": false,
     "distance_miles": 344.9,
-    "distance_str": "~345 mi from Bixby"
+    "distance_str": "~345 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221044.jpg"
   },
   {
     "id": "pinside:pin_221028",
@@ -13189,7 +13639,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $7,950 (Benchmark: ~$6,500)",
     "is_uncertain": false,
     "distance_miles": 144.7,
-    "distance_str": "~145 mi from Bixby"
+    "distance_str": "~145 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_221028.jpg"
   },
   {
     "id": "pinside:pin_220999",
@@ -13244,7 +13696,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "generic_or_low_confidence",
     "distance_miles": 389.5,
-    "distance_str": "~390 mi from Bixby"
+    "distance_str": "~390 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220999.jpg"
   },
   {
     "id": "pinside:pin_198047",
@@ -13303,7 +13757,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $4,500 is 27% below ~$6,200 market value",
     "is_uncertain": false,
     "distance_miles": 15.8,
-    "distance_str": "~16 mi from Bixby"
+    "distance_str": "~16 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_198047.jpg"
   },
   {
     "id": "pinside:pin_218336",
@@ -13362,7 +13818,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $15,500 vs ~$7,200 market benchmark",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_218336.jpg"
   },
   {
     "id": "pinside:pin_220929",
@@ -13421,7 +13879,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $16,800 vs ~$7,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 208.9,
-    "distance_str": "~209 mi from Bixby"
+    "distance_str": "~209 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220929.jpg"
   },
   {
     "id": "pinside:pin_220911",
@@ -13480,7 +13940,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $3,000 is 21% below ~$3,800 market value",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220911.jpg"
   },
   {
     "id": "pinside:pin_220876",
@@ -13540,7 +14002,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "generic_or_low_confidence",
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220876.jpg"
   },
   {
     "id": "pinside:pin_220817",
@@ -13599,7 +14063,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Exceptional Deal: $995 is 58% below ~$2,400 market value!",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220817.jpg"
   },
   {
     "id": "pinside:pin_220781",
@@ -13653,7 +14119,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $11,900 (Benchmark: ~$9,500)",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220781.jpg"
   },
   {
     "id": "pinside:pin_205198",
@@ -13712,7 +14180,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $5,500 is 24% below ~$7,200 market value",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_205198.jpg"
   },
   {
     "id": "pinside:pin_215649",
@@ -13766,7 +14236,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,100 (Benchmark: ~$4,200)",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_215649.jpg"
   },
   {
     "id": "pinside:pin_215650",
@@ -13825,7 +14297,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $5,500 is 24% below ~$7,200 market value",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_215650.jpg"
   },
   {
     "id": "pinside:pin_215674",
@@ -13884,7 +14358,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $4,500 (14% below ~$5,200 market value)",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_215674.jpg"
   },
   {
     "id": "pinside:pin_220750",
@@ -13943,7 +14419,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $4,610 vs ~$3,500 market benchmark",
     "is_uncertain": false,
     "distance_miles": 212.3,
-    "distance_str": "~212 mi from Bixby"
+    "distance_str": "~212 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220750.jpg"
   },
   {
     "id": "pinside:pin_216786",
@@ -13997,7 +14475,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $6,199 (Benchmark: ~$5,200)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_216786.jpg"
   },
   {
     "id": "pinside:pin_216789",
@@ -14056,7 +14536,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $5,225 is 30% below ~$7,500 market value",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_216789.jpg"
   },
   {
     "id": "pinside:pin_216788",
@@ -14110,7 +14592,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $4,999 (Benchmark: ~$5,200)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_216788.jpg"
   },
   {
     "id": "pinside:pin_220717",
@@ -14169,7 +14653,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $8,900 vs ~$6,800 market benchmark",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220717.jpg"
   },
   {
     "id": "pinside:pin_216785",
@@ -14229,7 +14715,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "generic_or_low_confidence",
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_216785.jpg"
   },
   {
     "id": "pinside:pin_220592",
@@ -14283,7 +14771,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $5,900 (Benchmark: ~$6,500)",
     "is_uncertain": false,
     "distance_miles": 344.9,
-    "distance_str": "~345 mi from Bixby"
+    "distance_str": "~345 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220592.jpg"
   },
   {
     "id": "pinside:pin_216054",
@@ -14342,7 +14832,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $6,400 (15% below ~$7,500 market value)",
     "is_uncertain": false,
     "distance_miles": 227.6,
-    "distance_str": "~228 mi from Bixby"
+    "distance_str": "~228 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_216054.jpg"
   },
   {
     "id": "pinside:pin_220429",
@@ -14401,7 +14893,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $6,500 is 21% below ~$8,200 market value",
     "is_uncertain": false,
     "distance_miles": 208.9,
-    "distance_str": "~209 mi from Bixby"
+    "distance_str": "~209 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220429.jpg"
   },
   {
     "id": "pinside:pin_220406",
@@ -14455,7 +14949,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $2,999 (Benchmark: ~$2,600)",
     "is_uncertain": false,
     "distance_miles": 208.9,
-    "distance_str": "~209 mi from Bixby"
+    "distance_str": "~209 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220406.jpg"
   },
   {
     "id": "pinside:pin_220405",
@@ -14509,7 +15005,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $2,999 (Benchmark: ~$3,200)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220405.jpg"
   },
   {
     "id": "pinside:pin_220371",
@@ -14569,7 +15067,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "generic_or_low_confidence",
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220371.jpg"
   },
   {
     "id": "pinside:pin_220370",
@@ -14623,7 +15123,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,000 (Benchmark: ~$7,500)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220370.jpg"
   },
   {
     "id": "pinside:pin_220369",
@@ -14682,7 +15184,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $7,500 is 24% below ~$9,800 market value",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220369.jpg"
   },
   {
     "id": "pinside:pin_218174",
@@ -14741,7 +15245,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Good Value: $7,000 (15% below ~$8,200 market value)",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_218174.jpg"
   },
   {
     "id": "pinside:pin_220352",
@@ -14795,7 +15301,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $3,499 (Benchmark: ~$3,200)",
     "is_uncertain": false,
     "distance_miles": 218.7,
-    "distance_str": "~219 mi from Bixby"
+    "distance_str": "~219 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220352.jpg"
   },
   {
     "id": "pinside:pin_220336",
@@ -14849,7 +15357,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $11,300 (Benchmark: ~$9,500)",
     "is_uncertain": false,
     "distance_miles": 218.7,
-    "distance_str": "~219 mi from Bixby"
+    "distance_str": "~219 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220336.jpg"
   },
   {
     "id": "pinside:pin_210749",
@@ -14908,7 +15418,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Great Deal: $6,200 is 27% below ~$8,500 market value",
     "is_uncertain": false,
     "distance_miles": 358.3,
-    "distance_str": "~358 mi from Bixby"
+    "distance_str": "~358 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_210749.jpg"
   },
   {
     "id": "pinside:pin_220261",
@@ -14962,7 +15474,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,800 (Benchmark: ~$7,500)",
     "is_uncertain": false,
     "distance_miles": 208.9,
-    "distance_str": "~209 mi from Bixby"
+    "distance_str": "~209 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220261.jpg"
   },
   {
     "id": "pinside:pin_220246",
@@ -15021,7 +15535,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $10,300 vs ~$6,800 market benchmark",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220246.jpg"
   },
   {
     "id": "pinside:pin_220241",
@@ -15081,7 +15597,9 @@ window.STATIC_LISTINGS = [
     "is_uncertain": true,
     "uncertainty_reason": "generic_or_low_confidence",
     "distance_miles": 221.0,
-    "distance_str": "~221 mi from Bixby"
+    "distance_str": "~221 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220241.jpg"
   },
   {
     "id": "pinside:pin_220194",
@@ -15135,7 +15653,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Price: $8,400 (Benchmark: ~$7,500)",
     "is_uncertain": false,
     "distance_miles": 235.2,
-    "distance_str": "~235 mi from Bixby"
+    "distance_str": "~235 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220194.jpg"
   },
   {
     "id": "pinside:pin_220164",
@@ -15194,7 +15714,9 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Priced Above Market: $10,650 vs ~$7,800 market benchmark",
     "is_uncertain": false,
     "distance_miles": 241.9,
-    "distance_str": "~242 mi from Bixby"
+    "distance_str": "~242 mi from Bixby",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220164.jpg"
   },
   {
     "id": "pinside:pin_220089",
@@ -15248,6 +15770,8 @@ window.STATIC_LISTINGS = [
     "deal_summary": "Fair Market Benchmark: ~$2,800 (Early Solid-State Era Average ($2,200-$3,500))",
     "is_uncertain": false,
     "distance_miles": null,
-    "distance_str": "Regional (OK/KS/AR/MO/TX)"
+    "distance_str": "Regional (OK/KS/AR/MO/TX)",
+    "is_new": false,
+    "local_image_url": "images/thumbnails/pinside_pin_220089.jpg"
   }
 ];
