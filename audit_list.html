@@ -205,6 +205,20 @@
         .tech-solid_state { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.4); }
         .tech-em { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.4); }
         .tech-unverified { background: rgba(148, 163, 184, 0.2); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
+        .pill-display {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .pill-display-lcd { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+        .pill-display-dmd { background: rgba(244, 63, 94, 0.2); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.4); }
+        .pill-display-alphanumeric { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+        .pill-display-reels { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.4); }
+        .pill-display-unverified, .pill-display-unknown, .pill-display-other, .pill-display-lights, .pill-display-cga {
+            background: rgba(148, 163, 184, 0.2); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -230,6 +244,7 @@
                 <th>Mfg</th>
                 <th>Year</th>
                 <th>Tech</th>
+                <th>Display</th>
                 <th>Price & Type</th>
                 <th>Location & Dist</th>
                 <th>Score</th>
@@ -246,6 +261,7 @@
             <td>Spooky</td>
             <td>2020</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$8,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Rhome, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -264,6 +280,7 @@
             <td>Stern</td>
             <td>2026</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$13,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Forney, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -282,6 +299,7 @@
             <td>Stern</td>
             <td>2017</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$7,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>St. Louis, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -300,6 +318,7 @@
             <td>Bally</td>
             <td>1993</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -318,6 +337,7 @@
             <td>Bally</td>
             <td>1978</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-reels">Reels</span></td>
             <td><strong>$4,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>5</strong></td>
@@ -336,6 +356,7 @@
             <td>Bally</td>
             <td>1979</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$1,700.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Springfield, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>11</strong></td>
@@ -354,6 +375,7 @@
             <td>Jersey Jack</td>
             <td>2019</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$12,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Carrollton, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -372,6 +394,7 @@
             <td>Williams</td>
             <td>1991</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lights">Lights</span></td>
             <td><strong>$3,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Oklahoma City, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~97 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -390,6 +413,7 @@
             <td>Stern</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$299.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -408,6 +432,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$180.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Oklahoma City, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~97 mi from Bixby</span></td>
             <td><strong>3</strong></td>
@@ -426,6 +451,7 @@
             <td>Gottlieb</td>
             <td>1964</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-reels">Reels</span></td>
             <td><strong>$400.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>13</strong></td>
@@ -444,6 +470,7 @@
             <td>Stern</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$6,300.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -462,6 +489,7 @@
             <td>Stern</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$5,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>10</strong></td>
@@ -480,6 +508,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$300.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>3</strong></td>
@@ -498,6 +527,7 @@
             <td>Stern</td>
             <td>2015</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$3,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Oklahoma City, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~97 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -516,6 +546,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$170.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>3</strong></td>
@@ -534,6 +565,7 @@
             <td>American Pinball</td>
             <td>2021</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$4,699.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Wichita, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -552,6 +584,7 @@
             <td>Bally</td>
             <td>1994</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$3,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -570,6 +603,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$2,600.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Wichita, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -588,6 +622,7 @@
             <td>Bally</td>
             <td>1978</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$3,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -606,6 +641,7 @@
             <td>Bally</td>
             <td>1969</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-reels">Reels</span></td>
             <td><strong>$1,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>3</strong></td>
@@ -624,6 +660,7 @@
             <td>Gottlieb</td>
             <td>1972</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-reels">Reels</span></td>
             <td><strong>$900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>11</strong></td>
@@ -642,6 +679,7 @@
             <td>Williams</td>
             <td>1986</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$4,100.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -660,6 +698,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$160.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>3</strong></td>
@@ -678,6 +717,7 @@
             <td>Game Plan</td>
             <td>1985</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$3,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Oklahoma City, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~97 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -696,6 +736,7 @@
             <td>Data East</td>
             <td>1990</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$4,800.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Wichita, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -714,6 +755,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$850.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Oklahoma City, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~97 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -732,6 +774,7 @@
             <td>Bally</td>
             <td>1980</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$2,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Oklahoma City, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~97 mi from Bixby</span></td>
             <td><strong>10</strong></td>
@@ -750,6 +793,7 @@
             <td>Wonderland Amusements</td>
             <td>2025</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$850.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>11</strong></td>
@@ -768,6 +812,7 @@
             <td>Stern</td>
             <td>2017</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$5,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>12</strong></td>
@@ -786,6 +831,7 @@
             <td>Stern</td>
             <td>2005</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$9,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -804,6 +850,7 @@
             <td>Williams</td>
             <td>1980</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$385.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -822,6 +869,7 @@
             <td>Bally</td>
             <td>1999</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-cga">CGA</span></td>
             <td><strong>$6,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>5</strong></td>
@@ -840,6 +888,7 @@
             <td>Bally</td>
             <td>1995</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$12,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -858,6 +907,7 @@
             <td>Stern</td>
             <td>2022</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$6,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -876,6 +926,7 @@
             <td>Stern</td>
             <td>2007</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,315.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>10</strong></td>
@@ -894,6 +945,7 @@
             <td>Spooky</td>
             <td>2020</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$8,750.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -912,6 +964,7 @@
             <td>Gottlieb</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$2,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -930,6 +983,7 @@
             <td>Stern</td>
             <td>2004</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$5,300.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -948,6 +1002,7 @@
             <td>Bally</td>
             <td>1976</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-reels">Reels</span></td>
             <td><strong>$7,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -966,6 +1021,7 @@
             <td>Data East</td>
             <td>1993</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Wichita, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>3</strong></td>
@@ -984,6 +1040,7 @@
             <td>Stern</td>
             <td>2020</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$5,400.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Wichita, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>8</strong></td>
@@ -1002,6 +1059,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$1,300.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Wichita, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1020,6 +1078,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$600.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Wichita, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>5</strong></td>
@@ -1038,6 +1097,7 @@
             <td>Stern</td>
             <td>2007</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,300.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -1056,6 +1116,7 @@
             <td>Williams</td>
             <td>1986</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$2,600.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -1074,6 +1135,7 @@
             <td>Williams</td>
             <td>1970</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-reels">Reels</span></td>
             <td><strong>$900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>11</strong></td>
@@ -1092,6 +1154,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-unverified">unverified</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$200.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>3</strong></td>
@@ -1110,6 +1173,7 @@
             <td>Williams</td>
             <td>1988</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$3,150.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>5</strong></td>
@@ -1128,6 +1192,7 @@
             <td>Gottlieb</td>
             <td>1994</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,600.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1146,6 +1211,7 @@
             <td>Williams</td>
             <td>1979</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$1,501.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>12</strong></td>
@@ -1164,6 +1230,7 @@
             <td>Gottlieb</td>
             <td>1984</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$1,250.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Kansas City MO, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>14</strong></td>
@@ -1182,6 +1249,7 @@
             <td>Spooky</td>
             <td>2021</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$6,495.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Lake Waukomis, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1200,6 +1268,7 @@
             <td>Stern Electronics</td>
             <td>1980</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$4,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Prosper, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1218,6 +1287,7 @@
             <td>Bally</td>
             <td>1981</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$4,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -1236,6 +1306,7 @@
             <td>Stern</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$13,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Park Hills, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1254,6 +1325,7 @@
             <td>Spooky</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$8,495.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Kansas City, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1272,6 +1344,7 @@
             <td>Gottlieb</td>
             <td>1994</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,600.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Prairie Village, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1290,6 +1363,7 @@
             <td>Williams</td>
             <td>1982</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$1,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Chesterfield, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -1308,6 +1382,7 @@
             <td>Stern</td>
             <td>2018</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$7,800.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Godley, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1326,6 +1401,7 @@
             <td>Stern</td>
             <td>2016</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$10,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Bryant, AR<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1344,6 +1420,7 @@
             <td>Stern</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$6,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Oklahoma City, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~97 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -1362,6 +1439,7 @@
             <td>Jersey Jack</td>
             <td>2023</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$11,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>St. Louis, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1380,6 +1458,7 @@
             <td>Data East</td>
             <td>1988</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$3,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Lake Saint Louis, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1398,6 +1477,7 @@
             <td>Stern</td>
             <td>2013</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$16,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Murphy, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1416,6 +1496,7 @@
             <td>Jersey Jack</td>
             <td>2016</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$8,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Elkhart, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1434,6 +1515,7 @@
             <td>American Pinball</td>
             <td>2021</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$5,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Park Hills, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -1452,6 +1534,7 @@
             <td>Multimorphic</td>
             <td>2020</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$1,800.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Park Hills, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>11</strong></td>
@@ -1470,6 +1553,7 @@
             <td>Spooky Pinball</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$17,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Park Hills, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1488,6 +1572,7 @@
             <td>Jersey Jack</td>
             <td>2023</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$8,250.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Kansas City, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -1506,6 +1591,7 @@
             <td>Jersey Jack</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$11,250.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Kansas City, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1524,6 +1610,7 @@
             <td>Stern</td>
             <td>2017</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$5,250.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Broken Arrow, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~10 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -1542,6 +1629,7 @@
             <td>Stern</td>
             <td>2009</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$10,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Broken Arrow, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~10 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -1560,6 +1648,7 @@
             <td>Stern</td>
             <td>2011</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$8,633.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Anna, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1578,6 +1667,7 @@
             <td>Bally</td>
             <td>1987</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$2,300.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Saint Charles, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1596,6 +1686,7 @@
             <td>Williams</td>
             <td>1988</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$2,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Saint Charles, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1614,6 +1705,7 @@
             <td>Turner Pinball</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$6,200.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Saint Charles, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1632,6 +1724,7 @@
             <td>Bally</td>
             <td>1987</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$5,800.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Columbia, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1650,6 +1743,7 @@
             <td>Stern</td>
             <td>2022</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$6,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Dallas, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1668,6 +1762,7 @@
             <td>Chicago Gaming</td>
             <td>2023</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$9,150.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Springfield, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1686,6 +1781,7 @@
             <td>Williams</td>
             <td>1998</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$8,999.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1704,6 +1800,7 @@
             <td>Jersey Jack</td>
             <td>2017</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$6,050.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Saint Charles, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -1722,6 +1819,7 @@
             <td>Gottlieb</td>
             <td>1982</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$3,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1740,6 +1838,7 @@
             <td>Williams</td>
             <td>1993</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$6,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Bedford, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -1758,6 +1857,7 @@
             <td>Williams</td>
             <td>1993</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$6,990.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Weldon Spring, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>12</strong></td>
@@ -1776,6 +1876,7 @@
             <td>Stern</td>
             <td>2017</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$7,950.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Wichita, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1794,6 +1895,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$1,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Round Rock, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1812,6 +1914,7 @@
             <td>Stern</td>
             <td>2020</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$9,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1830,6 +1933,7 @@
             <td>Stern</td>
             <td>2014</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -1848,6 +1952,7 @@
             <td>Multimorphic</td>
             <td>2022</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$15,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Cedar Park, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1866,6 +1971,7 @@
             <td>Spooky Pinball</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$16,800.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Benton, AR<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1884,6 +1990,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$4,849.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>3</strong></td>
@@ -1902,6 +2009,7 @@
             <td>Gottlieb</td>
             <td>1978</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-reels">Reels</span></td>
             <td><strong>$995.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Copperas Cove, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>11</strong></td>
@@ -1920,6 +2028,7 @@
             <td>Williams</td>
             <td>1993</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$11,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Rhome, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -1938,6 +2047,7 @@
             <td>Stern</td>
             <td>2013</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$5,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Rhome, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -1956,6 +2066,7 @@
             <td>Data East</td>
             <td>1993</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,100.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Rhome, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -1974,6 +2085,7 @@
             <td>Stern</td>
             <td>2018</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$5,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Rhome, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -1992,6 +2104,7 @@
             <td>Stern</td>
             <td>2007</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Rhome, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -2010,6 +2123,7 @@
             <td>Stern</td>
             <td>2004</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$6,199.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2028,6 +2142,7 @@
             <td>Stern</td>
             <td>2024</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$5,225.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -2046,6 +2161,7 @@
             <td>Stern</td>
             <td>2007</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$4,999.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2064,6 +2180,7 @@
             <td>Williams</td>
             <td>1979</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$5,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Pacific, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -2082,6 +2199,7 @@
             <td>Stern</td>
             <td>2017</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$5,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Weldon Spring, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2100,6 +2218,7 @@
             <td>Stern</td>
             <td>2019</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$6,400.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Linn Creek, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -2118,6 +2237,7 @@
             <td>Chicago Gaming</td>
             <td>2023</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$6,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Benton, AR<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -2136,6 +2256,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$9,500.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Prosper, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>0</strong></td>
@@ -2154,6 +2275,7 @@
             <td>Gottlieb</td>
             <td>1989</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$2,299.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Benton, AR<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>7</strong></td>
@@ -2172,6 +2294,7 @@
             <td>Sega</td>
             <td>1998</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$3,499.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Hardy, AR<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2190,6 +2313,7 @@
             <td>Stern</td>
             <td>2019</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$11,300.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Nashville, AR<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2208,6 +2332,7 @@
             <td>Jersey Jack</td>
             <td>2020</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$6,200.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Azle, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>9</strong></td>
@@ -2226,6 +2351,7 @@
             <td>Stern</td>
             <td>2021</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$8,800.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Benton, AR<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2244,6 +2370,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$14,600.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Lee&#x27;s Summit, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>0</strong></td>
@@ -2262,6 +2389,7 @@
             <td>Multimorphic</td>
             <td>2018</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$2,400.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Topeka, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>11</strong></td>
@@ -2280,6 +2408,7 @@
             <td>-</td>
             <td>-</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-unverified">Unverified</span></td>
             <td><strong>$9,400.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Tulsa, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~16 mi from Bixby</span></td>
             <td><strong>0</strong></td>
@@ -2298,6 +2427,7 @@
             <td>Stern</td>
             <td>2022</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$7,900.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Little Rock, AR<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2316,6 +2446,7 @@
             <td>Stern</td>
             <td>2021</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$11,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Saint Charles, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -2334,6 +2465,7 @@
             <td>Williams</td>
             <td>1984</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$3,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2352,6 +2484,7 @@
             <td>Stern</td>
             <td>2019</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-lcd">LCD</span></td>
             <td><strong>$13,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -2370,6 +2503,7 @@
             <td>Bally</td>
             <td>1981</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$2,800.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Prairie Village, KS<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>6</strong></td>
@@ -2388,6 +2522,7 @@
             <td>Stern</td>
             <td>2016</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$16,250.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Springfield, MO<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -2406,6 +2541,7 @@
             <td>Williams</td>
             <td>1993</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-dmd">DMD</span></td>
             <td><strong>$11,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> </td>
             <td>Fort Worth, TX<br><span style="font-size:0.75rem;color:#00f0ff;">~64 mi from Bixby</span></td>
             <td><strong>4</strong></td>
@@ -2424,6 +2560,7 @@
             <td>Bally</td>
             <td>1978</td>
             <td><span class="tech-tag tech-solid_state">solid_state</span></td>
+            <td><span class="pill-display pill-display-alphanumeric">Alphanumeric</span></td>
             <td><strong>$3,000.00</strong><br><span style="font-size:0.75rem;color:#8e95aa;">Asking Price</span> <span style="color:#e74c3c;font-weight:bold;">★ Price Change</span></td>
             <td>Bixby, OK<br><span style="font-size:0.75rem;color:#00f0ff;">~0 mi from Bixby (Local)</span></td>
             <td><strong>6</strong></td>

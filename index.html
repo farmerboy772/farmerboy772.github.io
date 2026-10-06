@@ -130,6 +130,16 @@
                                 <span class="pill pill-unknown">Unknown: <strong id="stat-date-unknown">--</strong></span>
                             </div>
                         </div>
+                        <div class="stat-group" style="margin-top: 12px;">
+                            <div class="stat-header">OPDB Display Type</div>
+                            <div class="pill-group">
+                                <span class="pill pill-display-lcd" id="pill-display-lcd" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_lcd', 'Display: LCD')" onkeydown="handleKpiKey(event, 'display_lcd', 'Display: LCD')" title="Filter LCD Display">LCD: <strong id="stat-display-lcd">--</strong></span>
+                                <span class="pill pill-display-dmd" id="pill-display-dmd" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_dmd', 'Display: DMD')" onkeydown="handleKpiKey(event, 'display_dmd', 'Display: DMD')" title="Filter DMD Display">DMD: <strong id="stat-display-dmd">--</strong></span>
+                                <span class="pill pill-display-alphanumeric" id="pill-display-alphanumeric" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_alphanumeric', 'Display: Alphanumeric')" onkeydown="handleKpiKey(event, 'display_alphanumeric', 'Display: Alphanumeric')" title="Filter Alphanumeric Display">Alphanumeric: <strong id="stat-display-alphanumeric">--</strong></span>
+                                <span class="pill pill-display-reels" id="pill-display-reels" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_reels', 'Display: Reels')" onkeydown="handleKpiKey(event, 'display_reels', 'Display: Reels')" title="Filter Reels Display">Reels: <strong id="stat-display-reels">--</strong></span>
+                                <span class="pill pill-display-unverified" id="pill-display-unverified" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_unverified', 'Display: Other / Unknown')" onkeydown="handleKpiKey(event, 'display_unverified', 'Display: Other / Unknown')" title="Filter Other/Unknown Display">Other/Unknown: <strong id="stat-display-unverified">--</strong></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -263,6 +273,7 @@
                                 <th>Manufacturer</th>
                                 <th>Year</th>
                                 <th>Tech</th>
+                                <th>Display</th>
                                 <th>Price & Est. FMV</th>
                                 <th>Deal Rating</th>
                                 <th>Location & Dist</th>
@@ -332,7 +343,7 @@
         </main>
     </div>
 
-    <script src="static_data.js?v=202610060000"></script>
-    <script src="dashboard.js?v=202610060000"></script>
+    <script src="static_data.js?v=202610060124"></script>
+    <script src="dashboard.js?v=202610060124"></script>
 </body>
 </html>

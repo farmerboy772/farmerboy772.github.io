@@ -47,7 +47,12 @@ function updateKpiUiState() {
         { key: "source_pinside", id: "source-row-pinside" },
         { key: "tech_ss", id: "pill-tech-ss" },
         { key: "tech_em", id: "pill-tech-em" },
-        { key: "tech_unverified", id: "pill-tech-unverified" }
+        { key: "tech_unverified", id: "pill-tech-unverified" },
+        { key: "display_lcd", id: "pill-display-lcd" },
+        { key: "display_dmd", id: "pill-display-dmd" },
+        { key: "display_alphanumeric", id: "pill-display-alphanumeric" },
+        { key: "display_reels", id: "pill-display-reels" },
+        { key: "display_unverified", id: "pill-display-unverified" }
     ];
 
     kpiElements.forEach(item => {
@@ -115,6 +120,22 @@ function matchesKpiFilter(item, kpiKey) {
     }
     if (kpiKey === "tech_unverified") {
         return item.technology === "unverified";
+    }
+    if (kpiKey === "display_lcd") {
+        return (item.display || "").toLowerCase() === "lcd";
+    }
+    if (kpiKey === "display_dmd") {
+        return (item.display || "").toLowerCase() === "dmd";
+    }
+    if (kpiKey === "display_alphanumeric") {
+        return (item.display || "").toLowerCase() === "alphanumeric";
+    }
+    if (kpiKey === "display_reels") {
+        return (item.display || "").toLowerCase() === "reels";
+    }
+    if (kpiKey === "display_unverified") {
+        const d = (item.display || "").toLowerCase();
+        return !d || d === "unverified" || d === "lights" || d === "cga" || d === "unknown";
     }
     return true;
 }
@@ -248,6 +269,14 @@ function applyDashboardState(data) {
     document.getElementById("stat-date-verified").textContent = dates.Verified ?? 0;
     document.getElementById("stat-date-estimated").textContent = dates["Estimated Relative"] ?? 0;
     document.getElementById("stat-date-unknown").textContent = dates.Unknown ?? 0;
+
+    // OPDB display stats
+    const disp = summary.opdb_display_counts || {};
+    if (document.getElementById("stat-display-lcd")) document.getElementById("stat-display-lcd").textContent = disp.lcd ?? 0;
+    if (document.getElementById("stat-display-dmd")) document.getElementById("stat-display-dmd").textContent = disp.dmd ?? 0;
+    if (document.getElementById("stat-display-alphanumeric")) document.getElementById("stat-display-alphanumeric").textContent = disp.alphanumeric ?? 0;
+    if (document.getElementById("stat-display-reels")) document.getElementById("stat-display-reels").textContent = disp.reels ?? 0;
+    if (document.getElementById("stat-display-unverified")) document.getElementById("stat-display-unverified").textContent = disp.unverified ?? 0;
 }
 
 // Fetch dashboard state & summary metrics via HTTP
@@ -554,6 +583,10 @@ function renderCatalogGrid() {
 
         const { displayDate, dateClass: dateBasisClass } = formatListingDate(item);
 
+        const dispVal = (item.display || "unverified").toLowerCase();
+        const dispLabel = (dispVal === "lcd" || dispVal === "dmd" || dispVal === "cga") ? dispVal.toUpperCase() : (dispVal.charAt(0).toUpperCase() + dispVal.slice(1));
+        const dispBadge = `<span class="badge badge-display badge-display-${escapeHtml(dispVal)}">${escapeHtml(dispLabel)}</span>`;
+
         const breakdownList = (item.score_breakdown || []).map(b => 
             `<li>${escapeHtml(b.desc)} (${b.delta > 0 ? '+' : ''}${b.delta})</li>`
         ).join("");
@@ -575,7 +608,10 @@ function renderCatalogGrid() {
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">${escapeHtml(mfgYear)}</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">${escapeHtml(mfgYear)}</span>
+                        ${dispBadge}
+                    </div>
                     <span class="distance-pill">${escapeHtml(dist)}</span>
                 </div>
                 <h3 class="card-title" title="${escapeHtml(item.raw_title)}">${escapeHtml(canonTitle)} ${matchBadge}</h3>
@@ -680,7 +716,7 @@ function renderAuditTable() {
     });
 
     if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="14" style="text-align:center; padding: 24px;">No records match audit criteria.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="15" style="text-align:center; padding: 24px;">No records match audit criteria.</td></tr>`;
         return;
     }
 
@@ -692,6 +728,9 @@ function renderAuditTable() {
         const statusBadge = item.status === "active" ? '<span class="badge badge-success">ACTIVE</span>' : '<span class="badge badge-warning">REMOVED</span>';
         const dist = getDistanceEst(item.city, item.state, item);
         const pinsideUrl = getPinsideMachineUrl(item);
+
+        const dispVal = (item.display || "unverified").toLowerCase();
+        const dispLabel = (dispVal === "lcd" || dispVal === "dmd" || dispVal === "cga") ? dispVal.toUpperCase() : (dispVal.charAt(0).toUpperCase() + dispVal.slice(1));
 
         const isGenericOrUncertain = !item.canonical_name || 
             GENERIC_MACHINE_NAMES.has((item.canonical_name || "").toLowerCase().trim()) || 
@@ -726,6 +765,7 @@ function renderAuditTable() {
             <td>${escapeHtml(item.manufacturer || '-')}</td>
             <td>${escapeHtml(item.year || '-')}</td>
             <td><span class="pill pill-${item.technology}">${escapeHtml(item.technology)}</span></td>
+            <td><span class="pill pill-display pill-display-${escapeHtml(dispVal)}">${escapeHtml(dispLabel)}</span></td>
             <td>
                 <strong>${priceDisp}</strong>
                 <div style="font-size:0.82rem; color:${pType === 'Market Estimate' ? 'var(--accent-cyan)' : 'var(--text-secondary)'}; font-weight:500;">${escapeHtml(pType)}</div>

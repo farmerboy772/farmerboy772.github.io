@@ -218,6 +218,23 @@
             -webkit-backdrop-filter: blur(4px);
             backdrop-filter: blur(4px);
         }
+        .badge-display {
+            font-size: 0.70rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+        }
+        .badge-display-lcd { background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); }
+        .badge-display-dmd { background: rgba(244, 63, 94, 0.18); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.35); }
+        .badge-display-alphanumeric { background: rgba(168, 85, 247, 0.18); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.35); }
+        .badge-display-reels { background: rgba(251, 191, 36, 0.18); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.35); }
+        .badge-display-unverified, .badge-display-unknown, .badge-display-other, .badge-display-lights, .badge-display-cga {
+            background: rgba(148, 163, 184, 0.12); color: #94a3b8; border: 1px solid rgba(148, 163, 184, 0.25);
+        }
         .card-body {
             padding: 18px;
             display: flex;
@@ -389,7 +406,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Spooky • 2020</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Spooky • 2020</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Rick and Morty (Blood Sucker Edition)">Rick and Morty </h3>
@@ -446,7 +466,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2026</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2026</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pokémon (Limited Edition)">Pokémon (Pro) </h3>
@@ -503,7 +526,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2017</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2017</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~363 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Star Wars: Fall of the Empire (Premium)">Star Wars (Stern) </h3>
@@ -560,7 +586,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1993</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1993</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Judge Dredd Pinball">Judge Dredd </h3>
@@ -617,7 +646,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1978</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1978</span>
+                        <span class="badge badge-display badge-display-reels">Reels</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stern playboy pinball">Playboy (Bally) </h3>
@@ -674,7 +706,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1979</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1979</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~168 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Future Spa">Future Spa </h3>
@@ -731,7 +766,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Jersey Jack • 2019</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Jersey Jack • 2019</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~214 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Medieval Madness (Merlin Edition) w/bonus Willy Wonka CE">Willy Wonka and the Chocolate Factory </h3>
@@ -788,7 +826,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1991</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1991</span>
+                        <span class="badge badge-display badge-display-lights">Lights</span>
+                    </div>
                     <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Williams Slugfest pinball">Slugfest </h3>
@@ -845,7 +886,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • None</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • None</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Tiny&#x27;s Tavern — Backlit Pinball Mod for Stern D&amp;D (Hand-Painted)">Tiny&#x27;s Tavern — Backlit Pinball Mod for Stern D&amp;D (Hand-Painted) <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -902,7 +946,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="AG Julie’s pinball machine">AG Julie’s pinball machine <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -959,7 +1006,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • 1964</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • 1964</span>
+                        <span class="badge badge-display badge-display-reels">Reels</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Vintage 1964 Gottlieb “Bonanza” 2-Player Pinball Machine">Bonanza </h3>
@@ -1016,7 +1066,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • None</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • None</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stern DnD Pro Pinball">Stern DnD Pro Pinball <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -1073,7 +1126,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stern Jaws Pro Pinball HUO">Jaws (Stern) </h3>
@@ -1130,7 +1186,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stiga brand Pinball Table">Stiga brand Pinball Table <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -1187,7 +1246,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2015</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2015</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Wrestlemania Pro pinball">WrestleMania </h3>
@@ -1244,7 +1306,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="American Girl Doll Julie’s pinball machine">American Girl Doll Julie’s pinball machine <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -1301,7 +1366,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">American Pinball • 2021</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">American Pinball • 2021</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~145 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Legends of Valhalla pinball machine">Legends of Valhalla </h3>
@@ -1358,7 +1426,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1994</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1994</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="The Shadow pinball machine">The Shadow </h3>
@@ -1415,7 +1486,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~145 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pinball">Pinball <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -1472,7 +1546,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1978</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1978</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Strikes &#x27;N Spares Bowling Pinball Machine Vintage">Strikes and Spares </h3>
@@ -1529,7 +1606,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1969</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1969</span>
+                        <span class="badge badge-display badge-display-reels">Reels</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Cosmos Digital Pinaball">Cosmos </h3>
@@ -1586,7 +1666,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • 1972</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • 1972</span>
+                        <span class="badge badge-display badge-display-reels">Reels</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Vintage 1972 wild life pinball machine">Wild Life </h3>
@@ -1643,7 +1726,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1986</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1986</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Grand Lizard Pinball Arcade">Grand Lizard </h3>
@@ -1700,7 +1786,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="1950’s ‘State Fair’ strength tester child’s pinball machine.">1950’s ‘State Fair’ strength tester child’s pinball machine. <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -1757,7 +1846,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Game Plan • 1985</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Game Plan • 1985</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Cosmos pinball andromeda">Andromeda </h3>
@@ -1814,7 +1906,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Data East • 1990</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Data East • 1990</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~145 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Back to the future pinball machine">Back to the Future </h3>
@@ -1871,7 +1966,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Legends pinball machine">Legends pinball machine <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -1928,7 +2026,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1980</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1980</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Bally Xenon pinball">Xenon </h3>
@@ -1985,7 +2086,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Wonderland Amusements • 2025</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Wonderland Amusements • 2025</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Alice Goes to Wonderland Pinball, small scale real pinball machine, small &amp; light, fits in any car">Alice Goes to Wonderland </h3>
@@ -2042,7 +2146,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2017</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2017</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stern Star Wars pro pinball machine ￼">Star Wars (Stern) </h3>
@@ -2099,7 +2206,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2005</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2005</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="SOPRANO&#x27;S PINBALL MACHINE - TOTALLY RESTORED!!">The Sopranos </h3>
@@ -2156,7 +2266,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1980</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1980</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Blackout+pinball+machine+play+field+populated">Blackout </h3>
@@ -2213,7 +2326,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1999</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1999</span>
+                        <span class="badge badge-display badge-display-cga">CGA</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Williams ‘Revenge From Mars’ PINBALL">Revenge From Mars </h3>
@@ -2270,7 +2386,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1995</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1995</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="THEATER OF MAGIC PINBALL MACHINE - STUNNING!!">Theatre of Magic </h3>
@@ -2327,7 +2446,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2022</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2022</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stern Rush Pinball [Premium] - Home Use Only, Single Owner">Rush </h3>
@@ -2384,7 +2506,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2007</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2007</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stern Family Guy Pinball Machine">Family Guy </h3>
@@ -2441,7 +2566,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Spooky • 2020</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Spooky • 2020</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Rick and morty pinball machine">Rick and Morty </h3>
@@ -2498,7 +2626,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • None</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • None</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Two Antique Gottlieb Pinball Machines – 1952 &amp; 1964">Two Antique Gottlieb Pinball Machines – 1952 &amp; 1964 <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -2555,7 +2686,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2004</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2004</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="PRICE REDUCED - Stern Elvis Pinball Machine">Elvis </h3>
@@ -2612,7 +2746,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1976</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1976</span>
+                        <span class="badge badge-display badge-display-reels">Reels</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="EVEL KNIEVEL PINBALL MACHINE">Evel Knievel (EM) </h3>
@@ -2669,7 +2806,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Data East • 1993</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Data East • 1993</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~145 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Jurassic Park Pinball Machine Data East 1993 with Topper &amp; Color DMD Screen">Jurassic Park (Data East) </h3>
@@ -2726,7 +2866,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2020</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2020</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~145 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stern Tmnt Pinball Pro">Teenage Mutant Ninja Turtles (Stern) </h3>
@@ -2783,7 +2926,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~145 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Vintage Pinball machine">Vintage Pinball machine <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -2840,7 +2986,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~145 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pinball machine">Pinball machine <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -2897,7 +3046,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2007</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2007</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Family Guy Pinball Machine">Family Guy </h3>
@@ -2954,7 +3106,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1986</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1986</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="High Speed Pinball Machine">High Speed </h3>
@@ -3011,7 +3166,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1970</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1970</span>
+                        <span class="badge badge-display badge-display-reels">Reels</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="GAY 90&#x27;s PINBALL MACHINE">Gay 90&#x27;s </h3>
@@ -3068,7 +3226,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pinball Machine for bouncy/gum balls">Pinball Machine for bouncy/gum balls <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -3125,7 +3286,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1988</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1988</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Cyclone Pinball">Cyclone </h3>
@@ -3182,7 +3346,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • 1994</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • 1994</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pinball Machine - Freddy : NIghtmare on Elmstreet">Freddy: A Nightmare on Elm Street </h3>
@@ -3239,7 +3406,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1979</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1979</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Williams Flash Pinball Machine">Flash </h3>
@@ -3296,7 +3466,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • 1984</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • 1984</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Gottlieb The Games pinball machine">The Games </h3>
@@ -3353,7 +3526,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Spooky • 2021</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Spooky • 2021</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~238 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Halloween (Collectors Edition)">Halloween </h3>
@@ -3410,7 +3586,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern Electronics • 1980</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern Electronics • 1980</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~194 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Quicksilver">Quicksilver </h3>
@@ -3467,7 +3646,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1981</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1981</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Fathom">Fathom </h3>
@@ -3524,7 +3706,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~324 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Beetlejuice">Beetlejuice </h3>
@@ -3581,7 +3766,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Spooky • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Spooky • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="King Kong: Myth of Terror Island (Premium) - 229 Plays - HUO">King Kong: Myth of Terror Island </h3>
@@ -3638,7 +3826,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • 1994</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • 1994</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~222 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Freddy: A Nightmare On Elm Street With ColorDMD">Freddy: A Nightmare on Elm Street </h3>
@@ -3695,7 +3886,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1982</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1982</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~347 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Hyperball">Hyperball </h3>
@@ -3752,7 +3946,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2018</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2018</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~259 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Iron Maiden: Legacy of the Beast (Premium)">Iron Maiden: Legacy of the Beast </h3>
@@ -3809,7 +4006,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2016</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2016</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~213 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Ghostbusters (Premium)">Ghostbusters (Stern) </h3>
@@ -3866,7 +4066,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~97 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Jaws (Pro)">Jaws (Stern) </h3>
@@ -3923,7 +4126,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Jersey Jack • 2023</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Jersey Jack • 2023</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~363 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Elton John (Platinum Edition)">Elton John </h3>
@@ -3980,7 +4186,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Data East • 1988</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Data East • 1988</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~342 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Time Machine">Time Machine (Data East) </h3>
@@ -4037,7 +4246,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2013</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2013</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~206 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Metallica Remastered (LE)">Metallica </h3>
@@ -4094,7 +4306,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Jersey Jack • 2016</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Jersey Jack • 2016</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~299 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="The Hobbit">The Hobbit </h3>
@@ -4151,7 +4366,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">American Pinball • 2021</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">American Pinball • 2021</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~324 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Legends of Valhalla">Legends of Valhalla </h3>
@@ -4208,7 +4426,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Multimorphic • 2020</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Multimorphic • 2020</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~324 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Heist">Heist </h3>
@@ -4265,7 +4486,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Spooky Pinball • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Spooky Pinball • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~324 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Evil Dead">Evil Dead </h3>
@@ -4322,7 +4546,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Jersey Jack • 2023</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Jersey Jack • 2023</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="FS/FT: The Godfather (CE) - HUO, Perfect Condition, 75 Plays">The Godfather </h3>
@@ -4379,7 +4606,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Jersey Jack • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Jersey Jack • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~230 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="FS/FT: Avatar - The Battle For Pandora CE - Perfect/Low Play">Avatar: The Last Airbender </h3>
@@ -4436,7 +4666,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2017</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2017</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~10 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Star Wars (Pro)">Star Wars (Stern) </h3>
@@ -4493,7 +4726,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2009</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2009</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~10 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="For Sale: NBA (Stern 2009) – Very Nice Condition – Oklahoma">NBA (Stern) </h3>
@@ -4550,7 +4786,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2011</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2011</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Transformers: More Than Meets the Eye (Premium)">Transformers </h3>
@@ -4607,7 +4846,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1987</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1987</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~355 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Escape from the Lost World">Escape from the Lost World </h3>
@@ -4664,7 +4906,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1988</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1988</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~355 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Jokerz!">Jokerz! </h3>
@@ -4721,7 +4966,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Turner Pinball • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Turner Pinball • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~355 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Ninja Eclipse">Ninja Eclipse (Arcade Edition) </h3>
@@ -4778,7 +5026,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1987</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1987</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~285 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Dungeons &amp; Dragons: The Tyrant’s Eye (Pro)">Dungeons &amp; Dragons </h3>
@@ -4835,7 +5086,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2022</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2022</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~225 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Rush (Premium) - Home Use Only">Rush </h3>
@@ -4892,7 +5146,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Chicago Gaming • 2023</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Chicago Gaming • 2023</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~168 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pulp Fiction (Bad Mother Flipper LE)">Pulp Fiction </h3>
@@ -4949,7 +5206,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1998</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1998</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Monster Bash (Special Edition)">Monster Bash </h3>
@@ -5006,7 +5266,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Jersey Jack • 2017</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Jersey Jack • 2017</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~355 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Dialed In">Dialed In! </h3>
@@ -5063,7 +5326,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • 1982</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • 1982</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Striker">Striker </h3>
@@ -5120,7 +5386,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1993</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1993</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Star Trek: The Next Generation">Star Trek: The Next Generation </h3>
@@ -5177,7 +5446,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1993</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1993</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~345 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="&quot;It&#x27;s Beautful&quot; Stern Indiana Jones - LOADED">Indiana Jones: The Pinball Adventure </h3>
@@ -5234,7 +5506,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2017</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2017</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~145 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Star Wars: Fall of the Empire (Premium)">Star Wars (Stern) </h3>
@@ -5291,7 +5566,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~390 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pennant Fever">Pennant Fever <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -5348,7 +5626,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2020</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2020</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Heavy Metal">Heavy Metal </h3>
@@ -5405,7 +5686,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2014</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2014</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="The Walking Dead (Pro)">The Walking Dead </h3>
@@ -5462,7 +5746,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Multimorphic • 2022</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Multimorphic • 2022</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="The Princess Bride/Weird Al LEs">Weird Al&#x27;s Museum of Natural Hilarity </h3>
@@ -5519,7 +5806,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Spooky Pinball • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Spooky Pinball • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~209 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Evil Dead">Evil Dead </h3>
@@ -5576,7 +5866,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="24">24 <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -5633,7 +5926,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • 1978</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • 1978</span>
+                        <span class="badge badge-display badge-display-reels">Reels</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Close Encounters of the Third Kind">Close Encounters of the Third Kind </h3>
@@ -5690,7 +5986,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1993</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1993</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Indiana Jones: The Pinball Adventure">Indiana Jones: The Pinball Adventure </h3>
@@ -5747,7 +6046,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2013</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2013</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Metallica (Pro)">Metallica </h3>
@@ -5804,7 +6106,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Data East • 1993</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Data East • 1993</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Last Action Hero">Last Action Hero </h3>
@@ -5861,7 +6166,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2018</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2018</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Iron Maiden: Legacy of the Beast (Pro)">Iron Maiden: Legacy of the Beast </h3>
@@ -5918,7 +6226,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2007</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2007</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Family Guy">Family Guy </h3>
@@ -5975,7 +6286,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2004</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2004</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Elvis">Elvis </h3>
@@ -6032,7 +6346,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2024</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2024</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="X-Men (LE)">The Uncanny X-Men </h3>
@@ -6089,7 +6406,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2007</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2007</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Family Guy">Family Guy </h3>
@@ -6146,7 +6466,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1979</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1979</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~333 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Gorgar">Gorgar </h3>
@@ -6203,7 +6526,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2017</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2017</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~345 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Star Wars Comic Art (Pro)">Star Wars (Stern) </h3>
@@ -6260,7 +6586,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2019</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2019</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~228 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Stranger Things (Pro) NIB!!!">Stranger Things </h3>
@@ -6317,7 +6646,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Chicago Gaming • 2023</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Chicago Gaming • 2023</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~209 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Pulp Fiction (SE)">Pulp Fiction </h3>
@@ -6374,7 +6706,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~194 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Loaded Jaws (Prem) w/ Topper and Accessories">Loaded Jaws (Prem) w/ Topper and Accessories <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -6431,7 +6766,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Gottlieb • 1989</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Gottlieb • 1989</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~209 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Big House">Big House </h3>
@@ -6488,7 +6826,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Sega • 1998</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Sega • 1998</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~219 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Viper Night Drivin&#x27;">Viper Night Drivin&#x27; </h3>
@@ -6545,7 +6886,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2019</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2019</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~219 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Elvira&#x27;s House of Horrors (Limited Edition)">Elvira House of Horrors </h3>
@@ -6602,7 +6946,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Jersey Jack • 2020</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Jersey Jack • 2020</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~358 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="For Sale -Guns N&#x27; Roses (LE)">Guns N&#x27; Roses (JJP) </h3>
@@ -6659,7 +7006,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2021</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2021</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~209 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Godzilla (Premium)">Godzilla (Stern) </h3>
@@ -6716,7 +7066,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~221 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="FS Beetlejuice Butter &amp; Snake Topper">FS Beetlejuice Butter &amp; Snake Topper <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -6773,7 +7126,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Multimorphic • 2018</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Multimorphic • 2018</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~215 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Cosmic Cart Racing">Cosmic Cart Racing </h3>
@@ -6830,7 +7186,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Manufacturer Unverified</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Manufacturer Unverified</span>
+                        <span class="badge badge-display badge-display-unverified">Unverified</span>
+                    </div>
                     <span class="distance-pill">~16 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Toy Story 4 (CE)">Toy Story 4 (CE) <span class="badge" style="background:rgba(148,163,184,0.15);color:#94a3b8;border:1px solid rgba(148,163,184,0.3);margin-left:6px;font-size:0.72rem;">Unverified Match</span></h3>
@@ -6887,7 +7246,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2022</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2022</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~219 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Rush (Premium)">Rush </h3>
@@ -6944,7 +7306,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2021</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2021</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~355 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Godzilla (Premium)">Godzilla (Stern) </h3>
@@ -7001,7 +7366,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1984</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1984</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Laser Cue">Laser Cue </h3>
@@ -7058,7 +7426,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2019</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2019</span>
+                        <span class="badge badge-display badge-display-lcd">LCD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Elvira&#x27;s House of Horrors (40th anniversary editio">Elvira House of Horrors </h3>
@@ -7115,7 +7486,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1981</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1981</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~222 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Elektra">Elektra </h3>
@@ -7172,7 +7546,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Stern • 2016</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Stern • 2016</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~168 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Ghostbusters (LE)">Ghostbusters (Stern) </h3>
@@ -7229,7 +7606,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Williams • 1993</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Williams • 1993</span>
+                        <span class="badge badge-display badge-display-dmd">DMD</span>
+                    </div>
                     <span class="distance-pill">~235 mi from Bixby</span>
                 </div>
                 <h3 class="card-title" title="Indiana Jones: The Pinball Adventure">Indiana Jones: The Pinball Adventure </h3>
@@ -7286,7 +7666,10 @@
             </div>
             <div class="card-body">
                 <div class="card-header-meta">
-                    <span class="mfg-year">Bally • 1978</span>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="mfg-year">Bally • 1978</span>
+                        <span class="badge badge-display badge-display-alphanumeric">Alphanumeric</span>
+                    </div>
                     <span class="distance-pill">~0 mi from Bixby (Local)</span>
                 </div>
                 <h3 class="card-title" title="Strikes &#x27;N Spares">Strikes and Spares </h3>
