@@ -34,128 +34,93 @@
             </div>
         </header>
 
-        <!-- Executive Summary & Diagnostic Panel -->
-        <section class="summary-section">
-            <div class="section-header">
-                <h2>EXECUTIVE SUMMARY & REFRESH METRICS</h2>
-                <div style="font-size:0.80rem; color:var(--text-muted);">Click any card or provider to filter listings view</div>
-            </div>
-            
-            <div class="kpi-grid">
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-observed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('observed', 'Total Observed')" onkeydown="handleKpiKey(event, 'observed', 'Total Observed')" title="Click to filter by Total Observed listings">
-                    <div class="kpi-label">TOTAL OBSERVED</div>
-                    <div class="kpi-val" id="metric-total-observed">--</div>
-                    <div class="kpi-sub">Across FB, HiBid & Pinside</div>
-                    <span class="kpi-filter-tag">Filter Metric ↗</span>
+        <!-- Lean Consolidated Command Bar (~100px height) -->
+        <section class="command-bar glass-panel" aria-label="Pinball Catalog Command Bar">
+            <!-- Top Row: Search & Spec Controls -->
+            <div class="cmd-row-top">
+                <div class="cmd-search-wrap">
+                    <span class="cmd-search-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </span>
+                    <input type="text" id="grid-search" class="cmd-search-input" placeholder="Search title, maker..." aria-label="Search title, maker..." oninput="handleCommandSearch(this.value)">
+                    <button type="button" id="cmd-search-clear" class="cmd-search-clear" onclick="clearCommandSearch()" aria-label="Clear search input">✕</button>
                 </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-active-ss" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('active_ss', 'Active Regional Solid-State')" onkeydown="handleKpiKey(event, 'active_ss', 'Active Regional Solid-State')" title="Click to filter by Active Regional Solid-State">
-                    <div class="kpi-label">ACTIVE REGIONAL SOLID-STATE</div>
-                    <div class="kpi-val" id="metric-active-ss">--</div>
-                    <div class="kpi-sub">Confirmed OK, KS, AR, MO, TX</div>
-                    <span class="kpi-filter-tag">Filter Metric ↗</span>
-                </div>
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-new" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('new', 'Newly Discovered')" onkeydown="handleKpiKey(event, 'new', 'Newly Discovered')" title="Click to filter strictly newly discovered listings from latest scrape">
-                    <div class="kpi-label">NEWLY DISCOVERED</div>
-                    <div class="kpi-val" id="metric-newly-discovered">--</div>
-                    <div class="kpi-sub">Initial observation run</div>
-                    <span class="kpi-filter-tag">Filter Metric ↗</span>
-                </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-gold" id="kpi-price-changes" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('price_changes', 'Price Alterations')" onkeydown="handleKpiKey(event, 'price_changes', 'Price Alterations')" title="Click to filter listings with logged price history">
-                    <div class="kpi-label">PRICE ALTERATIONS</div>
-                    <div class="kpi-val" id="metric-price-altered">--</div>
-                    <div class="kpi-sub">With logged price history</div>
-                    <span class="kpi-filter-tag">Filter Metric ↗</span>
-                </div>
-                <div class="kpi-card glass-panel glass-panel-interactive" id="kpi-removed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('removed', 'Removed / Delisted')" onkeydown="handleKpiKey(event, 'removed', 'Removed / Delisted')" title="Click to view removed and delisted listings">
-                    <div class="kpi-label">REMOVED / DELISTED</div>
-                    <div class="kpi-val" id="metric-removed">--</div>
-                    <div class="kpi-sub">Consecutive misses ≥ 3</div>
-                    <span class="kpi-filter-tag">Filter Metric ↗</span>
-                </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-warning" id="kpi-unconfirmed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('unconfirmed', 'Unconfirmed Location')" onkeydown="handleKpiKey(event, 'unconfirmed', 'Unconfirmed Location')" title="Click to view listings with unconfirmed location">
-                    <div class="kpi-label">UNCONFIRMED LOCATION</div>
-                    <div class="kpi-val" id="metric-unconfirmed">--</div>
-                    <div class="kpi-sub">Shipping-only / Unknown State</div>
-                    <span class="kpi-filter-tag">Filter Metric ↗</span>
-                </div>
-                <div class="kpi-card glass-panel glass-panel-interactive accent-neon" id="kpi-deals" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('deals', '🔥 Deal Radar (≥20% Off)')" onkeydown="handleKpiKey(event, 'deals', '🔥 Deal Radar (≥20% Off)')" title="Click to filter Steals and Great Deals">
-                    <div class="kpi-label" style="color: var(--accent-neon);">🔥 DEAL RADAR (≥20% OFF)</div>
-                    <div class="kpi-val" id="metric-deal-count" style="color: var(--accent-neon);">--</div>
-                    <div class="kpi-sub">Steals & Great Deals Active</div>
-                    <span class="kpi-filter-tag">Filter Metric ↗</span>
-                </div>
+
+                <select id="grid-state-filter" class="cmd-select" aria-label="Location Scope" onchange="handleLocationScopeChange(this.value)">
+                    <option value="regional" selected>Regional (OK, TX, KS, MO, AR)</option>
+                    <option value="oklahoma">Oklahoma Only</option>
+                    <option value="all">All Locations</option>
+                </select>
+
+                <select id="cmd-tech-filter" class="cmd-select" aria-label="Machine Technology" onchange="handleTechFilterChange(this.value)">
+                    <option value="all" selected>All Tech</option>
+                    <option value="solid_state" id="opt-tech-ss">Solid-State (148)</option>
+                    <option value="em" id="opt-tech-em">EM (5)</option>
+                </select>
+
+                <select id="cmd-display-filter" class="cmd-select" aria-label="Display Type" onchange="handleDisplayFilterChange(this.value)">
+                    <option value="all" selected>All Displays</option>
+                    <option value="dmd" id="opt-disp-dmd">DMD (48)</option>
+                    <option value="lcd" id="opt-disp-lcd">LCD (45)</option>
+                    <option value="alphanumeric" id="opt-disp-alphanumeric">Alphanumeric (36)</option>
+                    <option value="reels" id="opt-disp-reels">Reels (15)</option>
+                </select>
             </div>
 
-            <!-- Coverage & Breakdown Matrix -->
-            <div class="matrix-grid">
-                <!-- Source Coverage -->
-                <div class="matrix-card glass-panel">
-                    <div class="card-title-sm">PROVIDER COVERAGE BREAKDOWN</div>
-                    <div class="source-list" id="source-coverage-list">
-                        <div class="source-row" id="source-row-fb" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('source_facebook', 'Facebook Marketplace')" onkeydown="handleKpiKey(event, 'source_facebook', 'Facebook Marketplace')" title="Click to filter by Facebook Marketplace">
-                            <span class="source-tag tag-facebook">Facebook Marketplace</span>
-                            <span class="source-desc">10 Regional Cities • 12 Scrolls (~1.8s delay)</span>
-                            <span class="badge badge-success" id="fb-coverage-count">13 active</span>
-                        </div>
-                        <div class="source-row" id="source-row-hibid" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('source_hibid', 'HiBid Auctions')" onkeydown="handleKpiKey(event, 'source_hibid', 'HiBid Auctions')" title="Click to filter by HiBid Auctions">
-                            <span class="source-tag tag-hibid">HiBid</span>
-                            <span class="source-desc">250mi Radius (ZIP 74008) • Regional Portals (OK, TX, KS, MO, AR)</span>
-                            <span class="badge badge-success" id="hibid-coverage-count">5 active</span>
-                        </div>
-                        <div class="source-row" id="source-row-pinside" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('source_pinside', 'Pinside Classifieds')" onkeydown="handleKpiKey(event, 'source_pinside', 'Pinside Classifieds')" title="Click to filter by Pinside Classifieds">
-                            <span class="source-tag tag-pinside">Pinside</span>
-                            <span class="source-desc">500 km Radius Endpoint • Solid-State</span>
-                            <span class="badge badge-success" id="pinside-coverage-count">5 active</span>
-                        </div>
+            <!-- Bottom Row: Views, Sources, & Diagnostics -->
+            <div class="cmd-row-bottom">
+                <div class="cmd-left-group no-scrollbar">
+                    <!-- Quick Views Segmented Control (Single Select) -->
+                    <div class="cmd-quick-views" role="radiogroup" aria-label="Quick Filter Views">
+                        <button type="button" class="cmd-view-btn active" id="view-all" data-view="all" role="radio" aria-checked="true" onclick="setQuickView('all')">
+                            All <span class="cmd-view-count" id="count-view-all">(273)</span>
+                        </button>
+                        <button type="button" class="cmd-view-btn accent-deals" id="view-deals" data-view="deals" role="radio" aria-checked="false" onclick="setQuickView('deals')">
+                            🔥 Deals <span class="cmd-view-count" id="count-view-deals">(18)</span>
+                        </button>
+                        <button type="button" class="cmd-view-btn" id="view-price-drops" data-view="price_changes" role="radio" aria-checked="false" onclick="setQuickView('price_changes')">
+                            Price Drops <span class="cmd-view-count" id="count-view-price-drops">(101)</span>
+                        </button>
+                        <button type="button" class="cmd-view-btn" id="view-new" data-view="new" role="radio" aria-checked="false" onclick="setQuickView('new')">
+                            New <span class="cmd-view-count" id="count-view-new">(9)</span>
+                        </button>
+                        <button type="button" class="cmd-view-btn" id="view-delisted" data-view="removed" role="radio" aria-checked="false" onclick="setQuickView('removed')">
+                            Delisted <span class="cmd-view-count" id="count-view-delisted">(55)</span>
+                        </button>
+                    </div>
+
+                    <div class="cmd-divider" aria-hidden="true"></div>
+
+                    <!-- Source Multi-Select Toggles (Check-pills) -->
+                    <div class="cmd-sources" role="group" aria-label="Listing Sources">
+                        <label class="cmd-source-pill active" id="pill-source-fb" data-source="facebook" title="Toggle Facebook Marketplace">
+                            <input type="checkbox" id="check-source-fb" checked onchange="toggleSource('facebook', this.checked)">
+                            <span class="check-indicator" aria-hidden="true">✓</span>
+                            <span>Facebook</span>
+                            <span class="cmd-view-count" id="fb-coverage-count">(99)</span>
+                        </label>
+                        <label class="cmd-source-pill active" id="pill-source-hibid" data-source="hibid" title="Toggle HiBid Auctions">
+                            <input type="checkbox" id="check-source-hibid" checked onchange="toggleSource('hibid', this.checked)">
+                            <span class="check-indicator" aria-hidden="true">✓</span>
+                            <span>HiBid</span>
+                            <span class="cmd-view-count" id="hibid-coverage-count">(18)</span>
+                        </label>
+                        <label class="cmd-source-pill active" id="pill-source-pinside" data-source="pinside" title="Toggle Pinside Classifieds">
+                            <input type="checkbox" id="check-source-pinside" checked onchange="toggleSource('pinside', this.checked)">
+                            <span class="check-indicator" aria-hidden="true">✓</span>
+                            <span>Pinside</span>
+                            <span class="cmd-view-count" id="pinside-coverage-count">(101)</span>
+                        </label>
                     </div>
                 </div>
 
-                <!-- OPDB Enrichment & Date Status -->
-                <div class="matrix-card glass-panel">
-                    <div class="card-title-sm">OPDB ENRICHMENT & DATE RESOLUTION</div>
-                    <div class="enrich-stats">
-                        <div class="stat-group">
-                            <div class="stat-header">Machine Technology</div>
-                            <div class="pill-group">
-                                <span class="pill pill-ss" id="pill-tech-ss" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('tech_ss', 'Solid-State Technology')" onkeydown="handleKpiKey(event, 'tech_ss', 'Solid-State Technology')" title="Filter Solid-State">Solid-State: <strong id="stat-tech-ss">--</strong></span>
-                                <span class="pill pill-em" id="pill-tech-em" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('tech_em', 'EM Technology')" onkeydown="handleKpiKey(event, 'tech_em', 'EM Technology')" title="Filter EM">EM: <strong id="stat-tech-em">--</strong></span>
-                                <span class="pill pill-unverified" id="pill-tech-unverified" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('tech_unverified', 'Unverified Technology')" onkeydown="handleKpiKey(event, 'tech_unverified', 'Unverified Technology')" title="Filter Unverified">Unverified: <strong id="stat-tech-unverified">--</strong></span>
-                            </div>
-                        </div>
-                        <div class="stat-group" style="margin-top: 12px;">
-                            <div class="stat-header">Date Resolution Status</div>
-                            <div class="pill-group">
-                                <span class="pill pill-verified">Verified: <strong id="stat-date-verified">--</strong></span>
-                                <span class="pill pill-estimated">Estimated: <strong id="stat-date-estimated">--</strong></span>
-                                <span class="pill pill-unknown">Unknown: <strong id="stat-date-unknown">--</strong></span>
-                            </div>
-                        </div>
-                        <div class="stat-group" style="margin-top: 12px;">
-                            <div class="stat-header">OPDB Display Type</div>
-                            <div class="pill-group">
-                                <span class="pill pill-display-lcd" id="pill-display-lcd" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_lcd', 'Display: LCD')" onkeydown="handleKpiKey(event, 'display_lcd', 'Display: LCD')" title="Filter LCD Display">LCD: <strong id="stat-display-lcd">--</strong></span>
-                                <span class="pill pill-display-dmd" id="pill-display-dmd" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_dmd', 'Display: DMD')" onkeydown="handleKpiKey(event, 'display_dmd', 'Display: DMD')" title="Filter DMD Display">DMD: <strong id="stat-display-dmd">--</strong></span>
-                                <span class="pill pill-display-alphanumeric" id="pill-display-alphanumeric" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_alphanumeric', 'Display: Alphanumeric')" onkeydown="handleKpiKey(event, 'display_alphanumeric', 'Display: Alphanumeric')" title="Filter Alphanumeric Display">Alphanumeric: <strong id="stat-display-alphanumeric">--</strong></span>
-                                <span class="pill pill-display-reels" id="pill-display-reels" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_reels', 'Display: Reels')" onkeydown="handleKpiKey(event, 'display_reels', 'Display: Reels')" title="Filter Reels Display">Reels: <strong id="stat-display-reels">--</strong></span>
-                                <span class="pill pill-display-unverified" id="pill-display-unverified" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('display_unverified', 'Display: Other / Unknown')" onkeydown="handleKpiKey(event, 'display_unverified', 'Display: Other / Unknown')" title="Filter Other/Unknown Display">Other/Unknown: <strong id="stat-display-unverified">--</strong></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Right-aligned Utility Actions -->
+                <button type="button" class="cmd-btn-diagnostics" onclick="openDiagnosticsDrawer()" aria-label="Open Diagnostics Telemetry">
+                    <span>⚙</span>
+                    <span>Diagnostics</span>
+                </button>
             </div>
         </section>
-
-        <!-- Active Metric Filter Banner -->
-        <div id="active-kpi-banner" class="active-kpi-banner glass-panel" style="display: none;">
-            <div class="active-kpi-content">
-                <span class="active-kpi-badge">METRIC FILTER ACTIVE</span>
-                <span class="active-kpi-label">Filtering View: <strong id="active-kpi-name">Newly Discovered</strong></span>
-                <span id="active-kpi-count" class="active-kpi-count">0 matching machines</span>
-            </div>
-            <button type="button" class="btn-clear-kpi" onclick="clearKpiFilter()" aria-label="Clear active metric filter">
-                Reset to All Listings ✕
-            </button>
-        </div>
 
         <!-- Navigation Tabs -->
         <nav class="nav-tabs glass-panel-subtle no-scrollbar" role="tablist" aria-label="Dashboard view sections">
@@ -181,9 +146,12 @@
         <main class="main-content">
             <!-- TAB 1: Grid View -->
             <div id="tab-catalog" class="tab-pane active" role="tabpanel" aria-labelledby="tab-btn-catalog">
+                <div id="active-kpi-banner" class="active-kpi-banner" style="display:none;" role="status">
+                    <span>Filtered by: <strong id="active-kpi-name">All</strong> (<span id="active-kpi-count">0 matching machines</span>)</span>
+                    <button type="button" class="btn btn-xs" onclick="clearKpiFilter()" aria-label="Reset metric filter">Reset Filter ✕</button>
+                </div>
                 <div class="pane-toolbar">
                     <div class="filter-group no-scrollbar">
-                        <input type="text" id="grid-search" aria-label="Search catalog machines by title, manufacturer, or city" placeholder="Search machine, manufacturer, or city..." oninput="filterGrid()">
                         <select id="grid-deal-filter" aria-label="Filter catalog by deal rating" onchange="filterGrid()">
                             <option value="all">All Deals & Valuation</option>
                             <option value="deals_only">🔥 Deals Radar Only (≥15% off)</option>
@@ -192,19 +160,11 @@
                             <option value="good">✓ Good Value (10%–20% off)</option>
                             <option value="auction">🔨 Live Auction Bids</option>
                         </select>
-                        <select id="grid-source-filter" aria-label="Filter catalog by source platform" onchange="filterGrid()">
+                        <select id="grid-source-filter" aria-label="Filter catalog by source platform" style="display:none;" onchange="filterGrid()">
                             <option value="all">All Sources</option>
                             <option value="facebook">Facebook Marketplace</option>
                             <option value="hibid">HiBid</option>
                             <option value="pinside">Pinside</option>
-                        </select>
-                        <select id="grid-state-filter" aria-label="Filter catalog by regional state" onchange="filterGrid()">
-                            <option value="all">All Regional States (OK, KS, AR, MO, TX)</option>
-                            <option value="OK">Oklahoma (OK)</option>
-                            <option value="TX">Texas (TX)</option>
-                            <option value="KS">Kansas (KS)</option>
-                            <option value="MO">Missouri (MO)</option>
-                            <option value="AR">Arkansas (AR)</option>
                         </select>
                         <select id="grid-price-filter" aria-label="Filter catalog by price threshold" onchange="filterGrid()">
                             <option value="100" selected>Min Price: $100+ (Exclude &lt; $100)</option>
@@ -223,8 +183,8 @@
                             <option value="score-desc">Scoring (Highest First)</option>
                         </select>
                     </div>
-                    <div class="result-count" id="grid-result-count">Showing 16 machines</div>
-                </div>
+                    <div class="result-count" id="grid-result-count">Showing 120 machines</div>
+
 
                 <div class="catalog-grid" id="catalog-grid-cards">
                     <!-- Populated dynamically -->
@@ -340,10 +300,157 @@
                     </div>
                 </div>
             </div>
-        </main>
+    </div>
+    </main>
     </div>
 
-    <script src="static_data.js?v=202610060143"></script>
-    <script src="dashboard.js?v=202610060143"></script>
+    <!-- Slide-over Diagnostics Drawer (Modal) -->
+    <dialog id="diagnostics-drawer" class="diagnostics-drawer" aria-labelledby="diag-title">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <span class="drawer-icon" aria-hidden="true">⚙</span>
+                <div>
+                    <h2 id="diag-title" class="drawer-title">Scraper Telemetry & Diagnostics</h2>
+                    <div class="drawer-subtitle">Operational health, ingestion parameters, and data resolution metrics</div>
+                </div>
+            </div>
+            <button type="button" class="btn-close-drawer" onclick="closeDiagnosticsDrawer()" aria-label="Close diagnostics drawer">✕</button>
+        </div>
+        <div class="drawer-body no-scrollbar">
+            <!-- Scraper Telemetry Section -->
+            <div class="diag-section">
+                <h3 class="diag-heading">SCRAPER TELEMETRY & INGESTION PARAMETERS</h3>
+                <div class="diag-grid">
+                    <div class="diag-card">
+                        <div class="diag-card-title" role="button" tabindex="0" onclick="toggleKpiFilter('source_facebook'); closeDiagnosticsDrawer();">
+                            <span class="source-tag tag-facebook">Facebook Marketplace</span>
+                            <span class="badge badge-success">Persistent Profile</span>
+                        </div>
+                        <ul class="diag-list">
+                            <li><strong>Target Cities:</strong> 10 Regional Portals (OK, TX, KS, MO, AR)</li>
+                            <li><strong>Scroll Depth:</strong> 12 scrolls / city (~1.8s delay between actions)</li>
+                            <li><strong>Browser Mode:</strong> Playwright Headless (Anti-bot evasion active)</li>
+                            <li><strong>Observed / Active:</strong> <span id="diag-fb-counts">141 observed • 99 active</span></li>
+                        </ul>
+                    </div>
+                    <div class="diag-card">
+                        <div class="diag-card-title" role="button" tabindex="0" onclick="toggleKpiFilter('source_hibid'); closeDiagnosticsDrawer();">
+                            <span class="source-tag tag-hibid">HiBid Auctions</span>
+                            <span class="badge badge-success">Regional Subdomains</span>
+                        </div>
+                        <ul class="diag-list">
+                            <li><strong>Search Radius:</strong> 250 miles from Bixby, OK (ZIP 74008)</li>
+                            <li><strong>Target Portals:</strong> OK, TX, KS, MO, AR subdomains</li>
+                            <li><strong>Scrape Filter:</strong> URL-level regional bounds (Nationwide pass removed)</li>
+                            <li><strong>Observed / Active:</strong> <span id="diag-hibid-counts">18 observed • 18 active</span></li>
+                        </ul>
+                    </div>
+                    <div class="diag-card">
+                        <div class="diag-card-title" role="button" tabindex="0" onclick="toggleKpiFilter('source_pinside'); closeDiagnosticsDrawer();">
+                            <span class="source-tag tag-pinside">Pinside Classifieds</span>
+                            <span class="badge badge-success">Session Authenticated</span>
+                        </div>
+                        <ul class="diag-list">
+                            <li><strong>Endpoint:</strong> 500 km Solid-State Classifieds (Bixby ZIP 74008)</li>
+                            <li><strong>Date Extraction:</strong> Explicit "Added:" date parsing from card body</li>
+                            <li><strong>Image Cache:</strong> Ingestion thumbnail cache to local assets</li>
+                            <li><strong>Observed / Active:</strong> <span id="diag-pinside-counts">114 observed • 101 active</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pipeline Lifecycle Metrics -->
+            <div class="diag-section">
+                <h3 class="diag-heading">SYSTEM HEALTH & LIFECYCLE METRICS</h3>
+                <div class="diag-metrics-row">
+                    <div class="diag-metric" id="kpi-observed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('observed'); closeDiagnosticsDrawer();">
+                        <div class="diag-metric-label">TOTAL OBSERVED</div>
+                        <div class="diag-metric-val" id="metric-total-observed">273</div>
+                    </div>
+                    <div class="diag-metric" id="kpi-active-ss" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('active_ss'); closeDiagnosticsDrawer();">
+                        <div class="diag-metric-label">ACTIVE REGIONAL SS</div>
+                        <div class="diag-metric-val" id="metric-active-ss">120</div>
+                    </div>
+                    <div class="diag-metric" id="kpi-new" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('new'); closeDiagnosticsDrawer();">
+                        <div class="diag-metric-label">NEWLY DISCOVERED</div>
+                        <div class="diag-metric-val" id="metric-newly-discovered">9</div>
+                    </div>
+                    <div class="diag-metric" id="kpi-price-changes" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('price_changes'); closeDiagnosticsDrawer();">
+                        <div class="diag-metric-label">PRICE ALTERATIONS</div>
+                        <div class="diag-metric-val" id="metric-price-altered">101</div>
+                    </div>
+                    <div class="diag-metric" id="kpi-removed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('removed'); closeDiagnosticsDrawer();">
+                        <div class="diag-metric-label">DELISTED (MISSES ≥ 3)</div>
+                        <div class="diag-metric-val" id="metric-removed">55</div>
+                    </div>
+                    <div class="diag-metric" id="kpi-unconfirmed" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('unconfirmed'); closeDiagnosticsDrawer();">
+                        <div class="diag-metric-label">UNCONFIRMED LOCATIONS</div>
+                        <div class="diag-metric-val" id="metric-unconfirmed">46</div>
+                    </div>
+                    <div class="diag-metric" id="kpi-deals" role="button" tabindex="0" aria-pressed="false" onclick="toggleKpiFilter('deals'); closeDiagnosticsDrawer();">
+                        <div class="diag-metric-label">🔥 DEALS ACTIVE</div>
+                        <div class="diag-metric-val" id="metric-deal-count">18</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPDB Enrichment & Date Status -->
+            <div class="diag-section">
+                <h3 class="diag-heading">OPDB ENRICHMENT & DATE RESOLUTION STATUS</h3>
+                <div class="diag-grid">
+                    <div class="diag-card">
+                        <div class="diag-card-title">Date Resolution Queue</div>
+                        <div class="pill-group" style="margin-top:8px;">
+                            <span class="pill pill-verified" id="pill-date-verified">Verified: <strong id="stat-date-verified">46</strong></span>
+                            <span class="pill pill-estimated" id="pill-date-estimated">Estimated: <strong id="stat-date-estimated">172</strong></span>
+                            <span class="pill pill-unknown" id="pill-date-unknown">Unknown: <strong id="stat-date-unknown">0</strong></span>
+                        </div>
+                    </div>
+                    <div class="diag-card">
+                        <div class="diag-card-title">Hardware Display Distribution</div>
+                        <div class="pill-group" style="margin-top:8px;">
+                            <span class="pill pill-display-dmd" id="pill-display-dmd" role="button" tabindex="0" onclick="toggleKpiFilter('display_dmd'); closeDiagnosticsDrawer();">DMD: <strong id="stat-display-dmd">48</strong></span>
+                            <span class="pill pill-display-lcd" id="pill-display-lcd" role="button" tabindex="0" onclick="toggleKpiFilter('display_lcd'); closeDiagnosticsDrawer();">LCD: <strong id="stat-display-lcd">45</strong></span>
+                            <span class="pill pill-display-alphanumeric" id="pill-display-alphanumeric" role="button" tabindex="0" onclick="toggleKpiFilter('display_alphanumeric'); closeDiagnosticsDrawer();">Alphanumeric: <strong id="stat-display-alphanumeric">36</strong></span>
+                            <span class="pill pill-display-reels" id="pill-display-reels" role="button" tabindex="0" onclick="toggleKpiFilter('display_reels'); closeDiagnosticsDrawer();">Reels: <strong id="stat-display-reels">15</strong></span>
+                            <span class="pill pill-display-unverified" id="pill-display-unverified" role="button" tabindex="0" onclick="toggleKpiFilter('display_unverified'); closeDiagnosticsDrawer();">Other/Unverified: <strong id="stat-display-unverified">77</strong></span>
+                        </div>
+                    </div>
+                    <div class="diag-card">
+                        <div class="diag-card-title">Machine Technology Breakdown</div>
+                        <div class="pill-group" style="margin-top:8px;">
+                            <span class="pill pill-ss" id="pill-tech-ss" role="button" tabindex="0" onclick="toggleKpiFilter('tech_ss'); closeDiagnosticsDrawer();">Solid-State: <strong id="stat-tech-ss">148</strong></span>
+                            <span class="pill pill-em" id="pill-tech-em" role="button" tabindex="0" onclick="toggleKpiFilter('tech_em'); closeDiagnosticsDrawer();">EM: <strong id="stat-tech-em">5</strong></span>
+                            <span class="pill pill-unverified" id="pill-tech-unverified" role="button" tabindex="0" onclick="toggleKpiFilter('tech_unverified'); closeDiagnosticsDrawer();">Unverified: <strong id="stat-tech-unverified">65</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Scrape Runs Table -->
+            <div class="diag-section">
+                <h3 class="diag-heading">RECENT INGESTION RUNS</h3>
+                <div class="table-wrap no-scrollbar">
+                    <table class="data-table diag-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Provider</th>
+                                <th>Items</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="diag-runs-table-body">
+                            <!-- Populated dynamically from summary.latest_runs -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="static_data.js?v=202610060215"></script>
+    <script src="dashboard.js?v=202610060215"></script>
 </body>
 </html>
