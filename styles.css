@@ -1861,6 +1861,8 @@ html, body {
 .app-layout {
   max-width: 100%;
   overflow-x: hidden;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 .table-wrap {
@@ -1869,20 +1871,35 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Base Mobile Enhancements & Touch Accessibility */
+button, select, input, .tab-btn, .cmd-view-btn, .cmd-source-pill, .btn {
+  touch-action: manipulation;
+}
+
 @media (max-width: 768px) {
+  /* Prevent iOS Safari 16px auto-zoom bug on inputs and selects */
+  input[type="text"],
+  select,
+  textarea,
+  .cmd-search-input,
+  .cmd-select {
+    font-size: 16px !important;
+  }
+
+  /* Header */
   .top-nav {
     flex-direction: column;
     align-items: flex-start;
-    padding: 14px 16px;
-    gap: 12px;
+    padding: 12px 16px;
+    gap: 10px;
   }
   .brand {
-    gap: 12px;
+    gap: 10px;
     width: 100%;
   }
   .brand-logo {
-    padding: 4px 10px;
-    font-size: 1.2rem;
+    padding: 4px 8px;
+    font-size: 1.15rem;
     flex-shrink: 0;
   }
   .brand-title {
@@ -1890,7 +1907,7 @@ html, body {
     line-height: 1.2;
   }
   .brand-subtitle {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     line-height: 1.3;
     word-break: break-word;
   }
@@ -1900,96 +1917,168 @@ html, body {
   .status-indicator {
     width: 100%;
     justify-content: flex-start;
-    padding: 6px 12px;
-    font-size: 0.78rem;
+    padding: 6px 10px;
+    font-size: 0.75rem;
     white-space: normal;
     word-break: break-word;
   }
 
-  .nav-tabs {
-    flex-wrap: wrap;
-    padding: 10px 14px;
-    gap: 8px;
-    overflow-x: visible;
-  }
-  .tab-btn {
-    padding: 9px 14px;
-    font-size: 0.85rem;
-    white-space: normal;
-    border-radius: 8px;
-    border-bottom: 2px solid transparent;
-    background: rgba(255, 255, 255, 0.04);
-  }
-  .tab-btn.active {
-    border-bottom-color: var(--accent-cyan);
-    background: rgba(56, 189, 248, 0.15);
-  }
-
+  /* Command Bar */
   .command-bar {
-    padding: 10px 14px;
-    max-height: none;
+    padding: 8px 12px;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   .cmd-row-top {
     flex-wrap: wrap;
     gap: 8px;
+    width: 100%;
   }
   .cmd-search-wrap {
     flex: 1 1 100%;
+    width: 100%;
   }
-  .cmd-select {
-    flex: 1 1 calc(33.333% - 6px);
-    min-width: 100px;
-    font-size: 0.78rem;
+  .cmd-search-input {
+    height: 42px;
+    font-size: 16px !important;
+    padding: 0 36px 0 36px;
   }
+  .cmd-search-clear {
+    width: 32px;
+    height: 32px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  #grid-state-filter {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 42px;
+    font-size: 16px !important;
+  }
+  #cmd-tech-filter,
+  #cmd-display-filter {
+    flex: 1 1 calc(50% - 4px);
+    min-width: 0;
+    height: 42px;
+    font-size: 16px !important;
+  }
+
   .cmd-row-bottom {
-    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 8px;
+    width: 100%;
   }
   .cmd-left-group {
-    flex-wrap: wrap;
-    gap: 8px;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .cmd-left-group::-webkit-scrollbar {
+    display: none;
+  }
+  .cmd-quick-views {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 2px;
   }
   .cmd-view-btn {
-    font-size: 0.76rem;
-    padding: 4px 8px;
+    height: 36px;
+    font-size: 0.80rem;
+    padding: 0 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-radius: 6px;
+  }
+  .cmd-divider {
+    height: 20px;
+    margin: 0 2px;
+    flex-shrink: 0;
+  }
+  .cmd-sources {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 5px;
   }
   .cmd-source-pill {
-    font-size: 0.76rem;
-    padding: 3px 8px;
+    height: 36px;
+    font-size: 0.80rem;
+    padding: 0 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-radius: 18px;
   }
-  .main-content {
-    padding: 16px 14px;
+  .cmd-btn-diagnostics {
+    height: 36px;
+    font-size: 0.80rem;
+    padding: 0 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-radius: 6px;
   }
-  .kpi-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 10px;
-  }
-  .kpi-card {
-    padding: 14px;
-  }
-  .kpi-val {
-    font-size: 1.6rem;
-  }
-  .matrix-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .matrix-card {
-    padding: 14px;
-  }
-  .source-row {
-    flex-direction: column;
-    align-items: flex-start;
+
+  /* Navigation Tabs */
+  .nav-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 8px 12px;
     gap: 6px;
   }
-  .source-desc {
-    font-size: 0.78rem;
-    word-break: break-word;
+  .nav-tabs::-webkit-scrollbar {
+    display: none;
   }
+  .tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 0.82rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .tab-btn.active {
+    background: rgba(56, 189, 248, 0.15);
+    border-bottom-color: var(--accent-cyan);
+  }
+
+  /* Main Container */
+  .main-content {
+    padding: 14px 12px;
+    max-width: 100%;
+  }
+
+  /* Active Filter Banner */
+  .active-kpi-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+  .active-kpi-banner .btn {
+    align-self: flex-start;
+  }
+
+  /* Toolbar */
   .pane-toolbar {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 8px;
+    margin-bottom: 16px;
   }
   .filter-group {
     flex-direction: column;
@@ -2003,32 +2092,166 @@ html, body {
   .pane-toolbar select {
     width: 100%;
     max-width: 100%;
+    height: 42px;
+    font-size: 16px !important;
   }
+  .result-count {
+    text-align: left;
+    font-size: 0.82rem;
+  }
+
+  /* Catalog Grid & Cards */
   .catalog-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+    width: 100%;
+  }
+  .pinball-card {
+    border-radius: 12px;
+    width: 100%;
+  }
+  .card-image-wrap {
+    height: clamp(190px, 50vw, 240px);
+  }
+  .card-body {
+    padding: 14px;
+  }
+  .card-title {
+    font-size: 1.18rem;
+  }
+  .pricing-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .price-val {
+    font-size: 1.35rem;
+  }
+  .card-actions {
+    gap: 8px;
+  }
+  .btn-card-link,
+  .btn-pinside-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.90rem;
+    border-radius: 8px;
+  }
+
+  /* Diagnostics Drawer */
+  dialog.diagnostics-drawer {
+    width: 100%;
+    max-width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-left: none;
+    border-radius: 0;
+  }
+  .drawer-header {
+    padding: 12px 14px;
+  }
+  .drawer-title {
+    font-size: 1rem;
+  }
+  .btn-close-drawer {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+  .drawer-body {
+    padding: 14px;
+    gap: 16px;
+  }
+  .diag-metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .diag-metric {
+    padding: 10px;
+    min-height: 58px;
+  }
+  .diag-metric-label {
+    font-size: 0.68rem;
+  }
+  .diag-metric-val {
+    font-size: 1.25rem;
+  }
+  .diag-card {
+    padding: 12px;
+  }
+  .pill-group {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pill {
+    padding: 5px 8px;
+    font-size: 0.76rem;
+  }
+
+  /* Tables */
+  .table-wrap {
+    border-radius: 10px;
+  }
+  .data-table {
+    min-width: 850px;
+    font-size: 0.82rem;
+  }
+  .data-table th, .data-table td {
+    padding: 10px 12px;
+  }
+
+  /* Exports */
+  .exports-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .export-card {
+    padding: 16px;
+  }
+  .export-card .btn {
+    min-height: 44px;
+    width: 100%;
+    justify-content: center;
   }
 }
 
 @media (max-width: 420px) {
   .top-nav {
-    padding: 12px;
+    padding: 10px 12px;
   }
   .brand-logo {
-    font-size: 1.1rem;
-    padding: 4px 8px;
+    font-size: 1rem;
+    padding: 3px 7px;
   }
   .brand-title {
     font-size: 1.05rem;
   }
   .brand-subtitle {
-    font-size: 0.74rem;
+    font-size: 0.70rem;
   }
   .status-indicator {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
+    padding: 5px 8px;
+  }
+  .command-bar {
+    padding: 6px 10px;
+  }
+  .cmd-select {
+    font-size: 16px !important;
+  }
+  .main-content {
+    padding: 10px 8px;
   }
   .tab-btn {
-    width: 100%;
-    justify-content: flex-start;
+    font-size: 0.78rem;
+    padding: 0 10px;
+    height: 36px;
+  }
+  .card-body {
+    padding: 12px;
+  }
+  .card-title {
+    font-size: 1.1rem;
   }
 }

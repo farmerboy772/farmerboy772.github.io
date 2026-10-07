@@ -23,6 +23,11 @@ function setQuickView(viewKey) {
         const isMatch = btn.getAttribute("data-view") === viewKey;
         btn.classList.toggle("active", isMatch);
         btn.setAttribute("aria-checked", isMatch ? "true" : "false");
+        if (isMatch) {
+            try {
+                btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+            } catch(e) {}
+        }
     });
     updateKpiUiState();
     renderAllViews();
@@ -349,6 +354,9 @@ function switchTab(tabId) {
         clickedBtn.classList.add("active");
         clickedBtn.setAttribute("aria-selected", "true");
         clickedBtn.setAttribute("tabindex", "0");
+        try {
+            clickedBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+        } catch(e) {}
     }
 }
 
