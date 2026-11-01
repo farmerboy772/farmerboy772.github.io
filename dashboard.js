@@ -14,10 +14,39 @@ let activeSources = {
 let activeKpiFilter = null;
 let activeKpiName = null;
 
+function clearCatalogFilters() {
+    const filterDefaults = {
+        "grid-search": "",
+        "grid-state-filter": "all",
+        "cmd-tech-filter": "all",
+        "cmd-display-filter": "all",
+        "grid-deal-filter": "all",
+        "grid-price-filter": "all",
+        "grid-source-filter": "all"
+    };
+    Object.entries(filterDefaults).forEach(([id, value]) => {
+        const control = document.getElementById(id);
+        if (control) control.value = value;
+    });
+
+    const clearButton = document.getElementById("cmd-search-clear");
+    if (clearButton) clearButton.style.display = "none";
+
+    Object.keys(activeSources).forEach(sourceKey => {
+        activeSources[sourceKey] = true;
+        const keyId = sourceKey === "facebook" ? "fb" : sourceKey;
+        const pill = document.getElementById(`pill-source-${keyId}`);
+        if (pill) pill.classList.add("active");
+        const checkbox = document.getElementById(`check-source-${keyId}`);
+        if (checkbox) checkbox.checked = true;
+    });
+}
+
 function setQuickView(viewKey) {
     activeQuickView = viewKey;
     activeKpiFilter = null;
     activeKpiName = null;
+    if (viewKey === "new") clearCatalogFilters();
     const viewButtons = document.querySelectorAll(".cmd-view-btn");
     viewButtons.forEach(btn => {
         const isMatch = btn.getAttribute("data-view") === viewKey;
@@ -145,6 +174,7 @@ function toggleKpiFilter(filterKey, filterName) {
     }
     activeKpiFilter = filterKey;
     activeKpiName = filterName || getFilterDisplayName(filterKey);
+    if (filterKey === "new") clearCatalogFilters();
 
     // Sync corresponding Command Bar controls
     if (filterKey === "observed" || filterKey === "active_ss") {
